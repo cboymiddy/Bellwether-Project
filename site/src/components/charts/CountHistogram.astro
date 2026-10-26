@@ -1,0 +1,86 @@
+---
+// Grouped columns: for each bin of "perfect rules found in a shuffled history", the share of shuffled histories
+// per target. A triangle marks the bin the REAL history falls in. One tooltip per bin lists every series.
+export interface HistSeries { id: 'T1' | 'T2' | 'T3'; label: string; counts: Record<string, number>; B: number; realBin: string; realText: string; baselineBin?: string }
+export interface Bin { key: string; label: string }
+interface Props {
+  series: HistSeries[]; bins: Bin[]; title: string; sub: string; descId: string;
+  xLabel?: string; yLabel?: string; realLegend?: string; baselineLegend?: string; tipPrefix?: string; tipSuffix?: string;
+}
+const { series, bins, title, sub, descId, xLabel = 'perfect rules (up to four facts) found in one shuffled history',
+  yLabel = 'share of shuffled histories', realLegend = 'where the real history falls', baselineLegend = '',
+  tipPrefix = '', tipSuffix = ' perfect rules' } = Astro.props;
+const hasBaseline = series.some((s) => s.baselineBin !== undefined);
+const W = 760, H = 350, L = 54, R = 14, T = 46, B = 66;
+const PW = W - L - R, PH = H - T - B;
+const group = PW / bins.length;
+const BW = 14, GAP = 2;
+const share = (s: HistSeries, k: string) => (s.counts[k] ?? 0) / s.B;
+const maxShare = Math.max(...series.flatMap((s) => bins.map((b) => share(s, b.key))));
+const top = Math.ceil(maxShare * 10) / 10;
+const y = (v: number) => T + PH - (v / top) * PH;
+const step = top > 0.4 ? 0.2 : 0.1;
+const ticks: number[] = [];
+for (let v = 0; v <= top + 1e-9; v += step) ticks.push(Number(v.toFixed(2)));
+const col = (x0: number, y0: number, w: number, h: number, r = 4) => {
+  if (h <= 0) return `M${x0},${y0}h${w}`;
+  const rr = Math.min(r, h, w / 2);
+  return `M${x0},${y0 + h}V${y0 + rr}Q${x0},${y0} ${x0 + rr},${y0}H${x0 + w - rr}Q${x0 + w},${y0} ${x0 + w},${y0 + rr}V${y0 + h}Z`;
+};
+const n = series.length;
+const cls = (id: string) => (id === 'T1' ? 1 : id === 'T2' ? 2 : 3);
+---
+<div class="chart viz">
+  <p class="chart-title">{title}</p>
+  <p class="chart-sub">{sub}</p>
+  <ul class="legend" aria-label="Legend">
+    {series.map((s) => <li><span class={`sw b${cls(s.id)}`}></span>{s.label}</li>)}
+    <li><svg class="icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><polygon points="1,2 11,2 6,11" fill="currentColor" /></svg>{realLegend}</li>
+    {hasBaseline && <li><svg class="icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><polygon points="6,0.5 11.5,6 6,11.5 0.5,6" fill="currentColor" /></svg>{baselineLegend}</li>}
+  </ul>
+  <div class="chart-scroll" tabindex="0" role="region" aria-label="Chart, scrolls sideways on small screens">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby={`${descId}-t ${descId}-d`}>
+    <title id={`${descId}-t`}>{title}</title>
+    <desc id={`${descId}-d`}>{series.map((s) => `${s.label}: ${bins.map((b) => `${b.label} ${(share(s, b.key) * 100).toFixed(1)}%`).join(', ')}`).join('. ')}</desc>
+    {ticks.map((t) => (
+      <>
+        <line class="grid" x1={L} x2={W - R} y1={y(t)} y2={y(t)} />
+        <text class="axis" x={L - 6} y={y(t) + 3} text-anchor="end">{Math.round(t * 100)}%</text>
+      </>
+    ))}
+    <line class="axisline" x1={L} x2={W - R} y1={y(0)} y2={y(0)} />
+    {bins.map((b, gi) => {
+      const gx = L + gi * group;
+      const inner = n * BW + (n - 1) * GAP;
+      const x0 = gx + (group - inner) / 2;
+      const tip = JSON.stringify({ title: `${tipPrefix}${b.label}${tipSuffix}`, rows: series.map((s) => ({
+        series: cls(s.id), value: `${(share(s, b.key) * 100).toFixed(1)}%`, label: `${s.label} (${(s.counts[b.key] ?? 0).toLocaleString('en-US')} of ${s.B.toLocaleString('en-US')})` })) });
+      return (
+        <g class="col">
+          <line class="xhair" x1={gx + group / 2} x2={gx + group / 2} y1={T} y2={y(0)} />
+          {series.map((s, si) => {
+            const v = share(s, b.key);
+            const bx = x0 + si * (BW + GAP);
+            return (
+              <>
+                <path d={col(bx, y(v), BW, y(0) - y(v))} class={`f${cls(s.id)}`} />
+                {s.realBin === b.key && (
+                  <polygon points={`${bx + BW / 2 - 6},${y(v) - 15} ${bx + BW / 2 + 6},${y(v) - 15} ${bx + BW / 2},${y(v) - 4}`} class={`f${cls(s.id)} ring`} />
+                )}
+                {s.baselineBin === b.key && (
+                  <polygon points={`${bx + BW / 2},${y(v) - (s.realBin === b.key ? 32 : 17)} ${bx + BW / 2 + 6},${y(v) - (s.realBin === b.key ? 26 : 11)} ${bx + BW / 2},${y(v) - (s.realBin === b.key ? 20 : 5)} ${bx + BW / 2 - 6},${y(v) - (s.realBin === b.key ? 26 : 11)}`} class={`f${cls(s.id)} ring`} />
+                )}
+              </>
+            );
+          })}
+          <text class="axis" x={gx + group / 2} y={y(0) + 16} text-anchor="middle">{b.label}</text>
+          <rect class="hit" x={gx} y={T - 8} width={group} height={PH + 8} tabindex="0" data-tip={tip} />
+        </g>
+      );
+    })}
+    <text x={L + PW / 2} y={H - 12} text-anchor="middle">{xLabel}</text>
+    <text x="0" y="14" class="axis">{yLabel}</text>
+  </svg>
+  </div>
+</div>
+<script>import '../../scripts/tooltip';</script>

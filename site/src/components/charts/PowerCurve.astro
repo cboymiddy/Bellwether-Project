@@ -1,0 +1,63 @@
+---
+// Lines (2px) with markers (r=4, 2px surface ring): chance of finding a perfect rule vs. noise series added to the pool.
+// Hover or focus a column to read every series at that x (crosshair + one tooltip).
+export interface Pt { M: number; P: number }
+export interface LineSeries { id: 'T1' | 'T2' | 'T3'; label: string; points: Pt[] }
+interface Props { series: LineSeries[]; title: string; sub: string; descId: string }
+const { series, title, sub, descId } = Astro.props;
+const W = 760, H = 340, L = 52, R = 16, T = 30, B = 62;
+const dodge: Record<string, number> = { T1: -6, T2: 0, T3: 6 }; // marker offsets so overlapping series stay visible
+const PW = W - L - R, PH = H - T - B;
+const ms = series[0].points.map((p) => p.M);
+const cw = PW / ms.length;
+const x = (i: number) => L + cw * (i + 0.5);
+const y = (v: number) => T + PH - v * PH;
+const cls = (id: string) => (id === 'T1' ? 1 : id === 'T2' ? 2 : 3);
+const ticks = [0, 0.25, 0.5, 0.75, 1];
+const shape = (id: string, cx: number, cy: number) => id === 'T1' ? 'c' : id === 'T2' ? 's' : 'd';
+---
+<div class="chart viz">
+  <p class="chart-title">{title}</p>
+  <p class="chart-sub">{sub}</p>
+  <ul class="legend" aria-label="Legend">
+    {series.map((s) => <li><span class={`ln b${cls(s.id)}`}></span>{s.label}</li>)}
+  </ul>
+  <div class="chart-scroll" tabindex="0" role="region" aria-label="Chart, scrolls sideways on small screens">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby={`${descId}-t ${descId}-d`}>
+    <title id={`${descId}-t`}>{title}</title>
+    <desc id={`${descId}-d`}>{series.map((s) => `${s.label}: ${s.points.map((p) => `${p.M} series ${(p.P * 100).toFixed(1)}%`).join(', ')}`).join('. ')}</desc>
+    {ticks.map((t) => (
+      <>
+        <line class="grid" x1={L} x2={W - R} y1={y(t)} y2={y(t)} />
+        <text class="axis" x={L - 6} y={y(t) + 3} text-anchor="end">{Math.round(t * 100)}%</text>
+      </>
+    ))}
+    <line class="axisline" x1={L} x2={W - R} y1={y(0)} y2={y(0)} />
+    {series.map((s) => (
+      <polyline class={`line st${cls(s.id)}`} points={s.points.map((p, i) => `${x(i)},${y(p.P)}`).join(' ')} />
+    ))}
+    {ms.map((m, i) => {
+      const tip = JSON.stringify({ title: `${m.toLocaleString('en-US')} random series added`, rows: series.map((s) => ({
+        series: cls(s.id), value: `${(s.points[i].P * 100).toFixed(1)}%`, label: s.label })) });
+      return (
+        <g class="col">
+          <line class="xhair" x1={x(i)} x2={x(i)} y1={T} y2={y(0)} />
+          {series.map((s) => {
+            const cy = y(s.points[i].P);
+            const cx = x(i) + dodge[s.id];
+            const k = shape(s.id, cx, cy);
+            return k === 'c' ? <circle cx={cx} cy={cy} r="4" class={`f${cls(s.id)} ring`} />
+              : k === 's' ? <rect x={cx - 4} y={cy - 4} width="8" height="8" class={`f${cls(s.id)} ring`} />
+              : <polygon points={`${cx},${cy - 5.5} ${cx + 5.5},${cy} ${cx},${cy + 5.5} ${cx - 5.5},${cy}`} class={`f${cls(s.id)} ring`} />;
+          })}
+          <text class="axis" x={x(i)} y={y(0) + 16} text-anchor="middle">{m.toLocaleString('en-US')}</text>
+          <rect class="hit" x={x(i) - cw / 2} y={T} width={cw} height={PH} tabindex="0" data-tip={tip} />
+        </g>
+      );
+    })}
+    <text x={L + PW / 2} y={H - 10} text-anchor="middle">random series added to the pool (18 yes/no facts each); spacing is not to scale</text>
+    <text x="0" y="12" class="axis">chance of a perfect rule (markers are offset sideways so overlapping series stay visible)</text>
+  </svg>
+  </div>
+</div>
+<script>import '../../scripts/tooltip';</script>

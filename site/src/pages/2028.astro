@@ -1,0 +1,240 @@
+---
+import { url } from '../lib/url';
+import Base from '../layouts/Base.astro';
+import d2028 from '../data/2028.json';
+import metaJson from '../data/meta.json';
+import ruleJson from '../data/rule.json';
+
+const d: any = d2028, meta: any = metaJson, rule: any = ruleJson;
+const f = d.featured, t = d.tally, w = t.wordings;
+const fmt = (n: number) => n.toLocaleString('en-US');
+const pct = (x: number, dp = 1) => `${(x * 100).toFixed(dp)}%`;
+const noise = pct(meta.headline.p_perfect_rule_under_noise.T1, 1);
+const longDate = new Date(`${d.election_day}T12:00:00Z`).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const verdictNoWin = f.branches.every((b: any) => !b.prediction_hold_party_wins);
+const sky = f.cells.filter((c: any) => c.kind === 'sky');
+const failing = sky.filter((c: any) => c.state === 'false');
+const deg = (x: number) => `${x.toFixed(2)}°`;
+const verdictLabel: Record<string, string> = { no_win: 'says no win', win: 'says win', pending: 'undecided (depends on a game not yet played)' };
+const share = (n: number, tot: number) => (tot ? n / tot : 0);
+const rows1 = [
+  { k: 'no_win', label: 'Say no win', n: t.counts.no_win },
+  { k: 'win', label: 'Say win', n: t.counts.win },
+  { k: 'pending', label: 'Undecided', n: t.counts.pending },
+];
+const rows2 = [
+  { k: 'no_win', label: 'Say no win', n: w.no_win },
+  { k: 'win', label: 'Say win', n: w.win },
+  { k: 'pending', label: 'Undecided', n: w.pending },
+];
+---
+<Base title="2028" description="What the rule says about 2028, inside the same frame as its disclaimer." current="2028">
+  <h1>What the rule says about 2028</h1>
+  <p class="lede">
+    The next presidential election is on {longDate}. The rule can be read for it today, because three of its four facts are
+    about the sky. The reading is below, in the same frame as the reason to ignore it.
+  </p>
+
+  <section class="frame" aria-labelledby="frame-head">
+    <div class="frame-head" role="note">
+      <h2 id="frame-head">This is spurious</h2>
+      <p>
+        <strong>This reading predicts nothing.</strong> The rule fits 1900&ndash;2024 because the search that found it was
+        large enough to find a perfect fit in about <strong>{noise}</strong> of histories whose winners had been shuffled. A
+        rule found that way carries no information about 2028, and neither does this page.
+      </p>
+    </div>
+
+    <div class="frame-body">
+      <p class="verdict">
+        {verdictNoWin
+          ? <>Read literally, the rule says <strong>the party holding the White House on {longDate} does not win.</strong></>
+          : <>Read literally, the rule&rsquo;s answer for {longDate} <strong>depends on a game not yet played.</strong></>}
+      </p>
+      <p>
+        {verdictNoWin && <>That answer is already settled, whatever happens in the Super Bowl. </>}
+        The rule has no inputs about who is running, who is ahead, or who holds the office. &ldquo;The party holding the
+        White House&rdquo; is whichever party that turns out to be.
+      </p>
+      <p class="sub">Sky facts computed {meta.built_utc_date} with {d.ephemeris}. Same conventions as the 1900&ndash;2024 table on the rule card.</p>
+
+      <h3>The four facts</h3>
+      <div class="table-wrap">
+        <table class="plain">
+          <thead>
+            <tr><th>Fact</th><th class="r">Measured</th><th class="r">Line</th><th class="r">Gap to the line</th><th class="r">Gap in clock time</th><th>Fact holds?</th><th>Win needs it to</th><th>Needed state?</th></tr>
+          </thead>
+          <tbody>
+            {f.cells.map((c: any) => (
+              <tr>
+                <td>{c.gloss.replace(/^NOT: /, '')}</td>
+                {c.kind === 'sky' ? (
+                  <>
+                    <td class="num">{deg(c.measured_deg)}</td>
+                    <td class="num">{deg(c.threshold_deg)}</td>
+                    <td class="num">{c.base_truth ? 'over by ' : 'short by '}{deg(Math.abs(c.margin_deg))}</td>
+                    <td class="num">about {fmt(Math.round(c.margin_hours))} h</td>
+                    <td>{c.base_truth ? 'yes' : 'no'}</td>
+                  </>
+                ) : (
+                  <>
+                    <td class="num" colspan="4">pending: {c.event}</td>
+                    <td>pending</td>
+                  </>
+                )}
+                <td>{c.negated ? 'not hold' : 'hold'}</td>
+                <td>{c.kind === 'sky'
+                  ? ((c.negated ? !c.base_truth : c.base_truth) ? <span class="badge ok">met</span> : <span class="badge flag">not met</span>)
+                  : <span class="badge">pending</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="sub">
+        &ldquo;Line&rdquo; is the threshold in the fact, a difference in ecliptic longitude. &ldquo;Gap in clock time&rdquo; is how far the
+        instant would have to move for the measurement to reach the line, from the local rate of change (a rough figure; the
+        degrees are the measurement). All gaps are many hours, so no timezone convention changes any of the three sky facts.
+      </p>
+
+      <h3>The football fact, both ways</h3>
+      <div class="table-wrap">
+        <table class="plain">
+          <thead><tr><th>If, in {f.cells.find((c: any) => c.kind === 'event').event}&hellip;</th><th>Steelers fact</th><th>Rule&rsquo;s answer</th></tr></thead>
+          <tbody>
+            {f.branches.map((b: any) => (
+              <tr>
+                <td>{b.steelers_win ? 'the Pittsburgh Steelers win (pending)' : 'someone else wins, or the Steelers do not play in it (pending)'}</td>
+                <td>{b.steelers_win ? 'does not hold for a win' : 'holds for a win'}</td>
+                <td>{b.prediction_hold_party_wins ? 'party holding the White House wins' : 'party holding the White House does not win'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="sub">
+        {failing.length > 0
+          ? <>The answer is the same in both rows because {failing.length === 1 ? 'one sky fact is' : `${failing.length} sky facts are`} already unmet: {failing.map((c: any) => c.gloss.replace(/^NOT: /, '')).join('; ')}.</>
+          : <>Both sky facts that are not about football are met, so the football result decides.</>}
+      </p>
+    </div>
+  </section>
+
+  <h2 id="rivals">Equally perfect rules, same question</h2>
+  <p>
+    The rule above is one of {fmt(t.n_rules)} that score all 32 elections right with at most four facts. Each of the others can be read for
+    2028 the same way. Only sky facts can be read today; every sports fact for 2028 is still pending, and a rule that depends
+    on one stays undecided unless a sky fact has already ruled it out.
+  </p>
+  <p>
+    <strong>They do not all agree, but nearly all of them say the same thing.</strong> That is not a sign of anything. These rules are made from
+    the same few sky patterns, so they tend to succeed and fail together. They also agreed with one another, and with all 32 elections,
+    by construction.
+  </p>
+  <p class="panel warn">
+    <strong>Agreement among these rules is not independent evidence.</strong> Every one of them was selected because it fits the same 32 outcomes, and they share
+    most of their facts. Counting how many of them say the same thing for 2028 is counting one result many times, not many confirmations.
+  </p>
+
+  <h3>The other {fmt(t.n_others)} rules, one wording each</h3>
+  <div class="mini-bars viz" role="img" aria-label={`Of ${t.n_others} other rules: ${rows1.map((r) => `${r.n} ${r.label.toLowerCase()}`).join(', ')}`}>
+    {rows1.map((r) => (
+      <div class="mini-row">
+        <span class="mini-label">{r.label}</span>
+        <span class="mini-track"><span class={`mini-fill k-${r.k}`} style={`width:${Math.max(share(r.n, t.n_others) * 100, r.n ? 0.8 : 0)}%`}></span></span>
+        <span class="mini-n">{fmt(r.n)} <small>({pct(share(r.n, t.n_others), 1)})</small></span>
+      </div>
+    ))}
+  </div>
+  <details class="viz-table">
+    <summary>Data table</summary>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Reading for 2028</th><th class="r">Rules</th><th class="r">Share</th></tr></thead>
+      <tbody>{rows1.map((r) => <tr><td>{r.label}</td><td class="r">{fmt(r.n)}</td><td class="r">{pct(share(r.n, t.n_others), 1)}</td></tr>)}</tbody>
+    </table></div>
+  </details>
+
+  <h3>Counting every interchangeable wording</h3>
+  <p>
+    Many facts have exactly the same yes-or-no pattern across 1900&ndash;2024, so each of those {fmt(t.n_rules)} rules can be worded in many
+    equally perfect ways. Those wordings agree on every past election and not on 2028. Counted this way there are
+    <strong>{fmt(w.total)}</strong> perfect rules, and the number that say &ldquo;win&rdquo; is not zero.
+    {t.alias_changes_verdict > 0 && <> For <strong>{fmt(t.alias_changes_verdict)}</strong> of the {fmt(t.n_others)} other rules, the answer for 2028 depends on which wording you pick.</>}
+  </p>
+  <div class="mini-bars viz" role="img" aria-label={`Of ${w.total} worded rules: ${rows2.map((r) => `${r.n} ${r.label.toLowerCase()}`).join(', ')}`}>
+    {rows2.map((r) => (
+      <div class="mini-row">
+        <span class="mini-label">{r.label}</span>
+        <span class="mini-track"><span class={`mini-fill k-${r.k}`} style={`width:${Math.max(share(r.n, w.total) * 100, r.n ? 0.8 : 0)}%`}></span></span>
+        <span class="mini-n">{fmt(r.n)} <small>({pct(share(r.n, w.total), 1)})</small></span>
+      </div>
+    ))}
+  </div>
+  <details class="viz-table">
+    <summary>Data table</summary>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Reading for 2028</th><th class="r">Worded rules</th><th class="r">Share</th></tr></thead>
+      <tbody>{rows2.map((r) => <tr><td>{r.label}</td><td class="r">{fmt(r.n)}</td><td class="r">{pct(share(r.n, w.total), 2)}</td></tr>)}</tbody>
+    </table></div>
+  </details>
+  <details class="viz-table">
+    <summary>The {t.wording_sensitive.length} rules whose answer depends on the wording</summary>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="r">Rank</th><th>Facts as listed (each marked with its state for 2028)</th><th>Answers reachable by rewording</th><th class="r">Wordings</th><th class="r">Say no win</th><th class="r">Say win</th><th class="r">Undecided</th></tr></thead>
+      <tbody>
+        {t.wording_sensitive.map((r: any) => (
+          <tr>
+            <td class="r">{r.rank}</td>
+            <td>{r.literals.map((l: any) => (
+              <div>{l.gloss.startsWith('NOT: ') ? <em>not </em> : ''}{l.gloss.replace(/^NOT: /, '')} <span class={l.state === 'false' ? 'badge flag' : l.state === 'true' ? 'badge ok' : 'badge'}>{l.state === 'pending' ? 'pending' : l.state === 'true' ? 'met' : 'not met'}</span></div>
+            ))}</td>
+            <td>{r.reachable.map((v: string) => ({ no_win: 'no win', win: 'win', pending: 'undecided' } as Record<string, string>)[v]).join(', ')}</td>
+            <td class="r">{fmt(r.wordings.total)}</td><td class="r">{fmt(r.wordings.no_win)}</td><td class="r">{fmt(r.wordings.win)}</td><td class="r">{fmt(r.wordings.pending)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table></div>
+  </details>
+  <p class="sub">
+    Wordings are counted from the rules&rsquo; interchangeable-fact lists in the frontier file. A rule counts as &ldquo;say win&rdquo; only if every fact
+    in it holds for 2028 on today&rsquo;s sky; &ldquo;undecided&rdquo; means no sky fact rules it out and a sports fact is still pending.
+    {fmt(w.rules_with_a_wording_that_is_not_no_win)} of the {fmt(t.n_rules)} rules have at least one wording that does not say &ldquo;no win&rdquo;.
+  </p>
+
+  <h3>The {d.tied_top_key.length} rules tied at the top of the ranking</h3>
+  <p>The featured rule is one of these. They tie on every ranking criterion, so none is the better rule.</p>
+  <details class="viz-table">
+    <summary>Each tied rule&rsquo;s reading for 2028</summary>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="r">Rank</th><th>Facts (each marked with its state for 2028)</th><th>Reading</th></tr></thead>
+      <tbody>
+        {d.tied_top_key.map((r: any) => (
+          <tr>
+            <td class="r">{r.rank}{r.featured && <> <span class="badge ok">featured</span></>}</td>
+            <td>
+              {r.literals.map((l: any) => (
+                <div>{l.gloss.startsWith('NOT: ') ? <em>not </em> : ''}{l.gloss.replace(/^NOT: /, '')} <span class={l.state === 'false' ? 'badge flag' : l.state === 'true' ? 'badge ok' : 'badge'}>{l.state === 'pending' ? 'pending' : l.state === 'true' ? 'met' : 'not met'}</span></div>
+              ))}
+            </td>
+            <td>{verdictLabel[r.verdict]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table></div>
+  </details>
+
+  <h2 id="notes">Notes</h2>
+  <ul>
+    <li>
+      <strong>What would count.</strong> The reading was computed on {meta.built_utc_date}, before the election, from the pipeline fixed by hash
+      <code title={meta.hashes.freeze_sha256}>{meta.hashes.freeze_sha256.slice(0, 16)}&hellip;</code>. But the rule was chosen after seeing the results among {fmt(t.n_rules)} equally perfect ones
+      (<a href={url('/limitations/#choice')}>how it was chosen</a>), so even a correct call in 2028 would not be a test of anything.
+    </li>
+    <li>The football fact is about the Super Bowl played in early 2028; nothing about 2028 football is known today.</li>
+    <li>
+      The rule&rsquo;s answer is about the party holding the White House, not about any candidate or party label. It is only as good as the
+      shuffled-history control says it is: {noise} of the time, a search like this finds a rule that fits.
+    </li>
+    <li>Sky facts use the same code and ephemeris as the 1900&ndash;2024 table; the 2028 values were checked to give the same numbers as the stored pool for all 32 past years.</li>
+  </ul>
+</Base>

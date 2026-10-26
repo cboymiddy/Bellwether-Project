@@ -1,0 +1,4 @@
+party {'n_star': 4, 'm_star': 2} best: {'B': 100000, 'conjA': 84, 'conjB': 99914, 'keys': 0, 'none': 2, 'unknown': 0, 'P_conjA': 0.00084, 'P_conjB': 0.99914, 'P_keys': 0.0, 'P_none': 2e-05}
+  T1 {'B': 100000, 'conjA': 51, 'conjB': 98142, 'keys': 0, 'none': 1807, 'unknown': 0, 'P_conjA': 0.00051, 'P_conjB': 0.98142, 'P_keys': 0.0, 'P_none': 0.01807}
+  T2 {'B': 100000, 'conjA': 16, 'conjB': 97566, 'keys': 0, 'none': 2418, 'unknown': 0, 'P_conjA': 0.00016, 'P_conjB': 0.97566, 'P_keys': 0.0, 'P_none': 0.02418}
+  T3 {'B': 100000, 'conjA': 17, 'conjB': 97583, 'keys': 0, 'none': 2400, 'unknown': 0, 'P_conjA': 0.00017, 'P_conjB': 0.97583, 'P_keys': 0.0, 'P_none': 0.024}

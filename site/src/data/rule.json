@@ -1,0 +1,2019 @@
+{
+ "correct_ec": 32,
+ "literals": [
+  {
+   "F": 1,
+   "O": "A",
+   "defunct_entity": false,
+   "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+   "human_checked_rows": 0,
+   "id": "astro_geo_1021_sep_mercury_venus_ge020",
+   "rows": 32,
+   "tz_sensitive": false
+  },
+  {
+   "F": 1,
+   "O": "A",
+   "defunct_entity": false,
+   "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+   "human_checked_rows": 0,
+   "id": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+   "rows": 32,
+   "tz_sensitive": false
+  },
+  {
+   "F": 3,
+   "O": "B",
+   "defunct_entity": false,
+   "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+   "human_checked_rows": 2,
+   "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+   "rows": 32,
+   "tz_sensitive": false
+  },
+  {
+   "F": 1,
+   "O": "A",
+   "defunct_entity": false,
+   "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+   "human_checked_rows": 0,
+   "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+   "rows": 32,
+   "tz_sensitive": false
+  }
+ ],
+ "popvote": {
+  "correct": 30,
+  "wrong_years": [
+   2000,
+   2016
+  ]
+ },
+ "selection": {
+  "chosen_after_seeing_results": true,
+  "chosen_by": "Carson Middleton",
+  "featured_cushion_deg": 1.8843,
+  "featured_cushion_hours": 19.33,
+  "featured_in_tied_set": true,
+  "featured_on_pareto": true,
+  "featured_rank": 8,
+  "reason": "no Moon literal and the largest minimum timing cushion in the tied set",
+  "rule_label": "T1 (incumbent party wins), Electoral College coding, frontier rank 8",
+  "tied_sharing_best_cushion": 12,
+  "tied_top_key_rules": 22,
+  "tied_with_no_moon_literal": 15
+ },
+ "sentence": "The party holding the White House on Election Day wins if Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC), unless Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC), the Pittsburgh Steelers won the Super Bowl played earlier that year, or Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC).",
+ "verification": {
+  "espn_games_agree": 15,
+  "espn_games_total": 15,
+  "horizons_comparisons": 96,
+  "horizons_max_gap_deg": 0.0008262,
+  "horizons_tolerance_deg": 0.001,
+  "horizons_truth_differs": 0,
+  "human_checks": [
+   {
+    "checked_by": "Carson Middleton",
+    "checked_on": "2026-10-25",
+    "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+    "note": "Confirmed the Pittsburgh Steelers won the Super Bowl played in 1976",
+    "source_url": "https://www.espn.com/nfl/superbowl/history/winners",
+    "year": 1976
+   },
+   {
+    "checked_by": "Carson Middleton",
+    "checked_on": "2026-10-25",
+    "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+    "note": "Confirmed the Pittsburgh Steelers won the Super Bowl played in 1980",
+    "source_url": "https://www.espn.com/nfl/superbowl/history/winners",
+    "year": 1980
+   }
+  ],
+  "outcomes_second_source": "Wikipedia list of presidents and list of elections in which the winner lost the popular vote (Phase 0 used the National Archives and UCSB)",
+  "outcomes_second_source_years": 32,
+  "outcomes_second_source_years_agree": 32
+ },
+ "verification_status": {
+  "astro_auto_ok": 96,
+  "automated_only": 126,
+  "event_auto_ok": 32,
+  "human_checked": 2,
+  "rows": 128
+ },
+ "years": [
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 65.2976285,
+     "horizons_gap_deg": 7.63e-05,
+     "instant_utc": "1900-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 45.297705,
+     "margin_hours": 7058.42,
+     "measured_deg": 65.297705,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 54.6022915,
+     "horizons_gap_deg": 0.0003117,
+     "instant_utc": "1900-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -105.397397,
+     "margin_hours": 4123.86,
+     "measured_deg": 54.602603,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 47.678937,
+     "horizons_gap_deg": 0.0004891,
+     "instant_utc": "1900-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -112.320574,
+     "margin_hours": 2430.47,
+     "measured_deg": 47.679426,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1900-11-06",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1900
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 34.6741024,
+     "horizons_gap_deg": 0.0002088,
+     "instant_utc": "1904-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 14.673894,
+     "margin_hours": 734.57,
+     "measured_deg": 34.673894,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 20.2083827,
+     "horizons_gap_deg": 0.0002634,
+     "instant_utc": "1904-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -139.791881,
+     "margin_hours": 5663.74,
+     "measured_deg": 20.208119,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 7.4549728,
+     "horizons_gap_deg": 0.0008262,
+     "instant_utc": "1904-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -152.544201,
+     "margin_hours": 1804.33,
+     "measured_deg": 7.455799,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1904-11-08",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1904
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 58.3540701,
+     "horizons_gap_deg": 0.0006365,
+     "instant_utc": "1908-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 38.353434,
+     "margin_hours": 544.98,
+     "measured_deg": 58.353434,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 122.8914369,
+     "horizons_gap_deg": 0.0003203,
+     "instant_utc": "1908-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -37.108883,
+     "margin_hours": 1071.41,
+     "measured_deg": 122.891117,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 20.1770493,
+     "horizons_gap_deg": 0.0002825,
+     "instant_utc": "1908-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -139.823233,
+     "margin_hours": 5745.46,
+     "measured_deg": 20.176767,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1908-11-03",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1908
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 17.1770469,
+     "horizons_gap_deg": 0.0001035,
+     "instant_utc": "1912-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": false,
+     "margin_deg": -2.823057,
+     "margin_hours": 207.18,
+     "measured_deg": 17.176943,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 168.8664283,
+     "horizons_gap_deg": 1.9e-05,
+     "instant_utc": "1912-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": false,
+     "margin_deg": 8.866447,
+     "margin_hours": 3200.98,
+     "measured_deg": 168.866447,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 25.1044219,
+     "horizons_gap_deg": 0.0005401,
+     "instant_utc": "1912-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -134.895038,
+     "margin_hours": 1746.44,
+     "measured_deg": 25.104962,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1912-11-05",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1912
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 24.2846862,
+     "horizons_gap_deg": 3.78e-05,
+     "instant_utc": "1916-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 4.284648,
+     "margin_hours": 716.24,
+     "measured_deg": 24.284648,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 151.6410974,
+     "horizons_gap_deg": 0.0001248,
+     "instant_utc": "1916-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -8.359027,
+     "margin_hours": 447.27,
+     "measured_deg": 151.640973,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 15.7862745,
+     "horizons_gap_deg": 0.0002064,
+     "instant_utc": "1916-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -144.213932,
+     "margin_hours": 3612.42,
+     "measured_deg": 15.786068,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1916-11-07",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1916
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 5.1785781,
+     "horizons_gap_deg": 1.52e-05,
+     "instant_utc": "1920-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": false,
+     "margin_deg": -14.821407,
+     "margin_hours": 5655.21,
+     "measured_deg": 5.178593,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 70.7786894,
+     "horizons_gap_deg": 0.0001293,
+     "instant_utc": "1920-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -89.221181,
+     "margin_hours": 3922.95,
+     "measured_deg": 70.778819,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 27.1396057,
+     "horizons_gap_deg": 0.0001525,
+     "instant_utc": "1920-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -132.860242,
+     "margin_hours": 3750.07,
+     "measured_deg": 27.139758,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1920-11-02",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1920
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 38.6095697,
+     "horizons_gap_deg": 0.0001159,
+     "instant_utc": "1924-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 18.609686,
+     "margin_hours": 823.23,
+     "measured_deg": 38.609686,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 11.2450073,
+     "horizons_gap_deg": 9.86e-05,
+     "instant_utc": "1924-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -148.755091,
+     "margin_hours": 7790.06,
+     "measured_deg": 11.244909,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 8.7202453,
+     "horizons_gap_deg": 0.0004139,
+     "instant_utc": "1924-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -151.280169,
+     "margin_hours": 1705.99,
+     "measured_deg": 8.719831,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1924-11-04",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1924
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 21.8838153,
+     "horizons_gap_deg": 0.0004826,
+     "instant_utc": "1928-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 1.884298,
+     "margin_hours": 19.33,
+     "measured_deg": 21.884298,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 88.2141812,
+     "horizons_gap_deg": 0.0001152,
+     "instant_utc": "1928-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -71.785934,
+     "margin_hours": 3074.37,
+     "measured_deg": 88.214066,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 9.8095725,
+     "horizons_gap_deg": 0.0001635,
+     "instant_utc": "1928-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -150.190264,
+     "margin_hours": 5934.74,
+     "measured_deg": 9.809736,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1928-11-06",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1928
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 55.7035239,
+     "horizons_gap_deg": 7.26e-05,
+     "instant_utc": "1932-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 35.703597,
+     "margin_hours": 2424.64,
+     "measured_deg": 55.703597,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 162.4288493,
+     "horizons_gap_deg": 0.0001856,
+     "instant_utc": "1932-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": false,
+     "margin_deg": 2.429035,
+     "margin_hours": 64.66,
+     "measured_deg": 162.429035,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 6.3524686,
+     "horizons_gap_deg": 0.000318,
+     "instant_utc": "1932-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -153.647213,
+     "margin_hours": 2158.61,
+     "measured_deg": 6.352787,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1932-11-08",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1932
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 46.970706,
+     "horizons_gap_deg": 3.48e-05,
+     "instant_utc": "1936-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 26.970671,
+     "margin_hours": 3980.13,
+     "measured_deg": 46.970671,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 79.3440481,
+     "horizons_gap_deg": 0.0001237,
+     "instant_utc": "1936-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -80.655828,
+     "margin_hours": 3270.97,
+     "measured_deg": 79.344172,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 38.5960286,
+     "horizons_gap_deg": 0.0002377,
+     "instant_utc": "1936-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -121.404209,
+     "margin_hours": 2279.16,
+     "measured_deg": 38.595791,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1936-11-03",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1936
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 65.5956638,
+     "horizons_gap_deg": 3.94e-05,
+     "instant_utc": "1940-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 45.595624,
+     "margin_hours": 5721.87,
+     "measured_deg": 65.595624,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 7.5571155,
+     "horizons_gap_deg": 0.0001056,
+     "instant_utc": "1940-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -152.442779,
+     "margin_hours": 7089.31,
+     "measured_deg": 7.557221,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 1.304314,
+     "horizons_gap_deg": 8.21e-05,
+     "instant_utc": "1940-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -158.695604,
+     "margin_hours": 7072.0,
+     "measured_deg": 1.304396,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1940-11-05",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1940
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 30.3706068,
+     "horizons_gap_deg": 7.95e-05,
+     "instant_utc": "1944-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 10.370527,
+     "margin_hours": 554.06,
+     "measured_deg": 30.370527,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 79.2474357,
+     "horizons_gap_deg": 4.23e-05,
+     "instant_utc": "1944-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -80.752607,
+     "margin_hours": 8128.57,
+     "measured_deg": 79.247393,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 29.101453,
+     "horizons_gap_deg": 0.0003595,
+     "instant_utc": "1944-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -130.898907,
+     "margin_hours": 1458.89,
+     "measured_deg": 29.101093,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1944-11-07",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1944
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 38.6401158,
+     "horizons_gap_deg": 0.0003771,
+     "instant_utc": "1948-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 18.639739,
+     "margin_hours": 188.05,
+     "measured_deg": 38.639739,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 102.6753787,
+     "horizons_gap_deg": 5.79e-05,
+     "instant_utc": "1948-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -57.324563,
+     "margin_hours": 3810.88,
+     "measured_deg": 102.675437,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 44.4078025,
+     "horizons_gap_deg": 7.87e-05,
+     "instant_utc": "1948-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -115.592119,
+     "margin_hours": 7647.09,
+     "measured_deg": 44.407881,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1948-11-02",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1948
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 14.1686015,
+     "horizons_gap_deg": 3.41e-05,
+     "instant_utc": "1952-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": false,
+     "margin_deg": -5.831433,
+     "margin_hours": 577.45,
+     "measured_deg": 14.168567,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 158.1153509,
+     "horizons_gap_deg": 4.44e-05,
+     "instant_utc": "1952-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -1.884694,
+     "margin_hours": 147.95,
+     "measured_deg": 158.115306,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 19.0120419,
+     "horizons_gap_deg": 0.0002027,
+     "instant_utc": "1952-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -140.988161,
+     "margin_hours": 2179.94,
+     "measured_deg": 19.011839,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1952-11-04",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1952
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 25.7164025,
+     "horizons_gap_deg": 5.33e-05,
+     "instant_utc": "1956-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 5.716456,
+     "margin_hours": 328.47,
+     "measured_deg": 25.716456,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 94.8011703,
+     "horizons_gap_deg": 0.0001001,
+     "instant_utc": "1956-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -65.19873,
+     "margin_hours": 2070.46,
+     "measured_deg": 94.80127,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 66.8472473,
+     "horizons_gap_deg": 0.000185,
+     "instant_utc": "1956-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -93.152938,
+     "margin_hours": 1434.59,
+     "measured_deg": 66.847062,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1956-11-06",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1956
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 7.5820645,
+     "horizons_gap_deg": 5.56e-05,
+     "instant_utc": "1960-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": false,
+     "margin_deg": -12.41788,
+     "margin_hours": 556.15,
+     "measured_deg": 7.58212,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 12.0671547,
+     "horizons_gap_deg": 5.72e-05,
+     "instant_utc": "1960-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -147.932788,
+     "margin_hours": 6566.85,
+     "measured_deg": 12.067212,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 34.1294215,
+     "horizons_gap_deg": 3.4e-06,
+     "instant_utc": "1960-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -125.870582,
+     "margin_hours": 17151.85,
+     "measured_deg": 34.129418,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1960-11-08",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1960
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 43.477179,
+     "horizons_gap_deg": 3.56e-05,
+     "instant_utc": "1964-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 23.477215,
+     "margin_hours": 1213.95,
+     "measured_deg": 43.477215,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 66.9854844,
+     "horizons_gap_deg": 5.38e-05,
+     "instant_utc": "1964-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -93.014569,
+     "margin_hours": 3467.07,
+     "measured_deg": 66.985431,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK",
+     "held": false,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 58.3238414,
+     "horizons_gap_deg": 0.0001553,
+     "instant_utc": "1964-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -101.676314,
+     "margin_hours": 1152.05,
+     "measured_deg": 58.323686,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1964-11-03",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1964
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 42.807581,
+     "horizons_gap_deg": 6.83e-05,
+     "instant_utc": "1968-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 22.807649,
+     "margin_hours": 290.04,
+     "measured_deg": 42.807649,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 175.426431,
+     "horizons_gap_deg": 3.81e-05,
+     "instant_utc": "1968-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": false,
+     "margin_deg": 15.426393,
+     "margin_hours": 426.67,
+     "measured_deg": 175.426393,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1968-01-14",
+     "espn_detail": "II 1968-01-14: Green Bay 33, Oakland 14",
+     "game": "II",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Oakland Raiders",
+     "score": "33-14",
+     "winner_at_time": "Green Bay Packers"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 87.1471218,
+     "horizons_gap_deg": 1.04e-05,
+     "instant_utc": "1968-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -72.852868,
+     "margin_hours": 40014.98,
+     "measured_deg": 87.147132,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1968-11-05",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1968
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 58.8343385,
+     "horizons_gap_deg": 6e-07,
+     "instant_utc": "1972-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 38.834338,
+     "margin_hours": 4182.71,
+     "measured_deg": 58.834338,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 109.7671198,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "1972-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -50.23288,
+     "margin_hours": 2680.85,
+     "measured_deg": 109.76712,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1972-01-16",
+     "espn_detail": "VI 1972-01-16: Dallas 24, Miami 3",
+     "game": "VI",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Miami Dolphins",
+     "score": "24-3",
+     "winner_at_time": "Dallas Cowboys"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 56.1142007,
+     "horizons_gap_deg": 1.23e-05,
+     "instant_utc": "1972-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -103.885787,
+     "margin_hours": 1793.9,
+     "measured_deg": 56.114213,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1972-11-07",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1972
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 44.1815544,
+     "horizons_gap_deg": 6e-07,
+     "instant_utc": "1976-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 24.181554,
+     "margin_hours": 1247.57,
+     "measured_deg": 44.181554,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 57.1596796,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "1976-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -102.840321,
+     "margin_hours": 19291.61,
+     "measured_deg": 57.159679,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1976-01-18",
+     "espn_detail": "X 1976-01-18: Pittsburgh 21, Dallas 17",
+     "game": "X",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": false,
+     "loser_at_time": "Dallas Cowboys",
+     "score": "21-17",
+     "winner_at_time": "Pittsburgh Steelers"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 105.7970368,
+     "horizons_gap_deg": 1.18e-05,
+     "instant_utc": "1976-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -54.202951,
+     "margin_hours": 718.75,
+     "measured_deg": 105.797049,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1976-11-02",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1976
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 60.9246722,
+     "horizons_gap_deg": 9e-07,
+     "instant_utc": "1980-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 40.924671,
+     "margin_hours": 1055.88,
+     "measured_deg": 60.924671,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 5.9799813,
+     "horizons_gap_deg": 8e-07,
+     "instant_utc": "1980-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -154.020018,
+     "margin_hours": 213792.83,
+     "measured_deg": 5.979982,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1980-01-20",
+     "espn_detail": "XIV 1980-01-20: Pittsburgh 31, Los Angeles Rams 19",
+     "game": "XIV",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": false,
+     "loser_at_time": "Los Angeles Rams",
+     "score": "31-19",
+     "winner_at_time": "Pittsburgh Steelers"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 84.0951259,
+     "horizons_gap_deg": 1.15e-05,
+     "instant_utc": "1980-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -75.904863,
+     "margin_hours": 9451.35,
+     "measured_deg": 84.095137,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1980-11-04",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1980
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 26.2635073,
+     "horizons_gap_deg": 1e-07,
+     "instant_utc": "1984-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 6.263507,
+     "margin_hours": 385.2,
+     "measured_deg": 26.263507,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 55.3128538,
+     "horizons_gap_deg": 6e-07,
+     "instant_utc": "1984-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -104.687147,
+     "margin_hours": 8946.08,
+     "measured_deg": 55.312853,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1984-01-22",
+     "espn_detail": "XVIII 1984-01-22: Los Angeles Raiders 38, Washington 9",
+     "game": "XVIII",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Washington Redskins",
+     "score": "38-9",
+     "winner_at_time": "Los Angeles Raiders"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 100.6655985,
+     "horizons_gap_deg": 1.1e-05,
+     "instant_utc": "1984-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -59.33439,
+     "margin_hours": 694.41,
+     "measured_deg": 100.66561,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1984-11-06",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1984
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 22.4362522,
+     "horizons_gap_deg": 1e-07,
+     "instant_utc": "1988-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 2.436252,
+     "margin_hours": 55.91,
+     "measured_deg": 22.436252,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 133.7414059,
+     "horizons_gap_deg": 1e-07,
+     "instant_utc": "1988-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -26.258594,
+     "margin_hours": 1142.5,
+     "measured_deg": 133.741406,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1988-01-31",
+     "espn_detail": "XXII 1988-01-31: Washington 42, Denver 10",
+     "game": "XXII",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Denver Broncos",
+     "score": "42-10",
+     "winner_at_time": "Washington Redskins"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 140.2500019,
+     "horizons_gap_deg": 9.3e-06,
+     "instant_utc": "1988-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -19.749989,
+     "margin_hours": 956.88,
+     "measured_deg": 140.250011,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1988-11-08",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1988
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 12.1544532,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "1992-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": false,
+     "margin_deg": -7.845546,
+     "margin_hours": 1742.66,
+     "measured_deg": 12.154454,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 114.7261124,
+     "horizons_gap_deg": 2e-07,
+     "instant_utc": "1992-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -45.273887,
+     "margin_hours": 1332.28,
+     "measured_deg": 114.726113,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1992-01-26",
+     "espn_detail": "XXVI 1992-01-26: Washington 37, Buffalo 24",
+     "game": "XXVI",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Buffalo Bills",
+     "score": "37-24",
+     "winner_at_time": "Washington Redskins"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 105.5276448,
+     "horizons_gap_deg": 8.1e-06,
+     "instant_utc": "1992-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -54.472347,
+     "margin_hours": 1075.22,
+     "measured_deg": 105.527653,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1992-11-03",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 1992
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 29.9424545,
+     "horizons_gap_deg": 1e-07,
+     "instant_utc": "1996-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 9.942455,
+     "margin_hours": 458.29,
+     "measured_deg": 29.942455,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 35.9293638,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "1996-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -124.070636,
+     "margin_hours": 5210.43,
+     "measured_deg": 35.929364,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "1996-01-28",
+     "espn_detail": "XXX 1996-01-28: Dallas 27, Pittsburgh 17",
+     "game": "XXX",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Pittsburgh Steelers",
+     "score": "27-17",
+     "winner_at_time": "Dallas Cowboys"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 153.4288725,
+     "horizons_gap_deg": 5.9e-06,
+     "instant_utc": "1996-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -6.571122,
+     "margin_hours": 77.97,
+     "measured_deg": 153.428878,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "1996-11-05",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 1996
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 16.7065587,
+     "horizons_gap_deg": 5e-07,
+     "instant_utc": "2000-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": false,
+     "margin_deg": -3.293441,
+     "margin_hours": 51.09,
+     "measured_deg": 16.706559,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 43.5928397,
+     "horizons_gap_deg": 1e-07,
+     "instant_utc": "2000-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -116.40716,
+     "margin_hours": 4167.29,
+     "measured_deg": 43.59284,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2000-01-30",
+     "espn_detail": "XXXIV 2000-01-30: St. Louis 23, Tennessee 16",
+     "game": "XXXIV",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Tennessee Titans",
+     "score": "23-16",
+     "winner_at_time": "St. Louis Rams"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 142.8871093,
+     "horizons_gap_deg": 3.1e-06,
+     "instant_utc": "2000-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -17.112888,
+     "margin_hours": 858.16,
+     "measured_deg": 142.887112,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2000-11-07",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": true,
+   "prediction": false,
+   "year": 2000
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 47.6904857,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "2004-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 27.690485,
+     "margin_hours": 1772.51,
+     "measured_deg": 47.690485,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 146.9170552,
+     "horizons_gap_deg": 2e-07,
+     "instant_utc": "2004-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -13.082945,
+     "margin_hours": 460.87,
+     "measured_deg": 146.917055,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2004-02-01",
+     "espn_detail": "XXXVIII 2004-02-01: New England 32, Carolina 29",
+     "game": "XXXVIII",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Carolina Panthers",
+     "score": "32-29",
+     "winner_at_time": "New England Patriots"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 147.1413236,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "2004-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -12.858676,
+     "margin_hours": 158.43,
+     "measured_deg": 147.141324,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2004-11-02",
+   "incumbent_party": "R",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 2004
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 52.8572071,
+     "horizons_gap_deg": 6e-07,
+     "instant_utc": "2008-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 32.857207,
+     "margin_hours": 2094.88,
+     "measured_deg": 52.857207,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 167.1939726,
+     "horizons_gap_deg": 2e-07,
+     "instant_utc": "2008-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": false,
+     "margin_deg": 7.193972,
+     "margin_hours": 490.66,
+     "measured_deg": 167.193972,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2008-02-03",
+     "espn_detail": "XLII 2008-02-03: New York Giants 17, New England 14",
+     "game": "XLII",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "New England Patriots",
+     "score": "17-14",
+     "winner_at_time": "New York Giants"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 168.4454614,
+     "horizons_gap_deg": 3.5e-06,
+     "instant_utc": "2008-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": false,
+     "margin_deg": 8.445465,
+     "margin_hours": 225.15,
+     "measured_deg": 168.445465,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2008-11-04",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 2008
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 60.3141853,
+     "horizons_gap_deg": 8e-07,
+     "instant_utc": "2012-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 40.314185,
+     "margin_hours": 82160.18,
+     "measured_deg": 60.314185,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 141.5181291,
+     "horizons_gap_deg": 6e-07,
+     "instant_utc": "2012-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -18.48187,
+     "margin_hours": 9122.4,
+     "measured_deg": 141.51813,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2012-02-05",
+     "espn_detail": "XLVI 2012-02-05: New York Giants 21, New England 17",
+     "game": "XLVI",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "New England Patriots",
+     "score": "21-17",
+     "winner_at_time": "New York Giants"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 152.9128814,
+     "horizons_gap_deg": 6.1e-06,
+     "instant_utc": "2012-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": true,
+     "margin_deg": -7.087125,
+     "margin_hours": 172.88,
+     "measured_deg": 152.912875,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2012-11-06",
+   "incumbent_party": "D",
+   "incumbent_party_won": true,
+   "incumbent_party_won_popvote": true,
+   "prediction": true,
+   "year": 2012
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 39.814071,
+     "horizons_gap_deg": 5e-07,
+     "instant_utc": "2016-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 19.81407,
+     "margin_hours": 955.43,
+     "measured_deg": 39.81407,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 46.3804155,
+     "horizons_gap_deg": 5e-07,
+     "instant_utc": "2016-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -113.619584,
+     "margin_hours": 4845.72,
+     "measured_deg": 46.380416,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2016-02-07",
+     "espn_detail": "L 2016-02-07: Denver 24, Carolina 10",
+     "game": "50",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "Carolina Panthers",
+     "score": "24-10",
+     "winner_at_time": "Denver Broncos"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 165.7914204,
+     "horizons_gap_deg": 9.1e-06,
+     "instant_utc": "2016-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": false,
+     "margin_deg": 5.79143,
+     "margin_hours": 64.54,
+     "measured_deg": 165.79143,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2016-11-08",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": true,
+   "prediction": false,
+   "year": 2016
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 46.8877515,
+     "horizons_gap_deg": 9e-07,
+     "instant_utc": "2020-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 26.887751,
+     "margin_hours": 299.12,
+     "measured_deg": 46.887751,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 29.3332702,
+     "horizons_gap_deg": 3e-07,
+     "instant_utc": "2020-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -130.66673,
+     "margin_hours": 6894.92,
+     "measured_deg": 29.33327,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2020-02-02",
+     "espn_detail": "LIV 2020-02-02: Kansas City 31, San Francisco 20",
+     "game": "LIV",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "San Francisco 49ers",
+     "score": "31-20",
+     "winner_at_time": "Kansas City Chiefs"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 165.7242685,
+     "horizons_gap_deg": 1.24e-05,
+     "instant_utc": "2020-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": false,
+     "margin_deg": 5.724281,
+     "margin_hours": 237.18,
+     "measured_deg": 165.724281,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2020-11-03",
+   "incumbent_party": "R",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 2020
+  },
+  {
+   "cells": [
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 22.592819,
+     "horizons_gap_deg": 0.0,
+     "instant_utc": "2024-10-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "astro_geo_1021_sep_mercury_venus_ge020",
+     "literal_value": true,
+     "margin_deg": 2.592819,
+     "margin_hours": 194.0,
+     "measured_deg": 22.592819,
+     "threshold_deg": 20.0
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 114.0454912,
+     "horizons_gap_deg": 1e-07,
+     "instant_utc": "2024-01-21T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "literal_value": true,
+     "margin_deg": -45.954509,
+     "margin_hours": 1610.14,
+     "measured_deg": 114.045491,
+     "threshold_deg": 160.0
+    },
+    {
+     "checked": "auto-OK (ESPN date, winner, loser, score agree)",
+     "date": "2024-02-11",
+     "espn_detail": "LVIII 2024-02-11: Kansas City 25, San Francisco 22",
+     "game": "LVIII",
+     "held": true,
+     "kind": "event",
+     "literal": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "literal_value": true,
+     "loser_at_time": "San Francisco 49ers",
+     "score": "25-22",
+     "winner_at_time": "Kansas City Chiefs"
+    },
+    {
+     "checked": "auto-OK (Horizons within 0.001 deg, same truth)",
+     "horizons_deg": 175.9232772,
+     "horizons_gap_deg": 1.5e-05,
+     "instant_utc": "2024-07-01T00:00:00Z",
+     "kind": "astro",
+     "literal": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "literal_value": false,
+     "margin_deg": 15.923292,
+     "margin_hours": 211.7,
+     "measured_deg": 175.923292,
+     "threshold_deg": 160.0
+    }
+   ],
+   "correct": true,
+   "election_day": "2024-11-05",
+   "incumbent_party": "D",
+   "incumbent_party_won": false,
+   "incumbent_party_won_popvote": false,
+   "prediction": false,
+   "year": 2024
+  }
+ ]
+}

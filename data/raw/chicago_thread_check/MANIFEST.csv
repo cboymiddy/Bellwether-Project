@@ -1,0 +1,4 @@
+file,url,retrieved,sha256
+stnmeta_bbox.json,"https://data.rcc-acis.org/StnMeta (bbox query)",2026-10-25,a4b0cd2b75efc48406075c7e237f8fdaf7e017f44a80c00d2e11466473a2f94e
+threadex_datafiles_help.html,"http://threadex.rcc-acis.org/help/datafiles_help.html",2026-10-25,923d5b257c13595e592ddde8f4b7a079802274cb1ee71292ba73a9feb9eaee36
+threadex_home.html,"https://threadex.rcc-acis.org/",2026-10-25,11d351ee263674c5725b67c30daf7cee5017a5043f26e0e8331100122ca2fb9e

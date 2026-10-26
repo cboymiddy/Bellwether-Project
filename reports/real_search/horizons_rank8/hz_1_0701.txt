@@ -1,0 +1,133 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+
+
+*******************************************************************************
+Ephemeris / API_USER Sun Oct 25 17:36:11 2026 Pasadena, USA      / Horizons    
+*******************************************************************************
+Target body name: Mercury Barycenter (199)        {source: DE441}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: GEOCENTRIC
+*******************************************************************************
+Start time      : A.D. 1900-Jul-01 00:00:00.0000 UT      
+Stop  time      : A.D. 2024-Jul-01 00:00:00.0000 UT      
+Step-size       : 0 steps
+*******************************************************************************
+Target pole/equ : IAU_MERCURY                     {West-longitude positive}
+Target radii    : 2440.53, 2440.53, 2438.26 km    {Equator_a, b, pole_c}       
+Center geodetic : 0.0, 0.0, -6378.137             {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : ITRF93                          {East-longitude positive}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}       
+Target primary  : Sun
+Vis. interferer : MOON (R_eq= 1737.400) km        {source: DE441}
+Rel. light bend : Sun                             {source: DE441}
+Rel. lght bnd GM: 1.3271E+11 km^3/s^2                                          
+Atmos refraction: NO (AIRLESS)
+RA format       : DEG
+Time format     : CAL 
+Calendar mode   : Mixed Julian/Gregorian
+EOP file        : eop.261023.p270119                                           
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )
+Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
+Table cut-offs 3: RA/DEC angular rate (     0.0=NO )                           
+Table format    : Comma Separated Values (spreadsheet)
+*******************************************************************************
+ Date__(UT)__HR:MN:SC.fff, , ,    ObsEcLon,   ObsEcLat,
+*******************************************************
+$$SOE
+ 1900-Jul-01 00:00:00.000, , , 124.3928406,  0.5801988,
+ 1904-Jul-01 00:00:00.000, , ,  88.0868646,  0.1242234,
+ 1908-Jul-01 00:00:00.000, , , 104.8250178, -3.9955371,
+ 1912-Jul-01 00:00:00.000, , , 113.8577569,  1.8975286,
+ 1916-Jul-01 00:00:00.000, , ,  77.1822893, -3.0620423,
+ 1920-Jul-01 00:00:00.000, , , 124.4637106, -0.0706832,
+ 1924-Jul-01 00:00:00.000, , ,  93.0899799,  0.7336277,
+ 1928-Jul-01 00:00:00.000, , ,  96.6562615, -4.5696873,
+ 1932-Jul-01 00:00:00.000, , , 117.6999138,  1.8030140,
+ 1936-Jul-01 00:00:00.000, , ,  77.8530313, -2.3199535,
+ 1940-Jul-01 00:00:00.000, , , 123.1041032, -0.8653232,
+ 1944-Jul-01 00:00:00.000, , ,  98.3748350,  1.2318356,
+ 1948-Jul-01 00:00:00.000, , ,  89.0929987, -4.7131567,
+ 1952-Jul-01 00:00:00.000, , , 120.8964034,  1.5827320,
+ 1956-Jul-01 00:00:00.000, , ,  79.9271586, -1.5624114,
+ 1960-Jul-01 00:00:00.000, , , 119.9900209, -1.7918195,
+ 1964-Jul-01 00:00:00.000, , , 103.6518899,  1.5963954,
+ 1968-Jul-01 00:00:00.000, , ,  83.2732679, -4.4663891,
+ 1972-Jul-01 00:00:00.000, , , 123.3259808,  1.2391148,
+ 1976-Jul-01 00:00:00.000, , ,  83.1702636, -0.8164435,
+ 1980-Jul-01 00:00:00.000, , , 114.8742493, -2.7952435,
+ 1984-Jul-01 00:00:00.000, , , 108.6687699,  1.8190836,
+ 1988-Jul-01 00:00:00.000, , ,  79.6110825, -3.9566020,
+ 1992-Jul-01 00:00:00.000, , , 124.8614537,  0.7671946,
+ 1996-Jul-01 00:00:00.000, , ,  87.3305027, -0.1078218,
+ 2000-Jul-01 00:00:00.000, , , 107.9029795, -3.7410202,
+ 2004-Jul-01 00:00:00.000, , , 113.2590906,  1.9016819,
+ 2008-Jul-01 00:00:00.000, , ,  78.0128865, -3.2990040,
+ 2012-Jul-01 00:00:00.000, , , 125.3149911,  0.1598193,
+ 2016-Jul-01 00:00:00.000, , ,  92.1701974,  0.5326587,
+ 2020-Jul-01 00:00:00.000, , ,  99.8158123, -4.4326570,
+ 2024-Jul-01 00:00:00.000, , , 117.3040706,  1.8510697,
+$$EOE
+*******************************************************************************
+Column meaning:
+ 
+TIME
+
+  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
+using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the non-uniform civil UT time-scale requested for output
+has not been determined for UTC times after the next July or January 1st.
+Therefore, the last known leap-second is used as a constant over future
+intervals.
+
+  Time tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
+(" ") denotes an A.D. date.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+  NOTE: "n.a." in output means quantity "not available" at the print-time.
+ 
+ 'ObsEcLon,   ObsEcLat,' =
+   Observer-centered IAU76/80 ecliptic-of-date longitude and latitude of the
+target centers' apparent position, with light-time, gravitational deflection of
+light, and stellar aberrations.  Units: DEGREES
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+
+*******************************************************************************

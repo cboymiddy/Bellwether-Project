@@ -1,0 +1,16 @@
+file,url,retrieved,sha256
+USC00190736.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USC00190736.dly,2026-10-25,c65909059ff1967d8185fe1e101dd8b83bb5a00b1bd7ad57dfaecde51f691bf7
+USC00305816.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USC00305816.dly,2026-10-25,047b5826c1862572b3b1c228907d444f297fcf255d049fba738a83a5a79acc6d
+USW00013743.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00013743.dly,2026-10-25,552d002de0a65b1edb3b391be7b950a9592919cdd14f781b52d954e063cb3549
+USW00014734.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00014734.dly,2026-10-25,6cd43dc2ff0d8e854ee0bbaf23d2eda4534c1e4fe48f9d998a1b1f5db3a23a6d
+USW00014739.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00014739.dly,2026-10-25,1da29c55eaff8e075482eab01c8821baed6708a5237e37135aedf9edf6e8ce44
+USW00014819.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00014819.dly,2026-10-25,b3e3726fc2fe5db7e2fb49b0a443ff80d54af07f1ae5297d79772792414afcc8
+USW00014881.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00014881.dly,2026-10-25,1640fd2feee7c9c3ba01df71014b81f487d2360a3d428b052835dad2e8da9a05
+USW00093134.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00093134.dly,2026-10-25,8e1dbb4ad69807212d48c3c561707725dbd6742023fb342375086293fc40d8db
+USW00093725.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00093725.dly,2026-10-25,3a1b86959a6e50b1a60fc0d31e36f8dd115b8bbd16f015d810800c056d01ac70
+USW00094701.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00094701.dly,2026-10-25,4c96f520b5a50c43c4ebd106cbd8a47a3d69cc97064516ef34b8a1e26cc1045f
+USW00094728.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00094728.dly,2026-10-25,94c3a80198814258c74cc963d141fd8144602c4344e5521aed1dbd0719a846b0
+USW00094846.dly,https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00094846.dly,2026-10-25,b56dc2e60e237bf08ff6514f642c91e1026135ec857adbfb5bfa09a4d3c8c87d
+ghcnd-inventory.txt,https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt,2026-10-25,c33ec006c4f35d0371e6f9ccfe3f656ae9de0b6f0f122794da07df7c971c48b5
+ghcnd-stations.txt,https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt,2026-10-25,428eabc955883187935bce283766d5646e3ed7484b92eb0803874c0e8dd9b342
+readme.txt,https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt,2026-10-25,0e4e6f0e6947cf1add884c328a01760f31c56ef5fb86b85ed57dd5dc4c4aeaa6

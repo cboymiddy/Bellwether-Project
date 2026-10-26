@@ -1,0 +1,33 @@
+year,sitting_president,second_incumbent_party,outcomes_incumbent_party,winner_taking_office,second_ec_winner_party,outcomes_ec_winner_party,second_pv_winner_party,outcomes_pv_winner_party,second_incumbent_won,outcomes_incumbent_won,second_incumbent_won_pv,outcomes_incumbent_won_pv,all_agree
+1900,William McKinley,R,R,William McKinley,R,R,R,R,1,1,1,1,True
+1904,Theodore Roosevelt,R,R,Theodore Roosevelt,R,R,R,R,1,1,1,1,True
+1908,Theodore Roosevelt,R,R,William Howard Taft,R,R,R,R,1,1,1,1,True
+1912,William Howard Taft,R,R,Woodrow Wilson,D,D,D,D,0,0,0,0,True
+1916,Woodrow Wilson,D,D,Woodrow Wilson,D,D,D,D,1,1,1,1,True
+1920,Woodrow Wilson,D,D,Warren G. Harding,R,R,R,R,0,0,0,0,True
+1924,Calvin Coolidge,R,R,Calvin Coolidge,R,R,R,R,1,1,1,1,True
+1928,Calvin Coolidge,R,R,Herbert Hoover,R,R,R,R,1,1,1,1,True
+1932,Herbert Hoover,R,R,Franklin D. Roosevelt,D,D,D,D,0,0,0,0,True
+1936,Franklin D. Roosevelt,D,D,Franklin D. Roosevelt,D,D,D,D,1,1,1,1,True
+1940,Franklin D. Roosevelt,D,D,Franklin D. Roosevelt,D,D,D,D,1,1,1,1,True
+1944,Franklin D. Roosevelt,D,D,Franklin D. Roosevelt,D,D,D,D,1,1,1,1,True
+1948,Harry S. Truman,D,D,Harry S. Truman,D,D,D,D,1,1,1,1,True
+1952,Harry S. Truman,D,D,Dwight D. Eisenhower,R,R,R,R,0,0,0,0,True
+1956,Dwight D. Eisenhower,R,R,Dwight D. Eisenhower,R,R,R,R,1,1,1,1,True
+1960,Dwight D. Eisenhower,R,R,John F. Kennedy,D,D,D,D,0,0,0,0,True
+1964,Lyndon B. Johnson,D,D,Lyndon B. Johnson,D,D,D,D,1,1,1,1,True
+1968,Lyndon B. Johnson,D,D,Richard Nixon,R,R,R,R,0,0,0,0,True
+1972,Richard Nixon,R,R,Richard Nixon,R,R,R,R,1,1,1,1,True
+1976,Gerald Ford,R,R,Jimmy Carter,D,D,D,D,0,0,0,0,True
+1980,Jimmy Carter,D,D,Ronald Reagan,R,R,R,R,0,0,0,0,True
+1984,Ronald Reagan,R,R,Ronald Reagan,R,R,R,R,1,1,1,1,True
+1988,Ronald Reagan,R,R,George H. W. Bush,R,R,R,R,1,1,1,1,True
+1992,George H. W. Bush,R,R,Bill Clinton,D,D,D,D,0,0,0,0,True
+1996,Bill Clinton,D,D,Bill Clinton,D,D,D,D,1,1,1,1,True
+2000,Bill Clinton,D,D,George W. Bush,R,R,D,D,0,0,1,1,True
+2004,George W. Bush,R,R,George W. Bush,R,R,R,R,1,1,1,1,True
+2008,George W. Bush,R,R,Barack Obama,D,D,D,D,0,0,0,0,True
+2012,Barack Obama,D,D,Barack Obama,D,D,D,D,1,1,1,1,True
+2016,Barack Obama,D,D,Donald Trump,R,R,D,D,0,0,1,1,True
+2020,Donald Trump,R,R,Joe Biden,D,D,D,D,0,0,0,0,True
+2024,Joe Biden,D,D,Donald Trump,R,R,R,R,0,0,0,0,True

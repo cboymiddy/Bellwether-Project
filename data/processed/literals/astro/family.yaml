@@ -1,0 +1,61 @@
+family: astro_geometry
+category: astronomy
+polarity_storage: positives only; negation = complement vector, id prefix NOT_
+F: 1
+O: A, or B when tz_sensitive
+definition: Geocentric apparent ecliptic longitude (true equinox of date) of ten bodies at 00:00 UTC on
+  frozen dates; sector literals and pairwise separation thresholds.
+bodies:
+- Sun
+- Moon
+- Mercury
+- Venus
+- Mars
+- Jupiter
+- Saturn
+- Uranus
+- Neptune
+- Pluto
+months:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+- 10
+days:
+- 1
+- 6
+- 11
+- 16
+- 21
+- 26
+sep_grid_deg:
+- 20
+- 40
+- 60
+- 80
+- 100
+- 120
+- 140
+- 160
+sector_width_deg: 30
+instant: 00:00 UTC
+tz_sensitivity: flag set when the value changes at US/Eastern or US/Pacific local midnight of the same
+  date (zoneinfo, historical offsets) in any election year
+resolves_by: date of the instant (month/day of the election year); all <= Oct 26
+source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+dataset_citation: JPL DE421 (sha256 a20a7139da04cbc462454634918e9a9ca69127044e2cc9d4f9c16e238d2deedc)
+  via Skyfield
+retrieval_date: '2026-10-25'
+status: auto
+era_indicator_rule: src/literals/core.py
+counts:
+  positives_built: 28800
+  constant: 4510
+  era_indicator: 2814
+  included_positives: 21476

@@ -1,0 +1,51 @@
+---
+import { url } from '../lib/url';
+import type { YearRow } from '../data/types';
+interface Props { years: YearRow[] }
+const { years } = Astro.props;
+const CELL = 20, GAP = 5, LEFT = 150, TOP = 22;
+const W = LEFT + years.length * (CELL + GAP);
+const H = 118;
+const x = (i: number) => LEFT + i * (CELL + GAP);
+const matches = years.filter((y) => y.prediction === y.incumbent_party_won).length;
+---
+<figure class="strip">
+  <div class="strip-scroll" tabindex="0" role="region" aria-label="Chart, scrolls sideways on small screens">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="strip-title strip-desc" xmlns="http://www.w3.org/2000/svg">
+    <title id="strip-title">What happened versus what the rule said, 1900 to 2024</title>
+    <desc id="strip-desc">
+      Thirty-two pairs of squares, one per election. A filled square means the party holding the White House won; an
+      empty square means it lost. The rule&rsquo;s square matches history in {matches} of {years.length} elections.
+    </desc>
+    <text x="0" y={TOP + 15} class="rowlabel">What happened</text>
+    <text x="0" y={TOP + 15 + 36} class="rowlabel">What the rule said</text>
+    <text x="0" y={TOP + 15 + 72} class="rowlabel">Same answer?</text>
+    {years.map((y, i) => (
+      <>
+        {i % 4 === 0 && <text x={x(i) + CELL / 2} y="13" text-anchor="middle" class="yr">{y.year}</text>}
+        <rect x={x(i)} y={TOP} width={CELL} height={CELL} rx="3" class={y.incumbent_party_won ? 'on' : 'off'} />
+        <rect x={x(i)} y={TOP + 36} width={CELL} height={CELL} rx="3" class={y.prediction ? 'on' : 'off'} />
+        <text x={x(i) + CELL / 2} y={TOP + 72 + 15} text-anchor="middle" class={y.prediction === y.incumbent_party_won ? 'tick' : 'cross'}>
+          {y.prediction === y.incumbent_party_won ? '✓' : '✗'}
+        </text>
+      </>
+    ))}
+  </svg>
+  </div>
+  <figcaption>
+    Filled: the party holding the White House won. Empty: it lost. {matches} of {years.length} pairs agree.
+    <a href={url('/rule/')}>Every year, with its numbers, is on the rule card.</a>
+  </figcaption>
+</figure>
+<style>
+  .strip { margin: 1.4rem 0; font-family: var(--sans); }
+  .strip-scroll { overflow-x: auto; }
+  .strip svg { width: 100%; min-width: 40rem; height: auto; max-width: 56rem; display: block; }
+  .strip .rowlabel { font-size: 11px; fill: var(--muted); }
+  .strip .yr { font-size: 9px; fill: var(--muted); }
+  .strip .on { fill: var(--accent); stroke: var(--accent); stroke-width: 1.5; }
+  .strip .off { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+  .strip .tick { font-size: 12px; fill: var(--ok); font-weight: 700; }
+  .strip .cross { font-size: 12px; fill: var(--bad); font-weight: 700; }
+  .strip figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+</style>

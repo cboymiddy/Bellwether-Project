@@ -1,0 +1,1806 @@
+{
+ "election_day": "2028-11-07",
+ "election_weekday": "Tuesday",
+ "ephemeris": "JPL DE421 via Skyfield (covers through 2053)",
+ "featured": {
+  "branches": [
+   {
+    "prediction_hold_party_wins": false,
+    "steelers_win": false
+   },
+   {
+    "prediction_hold_party_wins": false,
+    "steelers_win": true
+   }
+  ],
+  "cells": [
+   {
+    "base_truth": false,
+    "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+    "id": "astro_geo_1021_sep_mercury_venus_ge020",
+    "instant_utc": "2028-10-21T00:00:00Z",
+    "kind": "sky",
+    "margin_deg": -1.535794859055386,
+    "margin_hours": 424.6,
+    "measured_deg": 18.464205140944614,
+    "negated": false,
+    "state": "false",
+    "threshold_deg": 20.0,
+    "value": false
+   },
+   {
+    "base_truth": false,
+    "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+    "id": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+    "instant_utc": "2028-01-21T00:00:00Z",
+    "kind": "sky",
+    "margin_deg": -23.75552054485678,
+    "margin_hours": 697.61,
+    "measured_deg": 136.24447945514322,
+    "negated": true,
+    "state": "true",
+    "threshold_deg": 160.0,
+    "value": true
+   },
+   {
+    "event": "Super Bowl LXII, played in early 2028",
+    "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+    "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+    "kind": "event",
+    "negated": true,
+    "state": "pending"
+   },
+   {
+    "base_truth": false,
+    "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+    "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+    "instant_utc": "2028-07-01T00:00:00Z",
+    "kind": "sky",
+    "margin_deg": -30.059037494465315,
+    "margin_hours": 586.52,
+    "measured_deg": 129.94096250553469,
+    "negated": true,
+    "state": "true",
+    "threshold_deg": 160.0,
+    "value": true
+   }
+  ],
+  "sky_conditions_hold": false
+ },
+ "tally": {
+  "alias_changes_verdict": 31,
+  "counts": {
+   "no_win": 444,
+   "pending": 0,
+   "win": 1
+  },
+  "n_others": 445,
+  "n_rules": 446,
+  "wording_sensitive": [
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: the Kansas City Royals lost the MLB World Series that election year",
+      "id": "NOT_sports_mlb_ws_loser_franchise_kansas_city_royals",
+      "state": "pending"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 2,
+    "reachable": [
+     "no_win",
+     "pending",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 304,
+     "pending": 32,
+     "total": 360,
+     "win": 24
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: the Philadelphia Phillies won the MLB World Series that election year",
+      "id": "NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies",
+      "state": "pending"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 4,
+    "reachable": [
+     "no_win",
+     "pending",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 40,
+     "pending": 4,
+     "total": 48,
+     "win": 4
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+      "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "state": "pending"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 6,
+    "reachable": [
+     "no_win",
+     "pending",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 1540,
+     "pending": 16,
+     "total": 1848,
+     "win": 292
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Sun and Moon are at least 20° apart in ecliptic longitude on Sep 21 (00:00 UTC)",
+      "id": "astro_geo_0921_sep_sun_moon_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+      "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "state": "pending"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 31,
+    "reachable": [
+     "no_win",
+     "pending",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 462,
+     "pending": 8,
+     "total": 616,
+     "win": 146
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Saturn's ecliptic longitude is in [150°, 180°) on Jan 1",
+      "id": "NOT_astro_geo_0101_saturn_lon150",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 109,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 1180,
+     "pending": 0,
+     "total": 1416,
+     "win": 236
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 111,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 40,
+     "pending": 0,
+     "total": 48,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 16 (00:00 UTC)",
+      "id": "NOT_astro_geo_0316_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 113,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 40,
+     "pending": 0,
+     "total": 48,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 16 (00:00 UTC)",
+      "id": "NOT_astro_geo_0316_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Moon and Mercury are at least 20° apart in ecliptic longitude on Jun 26 (00:00 UTC)",
+      "id": "astro_geo_0626_sep_moon_mercury_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 115,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 12,
+     "pending": 0,
+     "total": 16,
+     "win": 4
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Saturn are at least 160° apart in ecliptic longitude on Mar 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0326_sep_mercury_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 117,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 80,
+     "pending": 0,
+     "total": 96,
+     "win": 16
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Saturn are at least 160° apart in ecliptic longitude on Mar 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0326_sep_mercury_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Moon and Mercury are at least 20° apart in ecliptic longitude on Jun 26 (00:00 UTC)",
+      "id": "astro_geo_0626_sep_moon_mercury_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 119,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 24,
+     "pending": 0,
+     "total": 32,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 1 (00:00 UTC)",
+      "id": "astro_geo_0301_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Mercury and Saturn are at least 20° apart in ecliptic longitude on Sep 1 (00:00 UTC)",
+      "id": "astro_geo_0901_sep_mercury_saturn_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 121,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 80,
+     "pending": 0,
+     "total": 96,
+     "win": 16
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Saturn's ecliptic longitude is in [150°, 180°) on Jan 1",
+      "id": "NOT_astro_geo_0101_saturn_lon150",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 123,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 1180,
+     "pending": 0,
+     "total": 1416,
+     "win": 236
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 125,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 40,
+     "pending": 0,
+     "total": 48,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 16 (00:00 UTC)",
+      "id": "NOT_astro_geo_0316_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 127,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 40,
+     "pending": 0,
+     "total": 48,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 16 (00:00 UTC)",
+      "id": "NOT_astro_geo_0316_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Moon and Mercury are at least 20° apart in ecliptic longitude on Jun 26 (00:00 UTC)",
+      "id": "astro_geo_0626_sep_moon_mercury_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 129,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 12,
+     "pending": 0,
+     "total": 16,
+     "win": 4
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 21 (00:00 UTC)",
+      "id": "NOT_astro_geo_0321_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Moon and Mercury are at least 20° apart in ecliptic longitude on Jun 26 (00:00 UTC)",
+      "id": "astro_geo_0626_sep_moon_mercury_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 131,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 42,
+     "pending": 0,
+     "total": 56,
+     "win": 14
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Saturn are at least 160° apart in ecliptic longitude on Mar 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0326_sep_mercury_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 133,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 80,
+     "pending": 0,
+     "total": 96,
+     "win": 16
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Saturn are at least 160° apart in ecliptic longitude on Mar 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0326_sep_mercury_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Moon and Mercury are at least 20° apart in ecliptic longitude on Jun 26 (00:00 UTC)",
+      "id": "astro_geo_0626_sep_moon_mercury_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 135,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 24,
+     "pending": 0,
+     "total": 32,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Moon and Mercury are at least 160° apart in ecliptic longitude on Aug 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0826_sep_moon_mercury_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 137,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 20,
+     "pending": 0,
+     "total": 24,
+     "win": 4
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: Venus and Uranus are at least 160° apart in ecliptic longitude on Mar 16 (00:00 UTC)",
+      "id": "NOT_astro_geo_0316_sep_venus_uranus_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 139,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 40,
+     "pending": 0,
+     "total": 48,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 21 (00:00 UTC)",
+      "id": "NOT_astro_geo_0321_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 143,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 140,
+     "pending": 0,
+     "total": 168,
+     "win": 28
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Mar 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0326_sep_mercury_jupiter_ge160",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 145,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 64,
+     "pending": 0,
+     "total": 72,
+     "win": 8
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "NOT: Moon and Jupiter are at least 160° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+      "id": "NOT_astro_geo_1021_sep_moon_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 157,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 20,
+     "pending": 0,
+     "total": 24,
+     "win": 4
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Jupiter and Saturn are at least 20° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "id": "astro_geo_0101_sep_jupiter_saturn_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 159,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 60,
+     "pending": 0,
+     "total": 72,
+     "win": 12
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Jupiter and Saturn are at least 20° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+      "id": "astro_geo_0111_sep_jupiter_saturn_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 161,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 80,
+     "pending": 0,
+     "total": 96,
+     "win": 16
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Moon and Jupiter are at least 160° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+      "id": "NOT_astro_geo_1021_sep_moon_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Moon and Mercury are at least 20° apart in ecliptic longitude on Jun 26 (00:00 UTC)",
+      "id": "astro_geo_0626_sep_moon_mercury_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 163,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 6,
+     "pending": 0,
+     "total": 8,
+     "win": 2
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "id": "astro_geo_0306_sep_venus_uranus_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "Mercury and Saturn are at least 20° apart in ecliptic longitude on Sep 1 (00:00 UTC)",
+      "id": "astro_geo_0901_sep_mercury_saturn_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "state": "false"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 165,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 80,
+     "pending": 0,
+     "total": 96,
+     "win": 16
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "id": "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Moon and Mercury are at least 160° apart in ecliptic longitude on Oct 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_1006_sep_moon_mercury_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 191,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 36,
+     "pending": 0,
+     "total": 48,
+     "win": 12
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Sun and Saturn are at least 160° apart in ecliptic longitude on Mar 16 (00:00 UTC)",
+      "id": "NOT_astro_geo_0316_sep_sun_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Moon and Mercury are at least 160° apart in ecliptic longitude on Oct 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_1006_sep_moon_mercury_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 203,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 48,
+     "pending": 0,
+     "total": 64,
+     "win": 16
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Saturn are at least 160° apart in ecliptic longitude on Mar 26 (00:00 UTC)",
+      "id": "NOT_astro_geo_0326_sep_mercury_saturn_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Moon and Mercury are at least 160° apart in ecliptic longitude on Oct 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_1006_sep_moon_mercury_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 207,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 96,
+     "pending": 0,
+     "total": 128,
+     "win": 32
+    }
+   },
+   {
+    "literals": [
+     {
+      "gloss": "Mars and Neptune are at least 20° apart in ecliptic longitude on May 6 (00:00 UTC)",
+      "id": "astro_geo_0506_sep_mars_neptune_ge020",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "NOT: Moon and Mercury are at least 160° apart in ecliptic longitude on Oct 6 (00:00 UTC)",
+      "id": "NOT_astro_geo_1006_sep_moon_mercury_ge160",
+      "state": "true"
+     },
+     {
+      "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "id": "astro_geo_0121_sep_venus_pluto_ge040",
+      "state": "false"
+     }
+    ],
+    "rank": 375,
+    "reachable": [
+     "no_win",
+     "win"
+    ],
+    "verdict_as_listed": "no_win",
+    "wordings": {
+     "no_win": 24,
+     "pending": 0,
+     "total": 32,
+     "win": 8
+    }
+   }
+  ],
+  "wordings": {
+   "no_win": 71356,
+   "pending": 60,
+   "rules_with_a_wording_that_is_not_no_win": 32,
+   "total": 72646,
+   "win": 1230
+  }
+ },
+ "tied_top_key": [
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "NOT: the Quebec Bulldogs won the Stanley Cup that election year",
+     "id": "NOT_sports_nhl_winner_franchise_quebec_bulldogs",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 1,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+     "id": "astro_geo_0306_sep_venus_uranus_ge020",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Kansas City Royals lost the MLB World Series that election year",
+     "id": "NOT_sports_mlb_ws_loser_franchise_kansas_city_royals",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "id": "astro_geo_0121_sep_venus_pluto_ge040",
+     "state": "false"
+    }
+   ],
+   "rank": 2,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+     "id": "astro_geo_0306_sep_venus_uranus_ge020",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Kansas City Royals lost the MLB World Series that election year",
+     "id": "NOT_sports_mlb_ws_loser_franchise_kansas_city_royals",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 3,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+     "id": "astro_geo_0306_sep_venus_uranus_ge020",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Philadelphia Phillies won the MLB World Series that election year",
+     "id": "NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "id": "astro_geo_0121_sep_venus_pluto_ge040",
+     "state": "false"
+    }
+   ],
+   "rank": 4,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+     "id": "astro_geo_0306_sep_venus_uranus_ge020",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Philadelphia Phillies won the MLB World Series that election year",
+     "id": "NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 5,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+     "id": "astro_geo_0306_sep_venus_uranus_ge020",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "id": "astro_geo_0121_sep_venus_pluto_ge040",
+     "state": "false"
+    }
+   ],
+   "rank": 6,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+     "id": "astro_geo_0306_sep_venus_uranus_ge020",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0906_sep_sun_moon_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 7,
+   "verdict": "no_win"
+  },
+  {
+   "featured": true,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "id": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+     "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "state": "true"
+    }
+   ],
+   "rank": 8,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "id": "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 9,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Phoenix Suns lost the NBA Finals that election year",
+     "id": "NOT_sports_nba_loser_franchise_phoenix_suns",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+     "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "state": "true"
+    }
+   ],
+   "rank": 10,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Phoenix Suns lost the NBA Finals that election year",
+     "id": "NOT_sports_nba_loser_franchise_phoenix_suns",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 11,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+     "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "state": "true"
+    }
+   ],
+   "rank": 12,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+     "id": "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 13,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 11 (00:00 UTC)",
+     "id": "NOT_astro_geo_0211_sep_mars_jupiter_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+     "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "state": "true"
+    }
+   ],
+   "rank": 14,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 11 (00:00 UTC)",
+     "id": "NOT_astro_geo_0211_sep_mars_jupiter_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 15,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+     "id": "NOT_astro_geo_0221_sep_mars_jupiter_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+     "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "state": "true"
+    }
+   ],
+   "rank": 16,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+     "id": "NOT_astro_geo_0221_sep_mars_jupiter_ge140",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 17,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Venus and Saturn are at least 160° apart in ecliptic longitude on Sep 16 (00:00 UTC)",
+     "id": "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+     "id": "NOT_astro_geo_0701_sep_mercury_pluto_ge160",
+     "state": "true"
+    }
+   ],
+   "rank": 18,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Venus and Saturn are at least 160° apart in ecliptic longitude on Sep 16 (00:00 UTC)",
+     "id": "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "id": "astro_geo_0121_sep_venus_pluto_ge040",
+     "state": "false"
+    }
+   ],
+   "rank": 19,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Venus and Saturn are at least 160° apart in ecliptic longitude on Sep 16 (00:00 UTC)",
+     "id": "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 20° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge020",
+     "state": "true"
+    }
+   ],
+   "rank": 20,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Venus and Saturn are at least 160° apart in ecliptic longitude on Sep 16 (00:00 UTC)",
+     "id": "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 40° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge040",
+     "state": "true"
+    }
+   ],
+   "rank": 21,
+   "verdict": "no_win"
+  },
+  {
+   "featured": false,
+   "literals": [
+    {
+     "gloss": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+     "id": "astro_geo_1021_sep_mercury_venus_ge020",
+     "state": "false"
+    },
+    {
+     "gloss": "NOT: Venus and Saturn are at least 160° apart in ecliptic longitude on Sep 16 (00:00 UTC)",
+     "id": "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+     "state": "true"
+    },
+    {
+     "gloss": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+     "id": "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+     "state": "pending"
+    },
+    {
+     "gloss": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+     "id": "astro_geo_0201_sep_venus_pluto_ge060",
+     "state": "false"
+    }
+   ],
+   "rank": 22,
+   "verdict": "no_win"
+  }
+ ],
+ "year": 2028
+}

@@ -1,0 +1,1929 @@
+{
+ "targets": {
+  "T1": {
+   "all_rules_hist": {
+    "0": 25,
+    "1": 279,
+    "10": 1,
+    "2": 679,
+    "3": 982,
+    "4": 1321,
+    "5": 1240,
+    "6": 2035,
+    "7": 1073,
+    "8": 251,
+    "9": 83
+   },
+   "baseline": {
+    "always_loss_correct": 6,
+    "always_win_correct": 5,
+    "best_constant_correct": 6,
+    "best_constant_name": "the incumbent party always loses",
+    "name_no": "the incumbent party always loses",
+    "name_yes": "the incumbent party always wins",
+    "test_n": 11,
+    "test_true_years": 5
+   },
+   "label_32yr": "conjB",
+   "min_k_21yr": 2,
+   "min_k_32yr": 4,
+   "n_rules_21yr": 7969,
+   "n_rules_32yr": 446,
+   "null": {
+    "B": 2000,
+    "ge_baseline": 996,
+    "ge_real": 996,
+    "labels": {
+     "conjA": 277,
+     "conjB": 1723
+    },
+    "perfect_11_of_11": 2,
+    "top_correct_hist": {
+     "0": 3,
+     "1": 10,
+     "10": 9,
+     "11": 2,
+     "2": 59,
+     "3": 146,
+     "4": 303,
+     "5": 483,
+     "6": 455,
+     "7": 333,
+     "8": 141,
+     "9": 56
+    }
+   },
+   "real_label_21yr": "conjB",
+   "top20": [
+    {
+     "defunct": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 1,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 11 (00:00 UTC)",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0211_sep_mars_jupiter_ge140",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 2,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 11 (00:00 UTC)",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0211_sep_mars_jupiter_ge140",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 3,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      true,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: the Quebec Bulldogs won the Stanley Cup that election year",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: the Phoenix Suns lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_sports_nhl_winner_franchise_quebec_bulldogs",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nba_loser_franchise_phoenix_suns"
+     ],
+     "k": 4,
+     "rank": 4,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      true,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: the Quebec Bulldogs won the Stanley Cup that election year",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_sports_nhl_winner_franchise_quebec_bulldogs",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 5,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      true,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: the Quebec Bulldogs won the Stanley Cup that election year",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: Venus and Pluto are at least 140° apart in ecliptic longitude on Apr 1 (00:00 UTC)"
+     ],
+     "ids": [
+      "NOT_sports_nhl_winner_franchise_quebec_bulldogs",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_astro_geo_0401_sep_venus_pluto_ge140"
+     ],
+     "k": 4,
+     "rank": 6,
+     "test_correct": 1
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: the Detroit Tigers won the MLB World Series that election year",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_mlb_ws_winner_franchise_detroit_tigers",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 7,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Detroit Tigers won the MLB World Series that election year",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_mlb_ws_winner_franchise_detroit_tigers",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 8,
+     "test_correct": 8
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year",
+      "NOT: the Phoenix Suns lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates",
+      "NOT_sports_nba_loser_franchise_phoenix_suns"
+     ],
+     "k": 4,
+     "rank": 9,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 10,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: the Phoenix Suns lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nba_loser_franchise_phoenix_suns"
+     ],
+     "k": 4,
+     "rank": 11,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 12,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: Saturn's ecliptic longitude is in [270°, 300°) on Jan 1",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_astro_geo_0101_saturn_lon270",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 13,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: Venus and Pluto are at least 140° apart in ecliptic longitude on Apr 1 (00:00 UTC)"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_astro_geo_0401_sep_venus_pluto_ge140"
+     ],
+     "k": 4,
+     "rank": 14,
+     "test_correct": 2
+    },
+    {
+     "defunct": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: Venus and Pluto are at least 100° apart in ecliptic longitude on May 16 (00:00 UTC)"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_astro_geo_0516_sep_venus_pluto_ge100"
+     ],
+     "k": 4,
+     "rank": 15,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "Jupiter and Neptune are at least 20° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "astro_geo_0111_sep_jupiter_neptune_ge020",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 16,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "Jupiter and Neptune are at least 20° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: A team from the AFC won the Super Bowl"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "astro_geo_0111_sep_jupiter_neptune_ge020",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nfl_sb_winner_conference_afc"
+     ],
+     "k": 4,
+     "rank": 17,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "Mercury and Saturn are at least 40° apart in ecliptic longitude on Oct 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "astro_geo_1001_sep_mercury_saturn_ge040",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates"
+     ],
+     "k": 4,
+     "rank": 18,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "Mercury and Saturn are at least 40° apart in ecliptic longitude on Oct 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: The NBA Finals went 7 games"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mars_jupiter_ge160",
+      "astro_geo_1001_sep_mercury_saturn_ge040",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_nba_went_7"
+     ],
+     "k": 4,
+     "rank": 19,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 16 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+      "NOT: The NBA Finals went 7 games",
+      "NOT: the Phoenix Suns lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0116_sep_mars_jupiter_ge160",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_went_7",
+      "NOT_sports_nba_loser_franchise_phoenix_suns"
+     ],
+     "k": 4,
+     "rank": 20,
+     "test_correct": 5
+    }
+   ],
+   "top_rule": {
+    "defunct": [
+     false,
+     true,
+     false,
+     false
+    ],
+    "fits_all_21_training_years": true,
+    "glosses": [
+     "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+     "NOT: the Seattle Metropolitans lost the Stanley Cup final that election year",
+     "NOT: The NBA Finals went 7 games",
+     "NOT: A team from the AFC won the Super Bowl"
+    ],
+    "ids": [
+     "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+     "NOT_sports_nhl_loser_franchise_seattle_metropolitans",
+     "NOT_sports_nba_went_7",
+     "NOT_sports_nfl_sb_winner_conference_afc"
+    ],
+    "k": 4,
+    "rows": [
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 1984
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 1988
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 1992
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 1996
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 2000
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 2004
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2008
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 2012
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2016
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2020
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2024
+     }
+    ],
+    "test_correct": 6,
+    "test_n": 11
+   }
+  },
+  "T2": {
+   "all_rules_hist": {
+    "0": 172,
+    "1": 803,
+    "2": 3220,
+    "3": 8217,
+    "4": 15190,
+    "5": 20770,
+    "6": 15051,
+    "7": 6111,
+    "8": 807,
+    "9": 38
+   },
+   "baseline": {
+    "always_loss_correct": 6,
+    "always_win_correct": 5,
+    "best_constant_correct": 6,
+    "best_constant_name": "always Republican",
+    "name_no": "always Republican",
+    "name_yes": "always Democratic",
+    "test_n": 11,
+    "test_true_years": 5
+   },
+   "label_32yr": "none",
+   "min_k_21yr": 3,
+   "min_k_32yr": 0,
+   "n_rules_21yr": 70379,
+   "n_rules_32yr": null,
+   "null": {
+    "B": 2000,
+    "ge_baseline": 911,
+    "ge_real": 911,
+    "labels": {
+     "conjA": 192,
+     "conjB": 1808
+    },
+    "perfect_11_of_11": 0,
+    "top_correct_hist": {
+     "0": 2,
+     "1": 19,
+     "10": 5,
+     "2": 74,
+     "3": 173,
+     "4": 375,
+     "5": 446,
+     "6": 436,
+     "7": 284,
+     "8": 133,
+     "9": 53
+    }
+   },
+   "real_label_21yr": "conjB",
+   "top20": [
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0111_sep_mercury_jupiter_ge140",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 1,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+      "NOT: the St. Louis Cardinals lost the MLB World Series that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0111_sep_mercury_jupiter_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_st__louis_cardinals",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 2,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      true,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+      "NOT: the Montreal Maroons lost the Stanley Cup final that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0111_sep_mercury_jupiter_ge140",
+      "NOT_sports_nhl_loser_franchise_montreal_maroons",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 3,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 16 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0116_sep_mercury_jupiter_ge140",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 4,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 16 (00:00 UTC)",
+      "NOT: the St. Louis Cardinals lost the MLB World Series that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0116_sep_mercury_jupiter_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_st__louis_cardinals",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 5,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      true,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 16 (00:00 UTC)",
+      "NOT: the Montreal Maroons lost the Stanley Cup final that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0116_sep_mercury_jupiter_ge140",
+      "NOT_sports_nhl_loser_franchise_montreal_maroons",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 6,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Jan 16 (00:00 UTC)",
+      "NOT: the St. Louis Cardinals lost the MLB World Series that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0116_sep_mercury_jupiter_ge160",
+      "NOT_sports_mlb_ws_loser_franchise_st__louis_cardinals",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 7,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the New York Knicks lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0121_sep_mercury_jupiter_ge140",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_loser_franchise_new_york_knicks"
+     ],
+     "k": 4,
+     "rank": 8,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0121_sep_mercury_jupiter_ge140",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 9,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: the St. Louis Cardinals lost the MLB World Series that election year",
+      "NOT: the New York Knicks lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0121_sep_mercury_jupiter_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_st__louis_cardinals",
+      "NOT_sports_nba_loser_franchise_new_york_knicks"
+     ],
+     "k": 4,
+     "rank": 10,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: the St. Louis Cardinals lost the MLB World Series that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0121_sep_mercury_jupiter_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_st__louis_cardinals",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 11,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      true,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: the Montreal Maroons lost the Stanley Cup final that election year",
+      "NOT: the New York Knicks lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0121_sep_mercury_jupiter_ge140",
+      "NOT_sports_nhl_loser_franchise_montreal_maroons",
+      "NOT_sports_nba_loser_franchise_new_york_knicks"
+     ],
+     "k": 4,
+     "rank": 12,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      true,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+      "NOT: the Montreal Maroons lost the Stanley Cup final that election year",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0121_sep_mercury_jupiter_ge140",
+      "NOT_sports_nhl_loser_franchise_montreal_maroons",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 13,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Jan 26 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0126_sep_mercury_jupiter_ge160",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 14,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the New York Knicks lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0201_sep_mercury_jupiter_ge160",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_loser_franchise_new_york_knicks"
+     ],
+     "k": 4,
+     "rank": 15,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0201_sep_mercury_jupiter_ge160",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 16,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mars's ecliptic longitude is in [0°, 30°) on Feb 21",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0221_mars_lon000",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 17,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Mar 21 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the New York Knicks lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0321_sep_mercury_jupiter_ge140",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_loser_franchise_new_york_knicks"
+     ],
+     "k": 4,
+     "rank": 18,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Mar 21 (00:00 UTC)",
+      "NOT: January 1 of that year is a Sunday",
+      "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0321_sep_mercury_jupiter_ge140",
+      "NOT_cal_jan1_sunday",
+      "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+     ],
+     "k": 4,
+     "rank": 19,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+      "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Mar 21 (00:00 UTC)",
+      "NOT: the St. Louis Cardinals lost the MLB World Series that election year",
+      "NOT: the New York Knicks lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+      "NOT_astro_geo_0321_sep_mercury_jupiter_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_st__louis_cardinals",
+      "NOT_sports_nba_loser_franchise_new_york_knicks"
+     ],
+     "k": 4,
+     "rank": 20,
+     "test_correct": 4
+    }
+   ],
+   "top_rule": {
+    "defunct": [
+     false,
+     false,
+     false,
+     false
+    ],
+    "fits_all_21_training_years": true,
+    "glosses": [
+     "NOT: Mars and Saturn are at least 40° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+     "NOT: Mercury and Jupiter are at least 140° apart in ecliptic longitude on Jan 11 (00:00 UTC)",
+     "NOT: January 1 of that year is a Sunday",
+     "NOT: the Los Angeles Lakers won the NBA Finals that election year"
+    ],
+    "ids": [
+     "NOT_astro_geo_0221_sep_mars_saturn_ge040",
+     "NOT_astro_geo_0111_sep_mercury_jupiter_ge140",
+     "NOT_cal_jan1_sunday",
+     "NOT_sports_nba_winner_franchise_los_angeles_lakers"
+    ],
+    "k": 4,
+    "rows": [
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 1984
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 1988
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 1992
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 1996
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2000
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2004
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 2008
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 2012
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 2016
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 2020
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 2024
+     }
+    ],
+    "test_correct": 6,
+    "test_n": 11
+   }
+  },
+  "T3": {
+   "all_rules_hist": {
+    "1": 23,
+    "10": 50,
+    "2": 1097,
+    "3": 3295,
+    "4": 5950,
+    "5": 8286,
+    "6": 8147,
+    "7": 5989,
+    "8": 3347,
+    "9": 616
+   },
+   "baseline": {
+    "always_loss_correct": 5,
+    "always_win_correct": 6,
+    "best_constant_correct": 6,
+    "best_constant_name": "always Republican",
+    "name_no": "always Democratic",
+    "name_yes": "always Republican",
+    "test_n": 11,
+    "test_true_years": 6
+   },
+   "label_32yr": "conjB",
+   "min_k_21yr": 3,
+   "min_k_32yr": 4,
+   "n_rules_21yr": 36800,
+   "n_rules_32yr": 126,
+   "null": {
+    "B": 2000,
+    "ge_baseline": 986,
+    "ge_real": 1442,
+    "labels": {
+     "conjA": 226,
+     "conjB": 1774
+    },
+    "perfect_11_of_11": 0,
+    "top_correct_hist": {
+     "0": 1,
+     "1": 7,
+     "10": 11,
+     "2": 54,
+     "3": 157,
+     "4": 339,
+     "5": 456,
+     "6": 464,
+     "7": 290,
+     "8": 174,
+     "9": 47
+    }
+   },
+   "real_label_21yr": "conjB",
+   "top20": [
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Berlin hosted the Summer Olympics (city) that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_olympics_host_city_berlin",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 1,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Berlin hosted the Summer Olympics (city) that election year",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_olympics_host_city_berlin",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates"
+     ],
+     "k": 4,
+     "rank": 2,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 3,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the St. Louis Cardinals won the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_winner_franchise_st__louis_cardinals"
+     ],
+     "k": 4,
+     "rank": 4,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the Golden State Warriors lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_nba_loser_franchise_golden_state_warriors"
+     ],
+     "k": 4,
+     "rank": 5,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the Tokyo hosted the Summer Olympics (city) that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_olympics_host_city_tokyo"
+     ],
+     "k": 4,
+     "rank": 6,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Mars are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "Easter Sunday falls on or before April 20",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_mars_ge160",
+      "cal_easter_le_0420",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs"
+     ],
+     "k": 4,
+     "rank": 7,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Mars are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "Easter Sunday falls on or before April 20",
+      "NOT: the Toronto Maple Leafs won the Stanley Cup that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_mars_ge160",
+      "cal_easter_le_0420",
+      "NOT_sports_nhl_winner_franchise_toronto_maple_leafs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs"
+     ],
+     "k": 4,
+     "rank": 8,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Mars are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "The wimbledon men's singles final is completed before Election Day of that year",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_mars_ge160",
+      "sports_wimbledon_held",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs"
+     ],
+     "k": 4,
+     "rank": 9,
+     "test_correct": 6
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Mars are at least 160° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "The wimbledon men's singles final is completed before Election Day of that year",
+      "NOT: the Toronto Maple Leafs won the Stanley Cup that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_mars_ge160",
+      "sports_wimbledon_held",
+      "NOT_sports_nhl_winner_franchise_toronto_maple_leafs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs"
+     ],
+     "k": 4,
+     "rank": 10,
+     "test_correct": 7
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 11,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the Cincinnati Reds won the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_winner_franchise_cincinnati_reds"
+     ],
+     "k": 4,
+     "rank": 12,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the Phoenix Suns lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_nba_loser_franchise_phoenix_suns"
+     ],
+     "k": 4,
+     "rank": 13,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Berlin hosted the Summer Olympics (city) that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_olympics_host_city_berlin",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 14,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Chicago Cubs lost the MLB World Series that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_chicago_cubs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 15,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Toronto Maple Leafs won the Stanley Cup that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_sports_nhl_winner_franchise_toronto_maple_leafs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 16,
+     "test_correct": 3
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Toronto Maple Leafs won the Stanley Cup that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the Cincinnati Reds won the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_sports_nhl_winner_franchise_toronto_maple_leafs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_mlb_ws_winner_franchise_cincinnati_reds"
+     ],
+     "k": 4,
+     "rank": 17,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Saturn are at least 140° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+      "NOT: the Toronto Maple Leafs won the Stanley Cup that election year",
+      "NOT: the Toronto Maple Leafs lost the Stanley Cup final that election year",
+      "NOT: the Phoenix Suns lost the NBA Finals that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0101_sep_venus_saturn_ge140",
+      "NOT_sports_nhl_winner_franchise_toronto_maple_leafs",
+      "NOT_sports_nhl_loser_franchise_toronto_maple_leafs",
+      "NOT_sports_nba_loser_franchise_phoenix_suns"
+     ],
+     "k": 4,
+     "rank": 18,
+     "test_correct": 4
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Mars are at least 160° apart in ecliptic longitude on Jan 6 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Berlin hosted the Summer Olympics (city) that election year",
+      "NOT: the New York Yankees lost the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0106_sep_venus_mars_ge160",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_olympics_host_city_berlin",
+      "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+     ],
+     "k": 4,
+     "rank": 19,
+     "test_correct": 5
+    },
+    {
+     "defunct": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "glosses": [
+      "NOT: Venus and Mars are at least 160° apart in ecliptic longitude on Jan 6 (00:00 UTC)",
+      "NOT: Easter Sunday falls on or before March 31",
+      "NOT: the Berlin hosted the Summer Olympics (city) that election year",
+      "NOT: the Pittsburgh Pirates won the MLB World Series that election year"
+     ],
+     "ids": [
+      "NOT_astro_geo_0106_sep_venus_mars_ge160",
+      "NOT_cal_easter_le_0331",
+      "NOT_sports_olympics_host_city_berlin",
+      "NOT_sports_mlb_ws_winner_franchise_pittsburgh_pirates"
+     ],
+     "k": 4,
+     "rank": 20,
+     "test_correct": 5
+    }
+   ],
+   "top_rule": {
+    "defunct": [
+     false,
+     false,
+     false,
+     false
+    ],
+    "fits_all_21_training_years": true,
+    "glosses": [
+     "NOT: Mercury and Mars are at least 120° apart in ecliptic longitude on Jan 1 (00:00 UTC)",
+     "NOT: Easter Sunday falls on or before March 31",
+     "NOT: the Berlin hosted the Summer Olympics (city) that election year",
+     "NOT: the New York Yankees lost the MLB World Series that election year"
+    ],
+    "ids": [
+     "NOT_astro_geo_0101_sep_mercury_mars_ge120",
+     "NOT_cal_easter_le_0331",
+     "NOT_sports_olympics_host_city_berlin",
+     "NOT_sports_mlb_ws_loser_franchise_new_york_yankees"
+    ],
+    "k": 4,
+    "rows": [
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 1984
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 1988
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 1992
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 1996
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 2000
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": true,
+      "rule_says": true,
+      "year": 2004
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": true,
+      "rule_says": false,
+      "year": 2008
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 2012
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 2016
+     },
+     {
+      "actual": false,
+      "always_yes_correct": false,
+      "baseline_correct": true,
+      "correct": false,
+      "rule_says": true,
+      "year": 2020
+     },
+     {
+      "actual": true,
+      "always_yes_correct": true,
+      "baseline_correct": false,
+      "correct": false,
+      "rule_says": false,
+      "year": 2024
+     }
+    ],
+    "test_correct": 5,
+    "test_n": 11
+   }
+  }
+ },
+ "test_years": [
+  1984,
+  1988,
+  1992,
+  1996,
+  2000,
+  2004,
+  2008,
+  2012,
+  2016,
+  2020,
+  2024
+ ],
+ "train_years": [
+  1900,
+  1904,
+  1908,
+  1912,
+  1916,
+  1920,
+  1924,
+  1928,
+  1932,
+  1936,
+  1940,
+  1944,
+  1948,
+  1952,
+  1956,
+  1960,
+  1964,
+  1968,
+  1972,
+  1976,
+  1980
+ ]
+}

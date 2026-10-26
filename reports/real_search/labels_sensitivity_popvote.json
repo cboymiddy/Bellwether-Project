@@ -1,0 +1,56 @@
+{
+  "T1": {
+    "label": "conjB",
+    "k": 4,
+    "n_true": 20,
+    "n_candidates": 71,
+    "n_minimal_perfect": 150,
+    "perfect_subsets_by_k": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 150
+    },
+    "n_pareto": 24,
+    "tier_pool_distinct_vectors": 15010,
+    "k_hist": {
+      "4": 150
+    }
+  },
+  "T2": {
+    "label": "conjB",
+    "k": 4,
+    "n_true": 17,
+    "n_candidates": 155,
+    "n_minimal_perfect": 199,
+    "perfect_subsets_by_k": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 199
+    },
+    "n_pareto": 5,
+    "tier_pool_distinct_vectors": 15010,
+    "k_hist": {
+      "4": 199
+    }
+  },
+  "T3": {
+    "label": "conjB",
+    "k": 4,
+    "n_true": 15,
+    "n_candidates": 197,
+    "n_minimal_perfect": 3,
+    "perfect_subsets_by_k": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 3
+    },
+    "n_pareto": 1,
+    "tier_pool_distinct_vectors": 15010,
+    "k_hist": {
+      "4": 3
+    }
+  }
+}

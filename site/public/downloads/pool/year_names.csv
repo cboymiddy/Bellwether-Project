@@ -1,0 +1,195 @@
+family,year,role,canonical,name_at_time
+mlb_world_series,1908,loser,Detroit Tigers,Detroit Tigers
+mlb_world_series,1908,winner,Chicago Cubs,Chicago Cubs
+mlb_world_series,1912,loser,San Francisco Giants,New York Giants
+mlb_world_series,1912,winner,Boston Red Sox,Boston Red Sox
+mlb_world_series,1916,loser,Los Angeles Dodgers,Brooklyn Robins
+mlb_world_series,1916,winner,Boston Red Sox,Boston Red Sox
+mlb_world_series,1920,loser,Los Angeles Dodgers,Brooklyn Robins
+mlb_world_series,1920,winner,Cleveland Guardians,Cleveland Indians
+mlb_world_series,1924,loser,San Francisco Giants,New York Giants
+mlb_world_series,1924,winner,Minnesota Twins,Washington Senators
+mlb_world_series,1928,loser,St. Louis Cardinals,St. Louis Cardinals
+mlb_world_series,1928,winner,New York Yankees,New York Yankees
+mlb_world_series,1932,loser,Chicago Cubs,Chicago Cubs
+mlb_world_series,1932,winner,New York Yankees,New York Yankees
+mlb_world_series,1936,loser,San Francisco Giants,New York Giants
+mlb_world_series,1936,winner,New York Yankees,New York Yankees
+mlb_world_series,1940,loser,Detroit Tigers,Detroit Tigers
+mlb_world_series,1940,winner,Cincinnati Reds,Cincinnati Reds
+mlb_world_series,1944,loser,Baltimore Orioles,St. Louis Browns
+mlb_world_series,1944,winner,St. Louis Cardinals,St. Louis Cardinals
+mlb_world_series,1948,loser,Atlanta Braves,Boston Braves
+mlb_world_series,1948,winner,Cleveland Guardians,Cleveland Indians
+mlb_world_series,1952,loser,Los Angeles Dodgers,Brooklyn Dodgers
+mlb_world_series,1952,winner,New York Yankees,New York Yankees
+mlb_world_series,1956,loser,Los Angeles Dodgers,Brooklyn Dodgers
+mlb_world_series,1956,winner,New York Yankees,New York Yankees
+mlb_world_series,1960,loser,New York Yankees,New York Yankees
+mlb_world_series,1960,winner,Pittsburgh Pirates,Pittsburgh Pirates
+mlb_world_series,1964,loser,New York Yankees,New York Yankees
+mlb_world_series,1964,winner,St. Louis Cardinals,St. Louis Cardinals
+mlb_world_series,1968,loser,St. Louis Cardinals,St. Louis Cardinals
+mlb_world_series,1968,winner,Detroit Tigers,Detroit Tigers
+mlb_world_series,1972,loser,Cincinnati Reds,Cincinnati Reds
+mlb_world_series,1972,winner,Athletics,Oakland Athletics
+mlb_world_series,1976,loser,New York Yankees,New York Yankees
+mlb_world_series,1976,winner,Cincinnati Reds,Cincinnati Reds
+mlb_world_series,1980,loser,Kansas City Royals,Kansas City Royals
+mlb_world_series,1980,winner,Philadelphia Phillies,Philadelphia Phillies
+mlb_world_series,1984,loser,San Diego Padres,San Diego Padres
+mlb_world_series,1984,winner,Detroit Tigers,Detroit Tigers
+mlb_world_series,1988,loser,Athletics,Oakland Athletics
+mlb_world_series,1988,winner,Los Angeles Dodgers,Los Angeles Dodgers
+mlb_world_series,1992,loser,Atlanta Braves,Atlanta Braves
+mlb_world_series,1992,winner,Toronto Blue Jays,Toronto Blue Jays
+mlb_world_series,1996,loser,Atlanta Braves,Atlanta Braves
+mlb_world_series,1996,winner,New York Yankees,New York Yankees
+mlb_world_series,2000,loser,New York Mets,New York Mets
+mlb_world_series,2000,winner,New York Yankees,New York Yankees
+mlb_world_series,2004,loser,St. Louis Cardinals,St. Louis Cardinals
+mlb_world_series,2004,winner,Boston Red Sox,Boston Red Sox
+mlb_world_series,2008,loser,Tampa Bay Rays,Tampa Bay Rays
+mlb_world_series,2008,winner,Philadelphia Phillies,Philadelphia Phillies
+mlb_world_series,2012,loser,Detroit Tigers,Detroit Tigers
+mlb_world_series,2012,winner,San Francisco Giants,San Francisco Giants
+mlb_world_series,2016,loser,Cleveland Guardians,Cleveland Indians
+mlb_world_series,2016,winner,Chicago Cubs,Chicago Cubs
+mlb_world_series,2020,loser,Tampa Bay Rays,Tampa Bay Rays
+mlb_world_series,2020,winner,Los Angeles Dodgers,Los Angeles Dodgers
+mlb_world_series,2024,loser,New York Yankees,New York Yankees
+mlb_world_series,2024,winner,Los Angeles Dodgers,Los Angeles Dodgers
+nba_finals,1948,loser,Golden State Warriors,Philadelphia Warriors
+nba_finals,1948,winner,"Baltimore Bullets (original, folded 1954)",Baltimore Bullets
+nba_finals,1952,loser,New York Knicks,New York Knicks
+nba_finals,1952,winner,Los Angeles Lakers,Minneapolis Lakers
+nba_finals,1956,loser,Detroit Pistons,Fort Wayne Pistons
+nba_finals,1956,winner,Golden State Warriors,Philadelphia Warriors
+nba_finals,1960,loser,Atlanta Hawks,St. Louis Hawks
+nba_finals,1960,winner,Boston Celtics,Boston Celtics
+nba_finals,1964,loser,Golden State Warriors,San Francisco Warriors
+nba_finals,1964,winner,Boston Celtics,Boston Celtics
+nba_finals,1968,loser,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,1968,winner,Boston Celtics,Boston Celtics
+nba_finals,1972,loser,New York Knicks,New York Knicks
+nba_finals,1972,winner,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,1976,loser,Phoenix Suns,Phoenix Suns
+nba_finals,1976,winner,Boston Celtics,Boston Celtics
+nba_finals,1980,loser,Philadelphia 76ers,Philadelphia 76ers
+nba_finals,1980,winner,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,1984,loser,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,1984,winner,Boston Celtics,Boston Celtics
+nba_finals,1988,loser,Detroit Pistons,Detroit Pistons
+nba_finals,1988,winner,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,1992,loser,Portland Trail Blazers,Portland Trail Blazers
+nba_finals,1992,winner,Chicago Bulls,Chicago Bulls
+nba_finals,1996,loser,Oklahoma City Thunder,Seattle SuperSonics
+nba_finals,1996,winner,Chicago Bulls,Chicago Bulls
+nba_finals,2000,loser,Indiana Pacers,Indiana Pacers
+nba_finals,2000,winner,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,2004,loser,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,2004,winner,Detroit Pistons,Detroit Pistons
+nba_finals,2008,loser,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,2008,winner,Boston Celtics,Boston Celtics
+nba_finals,2012,loser,Oklahoma City Thunder,Oklahoma City Thunder
+nba_finals,2012,winner,Miami Heat,Miami Heat
+nba_finals,2016,loser,Golden State Warriors,Golden State Warriors
+nba_finals,2016,winner,Cleveland Cavaliers,Cleveland Cavaliers
+nba_finals,2020,loser,Miami Heat,Miami Heat
+nba_finals,2020,winner,Los Angeles Lakers,Los Angeles Lakers
+nba_finals,2024,loser,Dallas Mavericks,Dallas Mavericks
+nba_finals,2024,winner,Boston Celtics,Boston Celtics
+nfl_super_bowl,1968,loser,Las Vegas Raiders,Oakland Raiders
+nfl_super_bowl,1968,winner,Green Bay Packers,Green Bay Packers
+nfl_super_bowl,1972,loser,Miami Dolphins,Miami Dolphins
+nfl_super_bowl,1972,winner,Dallas Cowboys,Dallas Cowboys
+nfl_super_bowl,1976,loser,Dallas Cowboys,Dallas Cowboys
+nfl_super_bowl,1976,winner,Pittsburgh Steelers,Pittsburgh Steelers
+nfl_super_bowl,1980,loser,Los Angeles Rams,Los Angeles Rams
+nfl_super_bowl,1980,winner,Pittsburgh Steelers,Pittsburgh Steelers
+nfl_super_bowl,1984,loser,Washington Commanders,Washington Redskins
+nfl_super_bowl,1984,winner,Las Vegas Raiders,Los Angeles Raiders
+nfl_super_bowl,1988,loser,Denver Broncos,Denver Broncos
+nfl_super_bowl,1988,winner,Washington Commanders,Washington Redskins
+nfl_super_bowl,1992,loser,Buffalo Bills,Buffalo Bills
+nfl_super_bowl,1992,winner,Washington Commanders,Washington Redskins
+nfl_super_bowl,1996,loser,Pittsburgh Steelers,Pittsburgh Steelers
+nfl_super_bowl,1996,winner,Dallas Cowboys,Dallas Cowboys
+nfl_super_bowl,2000,loser,Tennessee Titans,Tennessee Titans
+nfl_super_bowl,2000,winner,Los Angeles Rams,St. Louis Rams
+nfl_super_bowl,2004,loser,Carolina Panthers,Carolina Panthers
+nfl_super_bowl,2004,winner,New England Patriots,New England Patriots
+nfl_super_bowl,2008,loser,New England Patriots,New England Patriots
+nfl_super_bowl,2008,winner,New York Giants,New York Giants
+nfl_super_bowl,2012,loser,New England Patriots,New England Patriots
+nfl_super_bowl,2012,winner,New York Giants,New York Giants
+nfl_super_bowl,2016,loser,Carolina Panthers,Carolina Panthers
+nfl_super_bowl,2016,winner,Denver Broncos,Denver Broncos
+nfl_super_bowl,2020,loser,San Francisco 49ers,San Francisco 49ers
+nfl_super_bowl,2020,winner,Kansas City Chiefs,Kansas City Chiefs
+nfl_super_bowl,2024,loser,San Francisco 49ers,San Francisco 49ers
+nfl_super_bowl,2024,winner,Kansas City Chiefs,Kansas City Chiefs
+nhl_stanley_cup,1900,loser,Halifax Crescents,Halifax Crescents
+nhl_stanley_cup,1900,winner,Montreal Shamrocks,Montreal Shamrocks
+nhl_stanley_cup,1904,loser,Brandon Wheat City,Brandon Wheat City
+nhl_stanley_cup,1904,winner,Ottawa Silver Seven,Ottawa Silver Seven
+nhl_stanley_cup,1908,loser,Edmonton HC,Edmonton HC
+nhl_stanley_cup,1908,winner,Montreal Wanderers,Montreal Wanderers
+nhl_stanley_cup,1912,loser,Moncton Victorias,Moncton Victorias
+nhl_stanley_cup,1912,winner,Quebec Bulldogs,Quebec Bulldogs
+nhl_stanley_cup,1916,loser,Portland Rosebuds,Portland Rosebuds
+nhl_stanley_cup,1916,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1920,loser,Seattle Metropolitans,Seattle Metropolitans
+nhl_stanley_cup,1920,winner,Ottawa Senators,Ottawa Senators
+nhl_stanley_cup,1924,loser,Calgary Tigers,Calgary Tigers
+nhl_stanley_cup,1924,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1928,loser,Montreal Maroons,Montreal Maroons
+nhl_stanley_cup,1928,winner,New York Rangers,New York Rangers
+nhl_stanley_cup,1932,loser,New York Rangers,New York Rangers
+nhl_stanley_cup,1932,winner,Toronto Maple Leafs,Toronto Maple Leafs
+nhl_stanley_cup,1936,loser,Toronto Maple Leafs,Toronto Maple Leafs
+nhl_stanley_cup,1936,winner,Detroit Red Wings,Detroit Red Wings
+nhl_stanley_cup,1940,loser,Toronto Maple Leafs,Toronto Maple Leafs
+nhl_stanley_cup,1940,winner,New York Rangers,New York Rangers
+nhl_stanley_cup,1944,loser,Chicago Blackhawks,Chicago Black Hawks
+nhl_stanley_cup,1944,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1948,loser,Detroit Red Wings,Detroit Red Wings
+nhl_stanley_cup,1948,winner,Toronto Maple Leafs,Toronto Maple Leafs
+nhl_stanley_cup,1952,loser,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1952,winner,Detroit Red Wings,Detroit Red Wings
+nhl_stanley_cup,1956,loser,Detroit Red Wings,Detroit Red Wings
+nhl_stanley_cup,1956,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1960,loser,Toronto Maple Leafs,Toronto Maple Leafs
+nhl_stanley_cup,1960,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1964,loser,Detroit Red Wings,Detroit Red Wings
+nhl_stanley_cup,1964,winner,Toronto Maple Leafs,Toronto Maple Leafs
+nhl_stanley_cup,1968,loser,St. Louis Blues,St. Louis Blues
+nhl_stanley_cup,1968,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1972,loser,New York Rangers,New York Rangers
+nhl_stanley_cup,1972,winner,Boston Bruins,Boston Bruins
+nhl_stanley_cup,1976,loser,Philadelphia Flyers,Philadelphia Flyers
+nhl_stanley_cup,1976,winner,Montreal Canadiens,Montreal Canadiens
+nhl_stanley_cup,1980,loser,Philadelphia Flyers,Philadelphia Flyers
+nhl_stanley_cup,1980,winner,New York Islanders,New York Islanders
+nhl_stanley_cup,1984,loser,New York Islanders,New York Islanders
+nhl_stanley_cup,1984,winner,Edmonton Oilers,Edmonton Oilers
+nhl_stanley_cup,1988,loser,Boston Bruins,Boston Bruins
+nhl_stanley_cup,1988,winner,Edmonton Oilers,Edmonton Oilers
+nhl_stanley_cup,1992,loser,Chicago Blackhawks,Chicago Blackhawks
+nhl_stanley_cup,1992,winner,Pittsburgh Penguins,Pittsburgh Penguins
+nhl_stanley_cup,1996,loser,Florida Panthers,Florida Panthers
+nhl_stanley_cup,1996,winner,Colorado Avalanche,Colorado Avalanche
+nhl_stanley_cup,2000,loser,Dallas Stars,Dallas Stars
+nhl_stanley_cup,2000,winner,New Jersey Devils,New Jersey Devils
+nhl_stanley_cup,2004,loser,Calgary Flames,Calgary Flames
+nhl_stanley_cup,2004,winner,Tampa Bay Lightning,Tampa Bay Lightning
+nhl_stanley_cup,2008,loser,Pittsburgh Penguins,Pittsburgh Penguins
+nhl_stanley_cup,2008,winner,Detroit Red Wings,Detroit Red Wings
+nhl_stanley_cup,2012,loser,New Jersey Devils,New Jersey Devils
+nhl_stanley_cup,2012,winner,Los Angeles Kings,Los Angeles Kings
+nhl_stanley_cup,2016,loser,San Jose Sharks,San Jose Sharks
+nhl_stanley_cup,2016,winner,Pittsburgh Penguins,Pittsburgh Penguins
+nhl_stanley_cup,2020,loser,Dallas Stars,Dallas Stars
+nhl_stanley_cup,2020,winner,Tampa Bay Lightning,Tampa Bay Lightning
+nhl_stanley_cup,2024,loser,Edmonton Oilers,Edmonton Oilers
+nhl_stanley_cup,2024,winner,Florida Panthers,Florida Panthers

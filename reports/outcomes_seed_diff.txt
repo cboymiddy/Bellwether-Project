@@ -1,0 +1,2 @@
+rows compared: 32
+discrepancies: 0

@@ -1,0 +1,298 @@
+---
+import { url } from '../lib/url';
+import Base from '../layouts/Base.astro';
+import ShareBars from '../components/charts/ShareBars.astro';
+import CountHistogram from '../components/charts/CountHistogram.astro';
+import PowerCurve from '../components/charts/PowerCurve.astro';
+import nullsJson from '../data/nulls.json';
+import frontJson from '../data/frontier.json';
+import metaJson from '../data/meta.json';
+import ruleJson from '../data/rule.json';
+import { fmtPct } from '../lib/labels';
+
+const nulls: any = nullsJson;
+const front: any = frontJson;
+const meta: any = metaJson;
+const rule: any = ruleJson;
+const T = ['T1', 'T2', 'T3'] as const;
+const NAME: Record<string, string> = { T1: 'the incumbent party wins', T2: 'the Democratic Party wins', T3: 'the Republican Party wins' };
+const fmt = (n: number) => n.toLocaleString('en-US');
+const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`;
+const ss = meta.search_size;
+const cuts = ss.pool_cuts;
+const astro = ss.astro;
+const n1 = nulls.n1;
+const party = nulls.party;
+const B = n1.T1.B;
+
+// Headline figure: the identical search on shuffled histories.
+const found = (b: any) => 1 - b.none.rate;
+const foundCount = (b: any) => b.B - b.none.count;
+const realText: Record<string, string> = {};
+for (const t of T) realText[t] = front.targets[t].ec.label === 'none' ? 'Real history: no perfect rule found' : 'Real history: a perfect rule was found';
+const bars = [
+  ...T.map((t) => ({ id: t, label: `${t}: ${NAME[t]}`, value: found(n1[t]), real: realText[t],
+    tip: JSON.stringify({ title: `${t}: ${NAME[t]}`, rows: [
+      { series: Number(t[1]), value: pct(found(n1[t])), label: 'of shuffled histories got a perfect rule' },
+      { series: Number(t[1]), value: `${fmt(foundCount(n1[t]))} of ${fmt(B)}`, label: 'shuffles' }] }) })),
+  { id: 'any', label: 'Any of the three targets', value: found(party.best), real: undefined,
+    tip: JSON.stringify({ title: 'Any of the three targets', rows: [
+      { series: 0, value: pct(found(party.best), 3), label: 'of shuffled histories (party-level shuffle)' },
+      { series: 0, value: `${fmt(foundCount(party.best))} of ${fmt(party.best.B)}`, label: 'shuffles' }] }) },
+];
+const ci = (b: any) => `${pct(1 - b.none.ci_hi, 2)} to ${pct(1 - b.none.ci_lo, 2)}`;
+
+// Histogram of the number of perfect rules per shuffled history.
+const BINS = [['0', 'none'], ['1-9', '1–9'], ['10-99', '10–99'], ['100-999', '100–999'], ['1k-9.9k', '1,000–9,999'],
+  ['10k-99k', '10k–99k'], ['100k-999k', '100k–999k'], ['1M+', '1M+']].map(([key, label]) => ({ key, label }));
+const binOf = (n: number) => n === 0 ? '0' : n < 10 ? '1-9' : n < 100 ? '10-99' : n < 1000 ? '100-999' : n < 1e4 ? '1k-9.9k' : n < 1e5 ? '10k-99k' : n < 1e6 ? '100k-999k' : '1M+';
+const hist = T.map((t) => ({ id: t, label: `${t}`, counts: nulls.counts[t].histogram as Record<string, number>, B: nulls.counts[t].summary.B as number,
+  realBin: binOf(front.targets[t].ec.perfect_subsets), realText: String(front.targets[t].ec.perfect_subsets) }));
+
+// Power curve.
+const power = T.map((t) => ({ id: t, label: `${t}: ${NAME[t]}`, points: nulls.power[t].map((r: any) => ({ M: r.M, P: r.P })) }));
+const cross = (pts: any[], level: number) => {
+  for (let i = 0; i < pts.length - 1; i++) if (pts[i].P < level && level <= pts[i + 1].P)
+    return Math.round(pts[i].M + (pts[i + 1].M - pts[i].M) * (level - pts[i].P) / (pts[i + 1].P - pts[i].P));
+  return null;
+};
+const Ms: number[] = nulls.power.T1.map((r: any) => r.M);
+
+const keys = nulls.keys_poolB;
+const keyRows = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+const kv = (t: string, n: number, m: number) => keys[t].find((r: any) => r.N_cap === n)[`P(m>=${m})`] as number;
+const lbl: Record<string, string> = { conjA: 'conjA', conjB: 'conjB' };
+const tgt = front.targets;
+const selection = rule.selection;
+const cut = meta.search_size.cutoffs;
+---
+<Base title="How we found it" description="The search, the identical search on shuffled histories, and what it means." current="how">
+  <h1>How we found it</h1>
+  <p class="lede">The short version: we looked for a rule until we found one. Then we checked how hard that was.</p>
+
+  <h2 id="pool">The pool of facts</h2>
+  <p>
+    The search draws on yes-or-no facts about each election year: calendar facts, the sky, professional sports and weather.
+    A fact counts once if it has the same pattern of yes and no across all 32 elections as another fact.
+  </p>
+  <div class="table-wrap">
+    <table class="plain">
+      <thead><tr><th>Pool</th><th>What is in it</th><th>Distinct facts</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>The original pool: {fmt(ss.main_pool_positives_F_ge_2)} conditions about calendars, the sky, sports and weather that at least enthusiasts recognise, plus each one&rsquo;s opposite</td><td class="num">{fmt(ss.pool_A_distinct_vectors)}</td></tr>
+        <tr><td>B</td><td>Pool A plus {fmt(astro.included_positives)} conditions about where ten bodies (Sun, Moon, eight planets and Pluto) stood on 60 fixed dates, plus each one&rsquo;s opposite</td><td class="num">{fmt(ss.pool_B_distinct_vectors)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">
+    {ss.main_pool_positives - ss.main_pool_positives_F_ge_2} conditions from the original pool that were rated niche (jockeys, trainers, runners-up and similar) were left out of the tiers.
+    Removed before searching: {cuts.main_era_indicator_positives} conditions that merely mark an era (for example &ldquo;a Super Bowl was played&rdquo;) plus
+    {fmt(astro.era_indicator)} slow-moving sky conditions that do the same; {cuts.main_constant_dropped} conditions that were the same every year plus
+    {fmt(astro.constant)} sky conditions that were the same every year; {cuts.main_quarantined_O_C} conditions whose value depended on a judgment call about
+    early Stanley Cup history. The sky family was added on purpose, and was sized from tests on shuffled histories so that a perfect rule would be likely
+    (see &ldquo;What was decided when&rdquo;).
+  </p>
+  <h3>The three tiers</h3>
+  <ol>
+    <li><strong>Tier 1a.</strong> Look for a combination of up to four facts from pool A that sorts every election correctly.</li>
+    <li><strong>Tier 1b.</strong> If tier 1a finds nothing, do the same with pool B.</li>
+    <li><strong>Tier 2.</strong> If neither finds anything, look for a fallback: a short list of at most {cut.keys_N_star} facts where the winners always have more of them true than the losers, by a margin of at least {cut.keys_margin_star}.</li>
+  </ol>
+
+  <h2 id="real">What the search found in the real history</h2>
+  <p>Three questions were asked: does the incumbent party win, does the Democratic Party win, does the Republican Party win.</p>
+  <div class="table-wrap">
+    <table class="plain">
+      <thead><tr><th>Target</th><th>Elections where true</th><th>Result</th><th>Perfect rules found</th><th>In shuffled histories</th></tr></thead>
+      <tbody>
+        {T.map((t) => {
+          const e = tgt[t].ec;
+          const noneRate = n1[t].none.rate;
+          return (
+            <tr>
+              <td>{t}: {NAME[t]}</td>
+              <td class="num">{e.n_true} of 32</td>
+              <td>{e.label === 'none' ? <strong>No perfect rule in any tier</strong> : <>Perfect rule at tier {e.label === 'conjA' ? '1a' : '1b'}</>}</td>
+              <td class="num">{e.label === 'none' ? 'none' : fmt(e.perfect_subsets)}</td>
+              <td>{e.label === 'none'
+                ? <>No perfect rule in {pct(noneRate, 1)} of them</>
+                : <>A perfect rule in {pct(found(n1[t]), 1)} of them</>}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+  <p>
+    For T2 the search came up empty. Under shuffling that happens only {pct(n1.T2.none.rate, 1)} of the time, so it is the less likely outcome; we
+    report it plainly, because the search ran once and that is what it returned. For T1 and T3 the search found a perfect rule, and it needed the large pool
+    to do it: with only the original facts (tier 1a), a shuffled history gets a perfect rule in {pct(n1.T1.conjA.rate, 2)} (T1),
+    {pct(n1.T2.conjA.rate, 2)} (T2) and {pct(n1.T3.conjA.rate, 2)} (T3) of cases. The real history did not do that.
+  </p>
+
+  <h2 id="shuffled">The identical search on shuffled histories</h2>
+  <p>
+    For each target we shuffled which elections count as wins, keeping the number of wins the same, and ran the identical frozen
+    search on the result. We did that {fmt(B)} times per target. A shuffled history contains no information about elections, so
+    anything the search finds in it is an artifact of the search.
+  </p>
+  <ShareBars rows={bars} title="The identical search on shuffled histories"
+    sub={`Share of ${fmt(B)} shuffled histories per target in which the search found a perfect rule`} descId="fig-shuffled" />
+  <details class="viz-table" open>
+    <summary>Data table: the identical search on shuffled histories</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Target</th><th class="r">Shuffled histories</th><th class="r">Tier 1a (original facts)</th><th class="r">Tier 1b (with sky facts)</th><th class="r">Tier 2 (fallback)</th><th class="r">Nothing found</th><th class="r">Perfect rule found (95% interval)</th></tr></thead>
+        <tbody>
+          {T.map((t) => (
+            <tr>
+              <td>{t}: {NAME[t]}</td><td class="r">{fmt(n1[t].B)}</td>
+              <td class="r">{fmt(n1[t].conjA.count)} ({pct(n1[t].conjA.rate, 3)})</td>
+              <td class="r">{fmt(n1[t].conjB.count)} ({pct(n1[t].conjB.rate, 2)})</td>
+              <td class="r">{fmt(n1[t].keys.count)}</td>
+              <td class="r">{fmt(n1[t].none.count)} ({pct(n1[t].none.rate, 2)})</td>
+              <td class="r">{pct(found(n1[t]), 2)} ({ci(n1[t])})</td>
+            </tr>
+          ))}
+          <tr>
+            <td>Any of the three targets (party-level shuffle)</td><td class="r">{fmt(party.best.B)}</td>
+            <td class="r">{fmt(party.best.conjA.count)} ({pct(party.best.conjA.rate, 3)})</td>
+            <td class="r">{fmt(party.best.conjB.count)} ({pct(party.best.conjB.rate, 2)})</td>
+            <td class="r">{fmt(party.best.keys.count)}</td>
+            <td class="r">{fmt(party.best.none.count)} ({pct(party.best.none.rate, 3)})</td>
+            <td class="r">{pct(found(party.best), 3)} ({ci(party.best)})</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <h3>Other ways of shuffling</h3>
+  <p class="sub">
+    The party-level shuffle reorders which party won each election (15 Democratic, 17 Republican), derives all three targets from it, and keeps the
+    best result of the three. {pct(party.rejected_fraction, 1)} of draws were set aside because the derived T1 had too few true years for exact counting. The structured
+    shuffles keep the real sequence&rsquo;s runs: 63 circular shifts and reversals (each run once) and {fmt(nulls.n2.block.B)} shuffles of four-election blocks.
+  </p>
+  <details class="viz-table" open>
+    <summary>Data table: other shuffles (best result across the three targets)</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Shuffle</th><th class="r">Histories</th><th class="r">Tier 1a</th><th class="r">Tier 1b</th><th class="r">Tier 2</th><th class="r">Nothing found</th></tr></thead>
+        <tbody>
+          {[['Party-level shuffle', party.best], ['Structured: shifts and reversals', nulls.n2.exact], ['Structured: block shuffles', nulls.n2.block]].map(([name, b]: any) => (
+            <tr><td>{name}</td><td class="r">{fmt(b.B)}</td><td class="r">{fmt(b.conjA.count)}</td><td class="r">{fmt(b.conjB.count)}</td><td class="r">{fmt(b.keys.count)}</td><td class="r">{fmt(b.none.count)}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h2 id="count">How many perfect rules does a shuffled history have?</h2>
+  <p>
+    More than one: typically hundreds. The middle shuffled history that has any perfect rule has {fmt(nulls.counts.T1.summary.median_given_found)} (T1),
+    {fmt(nulls.counts.T2.summary.median_given_found)} (T2) or {fmt(nulls.counts.T3.summary.median_given_found)} (T3). The real history has
+    {fmt(tgt.T1.ec.perfect_subsets)} for T1, none for T2 and {fmt(tgt.T3.ec.perfect_subsets)} for T3, which is unremarkable.
+  </p>
+  <CountHistogram series={hist} bins={BINS} title="Perfect rules per shuffled history"
+    sub={`Share of ${fmt(hist[0].B)} shuffled histories per target, by how many perfect rules of up to four facts the search found`} descId="fig-count" />
+  <details class="viz-table" open>
+    <summary>Data table: perfect rules per shuffled history</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Perfect rules found</th>{T.map((t) => <th class="r">{t} shuffled histories</th>)}</tr></thead>
+        <tbody>
+          {BINS.map((b) => (
+            <tr><td>{b.label}</td>{hist.map((h) => <td class="r">{fmt(h.counts[b.key] ?? 0)} ({pct((h.counts[b.key] ?? 0) / h.B, 1)})</td>)}</tr>
+          ))}
+          <tr><td><strong>Real history</strong></td>{T.map((t) => <td class="r"><strong>{tgt[t].ec.perfect_subsets === 0 ? 'none' : fmt(tgt[t].ec.perfect_subsets)}</strong></td>)}</tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h2 id="size">How big does the pool have to be?</h2>
+  <p>
+    We took the original pool and added random numbers: each added &ldquo;series&rdquo; is a column of random values cut at nine thresholds, giving
+    18 new yes-or-no facts. With none added the search almost never succeeds. With about {cross(power[0].points, 0.5)} added series it succeeds half the time for T1;
+    with about {cross(power[0].points, 0.9)} it succeeds nine times in ten.
+  </p>
+  <PowerCurve series={power} title="Chance of a perfect rule as the pool grows"
+    sub="Shuffled histories, original pool plus random series. 20,000 shuffles per point." descId="fig-power" />
+  <details class="viz-table" open>
+    <summary>Data table: chance of a perfect rule as the pool grows</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="r">Random series added</th>{T.map((t) => <th class="r">{t}</th>)}</tr></thead>
+        <tbody>
+          {Ms.map((m, i) => (
+            <tr><td class="r">{fmt(m)}</td>{T.map((t) => <td class="r">{pct(nulls.power[t][i].P, 1)} ({pct(nulls.power[t][i].lo, 1)} to {pct(nulls.power[t][i].hi, 1)})</td>)}</tr>
+          ))}
+          <tr><td class="r">Added series for 50% / 90%</td>{T.map((t, i) => <td class="r">{cross(power[i].points, 0.5)} / {cross(power[i].points, 0.9)}</td>)}</tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h2 id="fallback">The fallback, and why it never fires</h2>
+  <p>
+    Tier 2 asks for at most {cut.keys_N_star} facts and a margin of at least {cut.keys_margin_star}. We set that after measuring, on shuffled histories and the large pool, how short a
+    fallback list can be: with a margin of 1, four facts always suffice, so the cap had to be strict to mean anything. In
+    {fmt(n1.T1.B)} shuffles per target it fired {fmt(n1.T1.keys.count + n1.T2.keys.count + n1.T3.keys.count)} times in total.
+  </p>
+  <details class="viz-table" open>
+    <summary>Data table: chance that a fallback list exists within a size cap (shuffled histories, pool B; 1,500 shuffles per target)</summary>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th rowspan="2">Largest allowed list</th><th colspan="2" class="r">T1</th><th colspan="2" class="r">T2</th><th colspan="2" class="r">T3</th></tr>
+          <tr>{T.map(() => <><th class="r">margin &ge; 1</th><th class="r">margin &ge; 2</th></>)}</tr>
+        </thead>
+        <tbody>
+          {keyRows.map((n) => (
+            <tr><td>{n} facts</td>{T.map((t) => <><td class="r">{pct(kv(t, n, 1), 1)}</td><td class="r">{pct(kv(t, n, 2), 1)}</td></>)}</tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h2 id="popular">If &ldquo;win&rdquo; means the popular vote</h2>
+  <p>
+    Two elections (2000 and 2016) go the other way if the winner is the popular-vote winner. We ran the same search that way as a side check.
+    The rules differ: none of them is perfect under both codings.
+  </p>
+  <div class="table-wrap">
+    <table class="plain">
+      <thead><tr><th>Target</th><th>Electoral College: result</th><th>Electoral College: perfect rules</th><th>Popular vote: result</th><th>Popular vote: perfect rules</th><th>Perfect under both</th></tr></thead>
+      <tbody>
+        {T.map((t) => (
+          <tr>
+            <td>{t}: {NAME[t]}</td>
+            <td>{tgt[t].ec.label === 'none' ? 'none' : `tier ${tgt[t].ec.label === 'conjA' ? '1a' : '1b'}`}</td>
+            <td class="num">{tgt[t].ec.label === 'none' ? 'none' : fmt(tgt[t].ec.n_minimal_perfect)}</td>
+            <td>{tgt[t].popvote.label === 'none' ? 'none' : `tier ${tgt[t].popvote.label === 'conjA' ? '1a' : '1b'}`}</td>
+            <td class="num">{tgt[t].popvote.label === 'none' ? 'none' : fmt(tgt[t].popvote.n_minimal_perfect)}</td>
+            <td class="num">{tgt[t].rules_perfect_under_both_codings}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">The featured rule gets {rule.popvote.correct} of 32 elections right when scored against the popular vote (wrong in {rule.popvote.wrong_years.join(' and ')}). There is no null run for this coding.</p>
+
+  <h2 id="decided">What was decided when</h2>
+  <h3>Before any real result was looked at</h3>
+  <ul>
+    <li>The tiers, the limit of four facts per rule, the fallback&rsquo;s cap ({cut.keys_N_star} facts, margin {cut.keys_margin_star}), the ranking, and how the shuffles would be run.</li>
+    <li>That the real search would run exactly once on a frozen pipeline (hash <code>{meta.hashes.freeze_sha256.slice(0, 16)}&hellip;</code>).</li>
+  </ul>
+  <h3>After seeing results from shuffled histories only</h3>
+  <ul>
+    <li>The sky family: ten bodies, 60 dates, separation thresholds in steps of 20&deg;. It was sized from shuffled-history tests so that the search would very probably succeed.</li>
+    <li>The fallback&rsquo;s cap, from the shuffled-history table above.</li>
+  </ul>
+  <h3>After seeing the real result</h3>
+  <ul>
+    <li>{selection.chosen_by} chose which of the {selection.tied_top_key_rules} top-tied rules to feature (see the <a href={url('/rule/')}>rule card</a>).</li>
+    <li>Wording was corrected: the sky conditions compare the difference in ecliptic longitude (latitude is ignored), which is what was always computed. Only the display text changed.</li>
+  </ul>
+</Base>

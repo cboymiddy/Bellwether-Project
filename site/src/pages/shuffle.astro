@@ -1,0 +1,72 @@
+---
+import { url } from '../lib/url';
+import Base from '../layouts/Base.astro';
+import nullsJson from '../data/nulls.json';
+import shuffleJson from '../data/shuffle.json';
+
+const nulls: any = nullsJson;
+const sh: any = shuffleJson;
+const T = ['T1', 'T2', 'T3'] as const;
+const published: Record<string, any> = {};
+for (const t of T) published[t] = { B: nulls.n1[t].B, foundRate: 1 - nulls.n1[t].none.rate };
+published.totalShuffles = T.reduce((a, t) => a + nulls.n1[t].B, 0);
+published.keysFired = T.reduce((a, t) => a + nulls.n1[t].keys.count, 0);
+const demo = {
+  base: url('/'),
+  years: sh.years,
+  real: Object.fromEntries(T.map((t) => [t, { target: sh.real[t].target, n_true: sh.real[t].n_true }])),
+  realLabels: sh.real_labels,
+  published,
+};
+const rate = (t: string) => (published[t].foundRate * 100).toFixed(1);
+---
+<Base title="Shuffle your own history" description="Rewrite the past; the search will explain it anyway." current="shuffle">
+  <h1>Shuffle your own history</h1>
+  <p class="lede">Rewrite the past. The search will explain it anyway.</p>
+  <p>
+    Pick a target. The button reorders which elections count as wins, keeping the number of wins the same, and runs the same
+    search we ran on the real history, in your browser. If it finds a rule, that rule fits your invented history perfectly. In the
+    published runs it did that {rate('T1')}% of the time for the incumbent party (T1), {rate('T2')}% for the Democratic Party (T2) and {rate('T3')}% for
+    the Republican Party (T3).
+  </p>
+  <p class="sub">
+    What runs here: tier 1a (original facts), then tier 1b (with the sky facts). Tier 2, the fallback, is not run in the browser. The
+    rule shown is <em>a</em> perfect rule, not the top-ranked one. Nothing is redrawn: a shuffle that finds nothing is reported as nothing.
+    <noscript> This page needs JavaScript; the published results are on the <a href={url('/how/')}>How we found it</a> page.</noscript>
+  </p>
+
+  <div class="demo-controls" role="group" aria-label="Controls">
+    <label>Target
+      <select id="target">
+        <option value="T1">T1: the incumbent party wins</option>
+        <option value="T2">T2: the Democratic Party wins</option>
+        <option value="T3">T3: the Republican Party wins</option>
+      </select>
+    </label>
+    <label>Seed <input id="seed" type="text" value="bellwether" size="14" autocomplete="off" /></label>
+    <button id="btn-shuffle" type="button" disabled>Shuffle with this seed</button>
+    <button id="btn-random" type="button" class="secondary" disabled>Random seed</button>
+    <button id="btn-reset" type="button" class="secondary" disabled>Real history</button>
+    <button id="btn-batch" type="button" class="secondary" disabled>Run 1,000 shuffles</button>
+    <button id="btn-cancel" type="button" class="secondary" hidden>Cancel</button>
+    <progress id="progress" value="0" max="1000" aria-label="Progress of the 1,000 shuffles"></progress>
+  </div>
+  <p id="status" role="status" aria-live="polite">Loading&hellip;</p>
+
+  <h2>The history</h2>
+  <div class="history-scroll" tabindex="0" role="region" aria-label="History strip, scrolls sideways on small screens"><div id="history"></div></div>
+  <p class="sub" id="hist-caption"></p>
+
+  <h2>What the search found</h2>
+  <div id="result" aria-live="polite"></div>
+
+  <h2>1,000 shuffles</h2>
+  <p class="sub">
+    &ldquo;Run 1,000 shuffles&rdquo; draws 1,000 histories from the seed and counts what the search finds for each. The published figure for the
+    selected target is shown for comparison; a batch of 1,000 has a margin of roughly &plusmn;1 percentage point, so it will not match exactly.
+  </p>
+  <div id="tally" aria-live="polite"><p class="sub">No batch run yet.</p></div>
+
+  <script type="application/json" id="demo-data" set:html={JSON.stringify(demo)} />
+  <script>import '../scripts/shuffleDemo';</script>
+</Base>

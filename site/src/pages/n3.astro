@@ -1,0 +1,240 @@
+---
+import Base from '../layouts/Base.astro';
+import CountHistogram from '../components/charts/CountHistogram.astro';
+import n3Json from '../data/n3.json';
+import nullsJson from '../data/nulls.json';
+import { wilson } from '../lib/shuffle';
+
+const n3: any = n3Json;
+const nulls: any = nullsJson;
+const T = ['T1', 'T2', 'T3'] as const;
+const NAME: Record<string, string> = { T1: 'the incumbent party wins', T2: 'the Democratic Party wins', T3: 'the Republican Party wins' };
+const ACT: Record<string, string> = { T1: 'incumbent party won', T2: 'Democratic Party won', T3: 'Republican Party won' };
+const fmt = (n: number) => n.toLocaleString('en-US');
+const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`;
+const tg = n3.targets;
+const trainN = n3.train_years.length, testN = n3.test_years.length;
+const tier = (l: string) => (l === 'conjA' ? 'tier 1a' : l === 'conjB' ? 'tier 1b' : 'nothing');
+const best = (t: string) => tg[t].baseline.best_constant_correct as number;
+const diff = (t: string) => tg[t].top_rule.test_correct - best(t);
+const noneBeat = T.every((t) => diff(t) <= 0);
+const bins = Array.from({ length: testN + 1 }, (_, i) => ({ key: String(i), label: `${i}/${testN}` }));
+const histAll = T.map((t) => ({ id: t, label: t, counts: tg[t].all_rules_hist as Record<string, number>, B: tg[t].n_rules_21yr as number,
+  realBin: String(tg[t].top_rule.test_correct), realText: '', baselineBin: String(best(t)) }));
+const histNull = T.map((t) => ({ id: t, label: t, counts: tg[t].null.top_correct_hist as Record<string, number>, B: tg[t].null.B as number,
+  realBin: String(tg[t].top_rule.test_correct), realText: '' }));
+const above = (t: string, strict: boolean) => {
+  const base = best(t);
+  return Object.entries(tg[t].all_rules_hist as Record<string, number>).filter(([k]) => (strict ? Number(k) > base : Number(k) >= base)).reduce((a, [, v]) => a + v, 0);
+};
+const nullB = tg.T1.null.B;
+const ci = (k: number, n: number) => { const [lo, hi] = wilson(k, n); return `${pct(lo, 1)} to ${pct(hi, 1)}`; };
+---
+<Base title="The look-ahead test (N3)" description="Fit the first 21 elections, then score the last 11." current="n3">
+  <h1>The look-ahead test</h1>
+  <p class="lede">
+    We hid the last {testN} elections, found rules that fit the first {trainN} perfectly, and then looked.
+  </p>
+
+  <h2>The test</h2>
+  <p>
+    The search was run again on 1900&ndash;1980 only ({trainN} elections), with the same pools, tiers and ranking. A rule counts only if it
+    gets all {trainN} of those elections right. The top-ranked rule under the frozen ranking was then scored on 1984&ndash;2024 ({testN} elections), which the
+    search had never seen. As yardsticks we use the two dullest possible rules, which ignore the facts entirely: always guess &ldquo;no&rdquo; and always guess &ldquo;yes&rdquo;
+    (for T1, the incumbent party always loses or always wins; for T2 and T3, always Republican or always Democratic). The better of the two is the
+    <em>best constant guess</em>.
+  </p>
+  <div class="table-wrap">
+    <table class="plain">
+      <thead><tr><th>Target</th><th>Rules that fit 1900&ndash;1980 perfectly</th><th>Top-ranked rule on 1984&ndash;2024</th><th>Always &ldquo;no&rdquo;</th><th>Always &ldquo;yes&rdquo;</th><th>Best constant guess</th><th>Rule minus best guess</th></tr></thead>
+      <tbody>
+        {T.map((t) => {
+          const r = tg[t];
+          const d = diff(t);
+          return (
+            <tr>
+              <td>{t}: {NAME[t]}</td>
+              <td class="num">{fmt(r.n_rules_21yr)}</td>
+              <td class="num"><strong>{r.top_rule.test_correct} of {r.top_rule.test_n}</strong></td>
+              <td class="num">{r.baseline.always_loss_correct} of {r.baseline.test_n}<span class="sub">{r.baseline.name_no}</span></td>
+              <td class="num">{r.baseline.always_win_correct} of {r.baseline.test_n}<span class="sub">{r.baseline.name_yes}</span></td>
+              <td class="num"><strong>{best(t)} of {r.baseline.test_n}</strong><span class="sub">{r.baseline.best_constant_name}</span></td>
+              <td class="num">{d > 0 ? `+${d}` : d}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+  {noneBeat && (
+    <p>
+      <strong>In no case did the top-ranked rule beat the best constant guess.</strong>
+      {T.map((t) => diff(t) === 0
+        ? <> For {t} it tied ({best(t)} of {testN}, {tg[t].baseline.best_constant_name}).</>
+        : <> For {t} it did worse: {tg[t].top_rule.test_correct} against {best(t)} for &ldquo;{tg[t].baseline.best_constant_name}&rdquo;.</>)}
+      {' '}It fit the past perfectly and added nothing about the future.
+    </p>
+  )}
+
+  <h3>The three top-ranked rules, election by election</h3>
+  {T.map((t) => {
+    const r = tg[t].top_rule;
+    return (
+      <details class="viz-table">
+        <summary>{t}: {NAME[t]}, {r.test_correct} of {r.test_n} (best constant guess, {tg[t].baseline.best_constant_name}: {best(t)})</summary>
+        <p class="sub">The rule: all of the following must hold (&ldquo;NOT&rdquo; means the fact must be false).</p>
+        <ul>
+          {r.glosses.map((g: string, i: number) => (
+            <li>{g}{r.defunct[i] && <span class="badge flag" title="Names a club that no longer exists (C2.3)"> defunct club (C2.3)</span>}</li>
+          ))}
+        </ul>
+        <p class="sub">It fits all {trainN} elections of 1900&ndash;1980.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Year</th><th>Actual ({ACT[t]})</th><th>Rule says</th><th>Rule right?</th><th>Always &ldquo;no&rdquo; right?</th><th>Always &ldquo;yes&rdquo; right?</th></tr></thead>
+            <tbody>
+              {r.rows.map((row: any) => (
+                <tr>
+                  <td>{row.year}</td><td>{row.actual ? 'yes' : 'no'}</td><td>{row.rule_says ? 'yes' : 'no'}</td>
+                  <td><span class={row.correct ? 'yes' : 'no'}>{row.correct ? '✓' : '✗'}</span></td>
+                  <td><span class={row.baseline_correct ? 'yes' : 'no'}>{row.baseline_correct ? '✓' : '✗'}</span></td>
+                  <td><span class={row.always_yes_correct ? 'yes' : 'no'}>{row.always_yes_correct ? '✓' : '✗'}</span></td>
+                </tr>
+              ))}
+              <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>{r.test_correct}</strong></td><td><strong>{tg[t].baseline.always_loss_correct}</strong></td><td><strong>{tg[t].baseline.always_win_correct}</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    );
+  })}
+
+  <h2>Every rule that fit the past</h2>
+  <p>
+    The top-ranked rule is one of many. {fmt(tg.T1.n_rules_21yr)} rules fit 1900&ndash;1980 perfectly for T1, {fmt(tg.T2.n_rules_21yr)} for T2 and
+    {fmt(tg.T3.n_rules_21yr)} for T3. Here is how each one did on 1984&ndash;2024. For T1, {pct(above('T1', true) / tg.T1.n_rules_21yr, 1)} of them beat
+    the best constant guess and {pct((tg.T1.n_rules_21yr - above('T1', false)) / tg.T1.n_rules_21yr, 1)} did worse (T2: {pct(above('T2', true) / tg.T2.n_rules_21yr, 1)} beat it,
+    {pct((tg.T2.n_rules_21yr - above('T2', false)) / tg.T2.n_rules_21yr, 1)} did worse; T3: {pct(above('T3', true) / tg.T3.n_rules_21yr, 1)} beat it,
+    {pct((tg.T3.n_rules_21yr - above('T3', false)) / tg.T3.n_rules_21yr, 1)} did worse).
+  </p>
+  <CountHistogram series={histAll} bins={bins} title="Test scores of every rule that fit 1900–1980"
+    sub="Share of the rules for each target, by how many of the 11 elections 1984–2024 they got right"
+    xLabel="elections right out of 11 (1984–2024)" yLabel="share of rules" realLegend="the top-ranked rule" baselineLegend="best constant guess"
+    tipPrefix="Score " tipSuffix="" descId="fig-n3-all" />
+  <details class="viz-table" open>
+    <summary>Data table: test scores of every rule that fit 1900–1980</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Elections right (of {testN})</th>{T.map((t) => <th class="r">{t} rules</th>)}</tr></thead>
+        <tbody>
+          {bins.map((b) => (
+            <tr><td>{b.label}</td>{T.map((t) => <td class="r">{fmt(tg[t].all_rules_hist[b.key] ?? 0)} ({pct((tg[t].all_rules_hist[b.key] ?? 0) / tg[t].n_rules_21yr, 1)})</td>)}</tr>
+          ))}
+          <tr><td><strong>Top-ranked rule</strong></td>{T.map((t) => <td class="r"><strong>{tg[t].top_rule.test_correct}/{testN}</strong></td>)}</tr>
+          <tr><td><strong>Always &ldquo;no&rdquo;</strong></td>{T.map((t) => <td class="r"><strong>{tg[t].baseline.always_loss_correct}/{testN}</strong></td>)}</tr>
+          <tr><td><strong>Always &ldquo;yes&rdquo;</strong></td>{T.map((t) => <td class="r"><strong>{tg[t].baseline.always_win_correct}/{testN}</strong></td>)}</tr>
+          <tr><td><strong>Best constant guess</strong></td>{T.map((t) => <td class="r"><strong>{best(t)}/{testN} ({tg[t].baseline.best_constant_name})</strong></td>)}</tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h3>The 20 top-ranked rules for each target</h3>
+  <p class="sub">
+    In the frozen ranking&rsquo;s order. Many rules tie on every ranking criterion, so the order among them is alphabetical, not a measure of quality.
+    A rule that scores above the best constant guess is marked &#9650;.
+  </p>
+  {T.map((t) => (
+    <details class="viz-table">
+      <summary>{t}: {NAME[t]}, the top 20 of {fmt(tg[t].n_rules_21yr)}</summary>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th class="r">Rank</th><th>Facts (all must hold; &ldquo;NOT&rdquo; = must be false)</th><th class="r">Test score</th></tr></thead>
+          <tbody>
+            {tg[t].top20.map((r: any) => (
+              <tr>
+                <td class="r">{r.rank}</td>
+                <td>{r.glosses.map((g: string, i: number) => <>{i > 0 && '; '}{g}{r.defunct[i] && <span class="badge flag" title="Names a club that no longer exists (C2.3)"> defunct club</span>}</>)}</td>
+                <td class="r">{r.test_correct}/{testN}{r.test_correct > best(t) ? ' ▲' : ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  ))}
+
+  <h2>The same test on shuffled histories</h2>
+  <p>
+    We ran the identical procedure on {fmt(nullB)} shuffled histories per target: shuffle which of the 32 elections count as wins, fit the first 21,
+    take the top-ranked rule, score it on the last 11. In shuffled histories the top-ranked rule scored at least as well as the real one in
+    {fmt(tg.T1.null.ge_real)} of {fmt(nullB)} (T1, {pct(tg.T1.null.ge_real / nullB, 1)}), {fmt(tg.T2.null.ge_real)} (T2, {pct(tg.T2.null.ge_real / nullB, 1)}) and
+    {fmt(tg.T3.null.ge_real)} (T3, {pct(tg.T3.null.ge_real / nullB, 1)}).
+    A shuffled history can look prophetic too: the top-ranked rule got all 11 right in {tg.T1.null.perfect_11_of_11} of {fmt(nullB)} shuffles for T1.
+  </p>
+  <CountHistogram series={histNull} bins={bins} title="Test scores of the top-ranked rule in shuffled histories"
+    sub={`Share of ${fmt(nullB)} shuffled histories per target; the triangle marks the real top-ranked rule`}
+    xLabel="elections right out of 11 (last 11 elections of the shuffled history)" yLabel="share of shuffled histories" realLegend="the real top-ranked rule"
+    tipPrefix="Score " tipSuffix="" descId="fig-n3-null" />
+  <details class="viz-table" open>
+    <summary>Data table: test scores of the top-ranked rule in shuffled histories</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Elections right (of {testN})</th>{T.map((t) => <th class="r">{t} shuffled histories</th>)}</tr></thead>
+        <tbody>
+          {bins.map((b) => (
+            <tr><td>{b.label}</td>{T.map((t) => <td class="r">{fmt(tg[t].null.top_correct_hist[b.key] ?? 0)} ({pct((tg[t].null.top_correct_hist[b.key] ?? 0) / nullB, 1)})</td>)}</tr>
+          ))}
+          <tr><td><strong>Real top-ranked rule</strong></td>{T.map((t) => <td class="r"><strong>{tg[t].top_rule.test_correct}/{testN}</strong></td>)}</tr>
+          <tr><td><strong>Shuffles scoring at least as well</strong></td>{T.map((t) => <td class="r"><strong>{fmt(tg[t].null.ge_real)} ({pct(tg[t].null.ge_real / nullB, 1)}; {ci(tg[t].null.ge_real, nullB)})</strong></td>)}</tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <h2>Why fewer elections means shorter rules</h2>
+  <p>
+    Fitting 21 elections is easier than fitting 32. With fewer elections to get right, shorter rules suffice, and the original pool alone is often enough.
+    The numbers below compare the same search on 21 elections and on all 32.
+  </p>
+  <div class="table-wrap">
+    <table class="plain">
+      <thead>
+        <tr><th rowspan="2">Target</th><th colspan="3">Fit 1900&ndash;1980 (21 elections), real history</th><th colspan="3">Fit all 32 elections, real history</th><th colspan="2">Shuffled histories: original pool alone (tier 1a) succeeds</th></tr>
+        <tr><th>Result</th><th>Shortest rule</th><th>Perfect rules</th><th>Result</th><th>Shortest rule</th><th>Perfect rules</th><th>on 21 elections</th><th>on 32 elections</th></tr>
+      </thead>
+      <tbody>
+        {T.map((t) => {
+          const r = tg[t];
+          return (
+            <tr>
+              <td>{t}: {NAME[t]}</td>
+              <td>{tier(r.real_label_21yr)}</td><td class="num">{r.min_k_21yr} facts</td><td class="num">{fmt(r.n_rules_21yr)}</td>
+              <td>{tier(r.label_32yr)}</td><td class="num">{r.min_k_32yr ? `${r.min_k_32yr} facts` : '—'}</td><td class="num">{r.n_rules_32yr ? fmt(r.n_rules_32yr) : 'none'}</td>
+              <td class="num">{pct(r.null.labels.conjA / r.null.B, 1)}</td><td class="num">{pct(nulls.n1[t].conjA.rate, 2)}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">
+    The top-ranked rules above have {tg.T1.top_rule.k} facts each even though shorter rules exist (T1 has one with {tg.T1.min_k_21yr}), because the frozen ranking prefers
+    familiar facts first and length only later.
+  </p>
+
+  <h2>What this page did not do</h2>
+  <div class="panel warn">
+    <ul>
+      <li>
+        <strong>The shuffled-history comparison used {fmt(nullB)} shuffles per target,</strong> not the 20,000 originally planned. Finding the top-ranked rule exactly is slow when thousands of rules fit
+        the 21 training elections, and the run took more than three hours. With {fmt(nullB)} shuffles, a share near 50% is known to within about &plusmn;2 percentage points.
+      </li>
+      <li>
+        <strong>The second split from the project plan was not run:</strong> fitting 1900&ndash;1990 and scoring 1992&ndash;2024. It was not part of the pre-declared runs.
+      </li>
+      <li>The test uses a single split, 1900&ndash;1980 versus 1984&ndash;2024, chosen in advance.</li>
+      <li>Rules containing a club that no longer exists are flagged where they appear (the T1 top-ranked rule has one) and are not removed.</li>
+    </ul>
+  </div>
+</Base>

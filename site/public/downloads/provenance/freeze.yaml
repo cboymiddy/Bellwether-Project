@@ -1,0 +1,100 @@
+config_sha256: 17350119fff5ee544f343d12b5b9dff20573f6f9ea0a111527c6c32e0b8e0ceb
+pool_files:
+  literals_main.yaml: 56d8145b449f9c713928fc6af6d6c86fde1ecef11e82ceddd3c280c353b314f6
+  matrix_main.csv: c8ff75f670be64f17f1bb4d6565f0729948d1c52a8efedf7bc413e3d121d0747
+  resolves_by_main.csv: 91dcf5c3b3033c47ac36d95184f4ceb4890982200b2e9462712013683d257134
+  literals_era_indicator.yaml: 0e0faea7f8a61cb2c9ccb865759ed76e1b43bf11d295cae7ca578b72ea5d594c
+  matrix_era_indicator.csv: 14c3fd753b8654ccddec70456ac0d09956bf41fb7356f0cf4a491bf370915028
+  resolves_by_era_indicator.csv: 0e5e14b75e55b6735e91f0a4b32acd33cd1ceec8793c00bac704c6685f170039
+astro_files:
+  family.yaml: 84301dee267d886b2d1344adae139dc91b762fb69da65725a8a9f229df2818aa
+  index.csv: 6d85ae193bd1732132db8a6e29717197128ab2d4da1ac0b3c0a9f83c90f06e53
+  matrix.csv: c04530ea98d4ee7d7803344425a8349bf6c5830987834ad69c8517b4ee292649
+ephemeris_sha256: a20a7139da04cbc462454634918e9a9ca69127044e2cc9d4f9c16e238d2deedc
+astro_date_grid:
+  months:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  days:
+  - 1
+  - 6
+  - 11
+  - 16
+  - 21
+  - 26
+  sep_grid_deg:
+  - 20
+  - 40
+  - 60
+  - 80
+  - 100
+  - 120
+  - 140
+  - 160
+  bodies:
+  - Sun
+  - Moon
+  - Mercury
+  - Venus
+  - Mars
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
+  - Pluto
+  instant: 00:00 UTC
+  sector_width_deg: 30
+astro_date_grid_sha256: 5399209bd46f9491dab5abe6817dfa586c137d84f5b6d1a8b2080f5b74056bfb
+pool_A:
+  rule: main pool restricted to F>=2
+  distinct_vectors: 266
+  vectors_sha256: a4fc1686c2e65a48bbe73883b6961f71d7a29a227dd68665694789193e32252b
+pool_B:
+  rule: pool A + astro_geometry included literals (positives and complements)
+  distinct_vectors: 15010
+  vectors_sha256: 9d8bb6b37c151bc0d78b693e39e5bf97ec45f90a8540510f1b478a6a0ef0504f
+code_sha256:
+  src/config.py: 0d565d02346fea111d5714d3d15c99b33de2cfc32858596f7a905d4e3fb933d5
+  src/literals/core.py: b7650925c42562794d68f29f2f9c23e2c1fc93c1dce3b50a087a24d08f665d23
+  src/literals/astro_family.py: 35c83f81d5feefc2cd130c3ec775a39cf37183097a3faa0b90c2a6b7989ee321
+  src/nulls/pools.py: 478613ff2690f12812580638f423b0cafe31ecfaf2bec12be34a3b84cda028a1
+  src/nulls/search_core.py: ab97c01bca7fb466065a9f2e20acc6bfdcebe5a811c3468d6b6a6ec01a7e14b9
+  src/nulls/procedure.py: 3980fbdb48d171618f8feb4f900fae11b8717a0efd92cb686addf005932138b2
+  src/nulls/freeze_params.py: aa652ec1b96f2b8c5ab545e66fba721861d85ebbfe3b9de6d7a3255e2ce1e5c5
+  src/nulls/parallel.py: cdcc8a74137d2146281620b93aa925942e98253ec69d3aba8e169e7a41e11e20
+  src/nulls/whole.py: 680c79de4d5a6bd5b79e919f545e8d89dc5c76384dc58d408b83fe4824c44aed
+  src/nulls/n1.py: cff1ab1e3e8896780fec04ef8c410e5b920595a9ba7f48301b10fc43a6430ec8
+  src/nulls/freeze.py: 101e1d61667d07d421928279e56a6a78c5005512953802bb888136013f0ac5c2
+  src/search/real.py: 351ddbf8315e33d413f70e6ad1592168e6bfdf54b5c48c8e723c1ad06ea66dba
+cutoffs:
+  k_max: 4
+  keys_N_star: 4
+  keys_margin_star: 2
+solver:
+  cp_sat_time_limit_s: 120.0
+  cp_sat_workers: 1
+  keys_candidate_reduction: exact Pareto dominance
+ranking: O in {A,B}; higher min F; higher mean F; fewer conditions; fewer tz_sensitive
+seeds:
+  config_seed: 20240101
+null_plan:
+  N1_per_target: 100000
+  N1_party: 100000
+  N2_block: 100000
+  N2_exact: 63
+versions:
+  python: 3.12.14
+  numpy: 2.5.4
+  pandas: 3.1.0
+  ortools: 9.15.6755
+  skyfield: '1.55'
+  pyyaml: 6.0.3
+freeze_sha256: 475aba0811048404051d238c3ccdcb368f9e8e075b992e50738b604363965c1a

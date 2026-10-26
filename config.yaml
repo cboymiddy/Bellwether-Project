@@ -1,0 +1,35 @@
+# Bellwether locked configuration. Changes require a Gate (CLAUDE.md Section 3).
+# Hash this file (see src/config.py) and record the hash before Phase 2.
+elections:
+  start: 1900
+  end: 2024
+  step: 4            # 32 elections
+election_day_rule: first Tuesday after the first Monday in November (computed, never scraped)
+incumbent_party: party of the sitting president on Election Day, whether or not he runs
+win_coding: electoral_college     # default; popular vote runs as a sensitivity pass
+contested_2000: incumbent_party_loss
+perfect: all 32 correct on the locked outcome vector, no exceptions
+event_dating: actual event date; counts only if it occurs in the election year and is COMPLETED before Election Day
+incomplete_event_rule: an event not completed before Election Day is False, uniformly across all years; stated in each literal definition
+timezone: UTC                     # flag literals whose value changes under US/Eastern or US/Pacific; grade O=B
+max_conditions:
+  preferred: 3
+  accepted: 4
+  flag_at: 5
+franchise_lineage: official league lineage (relocations/renames = same franchise); document each mapping
+targets:
+  T1_incumbent_party_wins: true
+  T2_democratic_wins: true
+  T3_republican_wins: true
+  T4_incumbent_party_loses: false # OFF (Carson, Phase 0): symmetric restriction, buys nothing
+rule_rendering: negation-conjunctions are rendered as "the incumbent party wins unless A, B, or C"
+era_indicator_operationalization: at most two value changes across the 32 elections and every run at least 3 elections long (src/literals/core.py era_indicator_rule); negations inherit; added at Phase 1 and hashed with the pool
+quarantine_rule: literals graded O=C (judgment-dependent) are quarantined and excluded from the pool unless Carson approves them (CLAUDE.md C5)
+era_indicator_rule: literals constant across a block of years (e.g. "a Super Bowl was held this year") are tagged era_indicator, excluded from the main pool, and reported separately
+nulls:
+  N1_permutations: 10000
+  N2: exact distinct circular shifts reported, plus reversal, plus block permutations for volume
+  per_target_permutation: true    # each target's own vector is permuted
+freeze: hash pool and config before Phase 2; any later change restarts the pipeline
+markets_macro: false
+seed: 20240101

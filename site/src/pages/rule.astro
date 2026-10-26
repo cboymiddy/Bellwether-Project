@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import LiteralList from '../components/LiteralList.astro';
+import YearTable from '../components/YearTable.astro';
+import TiedRules from '../components/TiedRules.astro';
+import ruleJson from '../data/rule.json';
+import frontJson from '../data/frontier.json';
+import metaJson from '../data/meta.json';
+import type { Rule, Frontier, Meta } from '../data/types';
+import { fmtPct, fmtDeg } from '../lib/labels';
+
+const rule = ruleJson as unknown as Rule;
+const front = frontJson as unknown as Frontier;
+const meta = metaJson as unknown as Meta;
+const sel = rule.selection;
+const v = rule.verification;
+const f1 = front.frontier.ec_T1;
+const pvWrong = rule.popvote.wrong_years.join(' and ');
+const t = front.targets;
+const noise = meta.headline.p_perfect_rule_under_noise.T1;
+const poolB = meta.search_size.pool_B_distinct_vectors.toLocaleString('en-US');
+const noGameYears = rule.years.filter((y) => y.cells.some((c) => c.kind === 'event' && !c.held)).length;
+const astroHours = (y: Rule['years'][number]) => Math.min(...y.cells.flatMap((c) => (c.kind === 'astro' ? [c.margin_hours] : [])));
+const tightest = rule.years.reduce((a, b) => (astroHours(b) < astroHours(a) ? b : a));
+const nAstro = rule.literals.filter((l) => l.id.includes('astro_geo_')).length;
+---
+<Base title="The rule card" description="One rule that fits all 32 presidential elections, and why it means nothing." current="rule">
+  <h1>The rule card</h1>
+  <p class="lede">
+    One rule, built from astronomy and football, that gets every presidential election from 1900 to 2024 right.
+    It does not know anything. This page shows the rule, every year of it, and exactly how it was picked.
+  </p>
+
+  <blockquote class="rule">{rule.sentence}</blockquote>
+
+  <div class="scoreboard" aria-label="Scoreboard">
+    <div><span class="n">{rule.correct_ec}/32</span><span class="l">elections matched (Electoral College coding)</span></div>
+    <div><span class="n">{rule.popvote.correct}/32</span><span class="l">if &ldquo;win&rdquo; means the popular vote (wrong in {pvWrong})</span></div>
+    <div><span class="n">{fmtPct(noise, 1)}</span><span class="l">of shuffled histories also get a perfect rule from the same search</span></div>
+  </div>
+
+  <div class="panel warn">
+    <h3>How this rule was chosen</h3>
+    <p>
+      The search found {f1.n_rules} perfect rules for &ldquo;the incumbent party wins&rdquo;. {sel.tied_top_key_rules} of them tie at the top of the
+      frozen ranking. <strong>{sel.chosen_by} picked this one after seeing the results</strong>, because it contains no Moon
+      condition and its tightest astronomy condition has the largest timing cushion in the tied set
+      ({sel.featured_cushion_hours} hours of clock error, {fmtDeg(sel.featured_cushion_deg, 2)}). That cushion is shared by
+      {sel.tied_sharing_best_cushion} of the {sel.tied_top_key_rules} tied rules, and {sel.tied_with_no_moon_literal} of the
+      {sel.tied_top_key_rules} contain no Moon condition, so the choice among them was not forced. Picking one after the fact is
+      one more way a search like this can flatter itself.
+    </p>
+  </div>
+
+  <h2>What the rule is made of</h2>
+  <LiteralList literals={rule.literals} status={rule.verification_status} />
+  <p class="sub">
+    Astronomy conditions use the difference in ecliptic longitude (latitude is ignored) between two bodies at
+    00:00 UTC on the stated date of the election year, as seen from the Earth&rsquo;s centre, with light-time, aberration and
+    deflection applied and the true equinox of date. Dates are fixed in advance; every date is before Election Day.
+  </p>
+
+  <h2>All 32 elections</h2>
+  <YearTable literals={rule.literals} years={rule.years} />
+  <p class="sub">
+    The row with the smallest cushion is highlighted: in {tightest.year}, a clock error of {astroHours(tightest).toFixed(1)}
+    hours would flip its nearest astronomy condition.
+  </p>
+
+  <h2>If &ldquo;win&rdquo; means the popular vote</h2>
+  <p>
+    The same search, run on popular-vote coding (2000 and 2016 flip), finds {t.T1.popvote.n_minimal_perfect} rules for the
+    incumbent party, {t.T2.popvote.n_minimal_perfect} for the Democratic Party and {t.T3.popvote.n_minimal_perfect} for the
+    Republican Party. None of them is also perfect under Electoral College coding
+    ({t.T1.rules_perfect_under_both_codings} rules in common for the incumbent party). This rule is wrong in {pvWrong} when
+    scored that way.
+  </p>
+
+  <h2>It is not the only rule</h2>
+  <p>
+    {f1.n_rules} minimal perfect rules exist for this target ({f1.n_pareto} on the familiarity/length/timezone Pareto frontier).
+    {f1.defunct_rules.count} of them contain a condition about a club that no longer exists
+    (the Quebec Bulldogs, ranks {f1.defunct_rules.ranks.join(', ')}); they are flagged, still counted, and in the download.
+  </p>
+  <details>
+    <summary>Show the {sel.tied_top_key_rules} rules tied at the top</summary>
+    <TiedRules front={f1} featured={sel.featured_rank} />
+  </details>
+
+  <h2>How well was it checked?</h2>
+  <div class="panel">
+    <ul>
+      <li>
+        <strong>Astronomy ({v.horizons_comparisons} comparisons: {nAstro} conditions &times; {v.horizons_comparisons / nAstro} years):</strong> recomputed independently
+        with NASA/JPL Horizons. The truth value differs in {v.horizons_truth_differs} years; the largest gap in the
+        measured difference is {v.horizons_max_gap_deg.toFixed(5)}&deg; (tolerance {v.horizons_tolerance_deg}&deg;).
+      </li>
+      <li>
+        <strong>Super Bowl:</strong> date, winner and score agree with a second source (ESPN) for {v.espn_games_agree} of {v.espn_games_total}
+        games; no game was played in the {noGameYears} election years before 1967.
+      </li>
+      <li>
+        <strong>Election outcomes:</strong> party of the sitting president, Electoral College winner and popular-vote winner agree with a
+        second source ({v.outcomes_second_source}) in {v.outcomes_second_source_years_agree} of {v.outcomes_second_source_years} years.
+      </li>
+      <li>
+        <strong>Human check: {rule.verification_status.human_checked} of {rule.verification_status.rows} human-checked, {rule.verification_status.automated_only} automated.</strong>
+        {v.human_checks.length > 0 && <>
+          The human-checked rows are the Pittsburgh Steelers&rsquo; Super Bowl wins in {v.human_checks.map((h) => h.year).join(' and ')}, confirmed by {v.human_checks[0].checked_by}
+          against <a href={v.human_checks[0].source_url}>ESPN&rsquo;s list of winners</a> on {v.human_checks[0].checked_on} (those rows also passed the automated check). ESPN is also the source of the automated Super Bowl cross-check, so this is a person reading the same source, not a second independent one.
+        </>}
+        The automated checks above are not a substitute for checking the other {rule.verification_status.automated_only} rows by hand.
+      </li>
+    </ul>
+  </div>
+
+  <h2>What this is not</h2>
+  <div class="panel warn">
+    <p>
+      This is not a forecast and not evidence about elections. The search looked through {poolB} distinct candidate
+      conditions, a pool deliberately made large, and the same procedure finds a perfect rule for
+      shuffled histories {fmtPct(noise, 1)} of the time. The rule&rsquo;s conditions have no causal connection to voting.
+    </p>
+  </div>
+</Base>

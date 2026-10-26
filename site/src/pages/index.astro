@@ -1,0 +1,72 @@
+---
+import { url } from '../lib/url';
+import Base from '../layouts/Base.astro';
+import HistoryStrip from '../components/HistoryStrip.astro';
+import ruleJson from '../data/rule.json';
+import frontJson from '../data/frontier.json';
+import metaJson from '../data/meta.json';
+import type { Rule, Frontier, Meta } from '../data/types';
+import { fmtPct } from '../lib/labels';
+
+const rule = ruleJson as unknown as Rule;
+const front = frontJson as unknown as Frontier;
+const meta = metaJson as unknown as Meta;
+const f1 = front.frontier.ec_T1;
+const sel = rule.selection;
+const noise = fmtPct(meta.headline.p_perfect_rule_under_noise.T1, 1);
+const perms = meta.headline.permutations.toLocaleString('en-US');
+const facts = meta.search_size.pool_B_distinct_vectors.toLocaleString('en-US');
+const matched = rule.years.filter((y) => y.correct).length;
+---
+<Base title="A rule that has called every election since 1900" description="One rule gets all 32 presidential elections right. It means nothing." current="home">
+  <section class="hero">
+    <h1>The Great Presidential Bellwether</h1>
+    <p class="subhead">A rule that has correctly identified the winner of every U.S. presidential election since 1900.</p>
+    <p class="lede">
+      It uses four facts. Three are about the sky. One is about football. None is about politics.
+    </p>
+  </section>
+
+  <div class="bigstats" aria-label="Headline numbers">
+    <div><span class="n">{matched} of {rule.years.length}</span><span class="l">elections matched</span></div>
+    <div><span class="n">None</span><span class="l">predictive value</span></div>
+    <div><span class="n">{noise}</span><span class="l">of histories with shuffled winners that also produce a perfect rule</span></div>
+  </div>
+
+  <blockquote class="rule">{rule.sentence}</blockquote>
+  <p><a href={url('/rule/')}>Read the rule card</a>, which lists every election, every measurement, and how the rule was picked.</p>
+
+  <HistoryStrip years={rule.years} />
+
+  <h2>Method</h2>
+  <ol class="method">
+    <li>
+      <strong>The facts.</strong> We assembled {facts} distinct yes-or-no facts about the sky, the calendar and professional
+      sports. Example: whether Mercury and Venus were at least 20&deg; apart on October 21. Example: whether the Pittsburgh
+      Steelers won the Super Bowl.
+    </li>
+    <li>
+      <strong>The search.</strong> We looked for combinations of up to four facts that sort every election correctly. There
+      were {f1.n_rules}. {sel.tied_top_key_rules} of them tied for first under our ranking. {sel.chosen_by} chose one of the
+      tied rules after seeing the results.
+    </li>
+    <li>
+      <strong>The control.</strong> We ran the same search on {perms} histories in which the winners had been shuffled. It
+      found a perfect rule in {noise} of them.
+    </li>
+    <li>
+      <strong>The conclusion.</strong> A perfect fit is what a large enough search produces. It is not evidence about
+      elections, and nothing on this site is a forecast.
+    </li>
+  </ol>
+
+  <h2>Where to go next</h2>
+  <ul class="next">
+    <li><a href={url('/rule/')}>The rule card</a>: the rule, all 32 years, the checks, the 22 tied rules.</li>
+    <li><a href={url('/how/')}>How we found it</a>: the search size, the identical search on shuffled histories, the popular-vote version.</li>
+    <li><a href={url('/shuffle/')}>Shuffle your own history</a> and watch the search find a rule for it.</li>
+    <li><a href={url('/n3/')}>The look-ahead test</a>: fit the first 21 elections, score the last 11.</li>
+    <li><a href={url('/2028/')}>What the rule says about 2028</a>, in the same frame as its disclaimer.</li>
+    <li><a href={url('/limitations/')}>Limitations</a>, and everything you can download.</li>
+  </ul>
+</Base>

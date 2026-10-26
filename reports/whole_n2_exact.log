@@ -1,0 +1,1 @@
+n2_exact {'n_star': 4, 'm_star': 2} 63 sequences; best: {'B': 63, 'conjA': 0, 'conjB': 63, 'keys': 0, 'none': 0, 'unknown': 0, 'P_conjA': 0.0, 'P_conjB': 1.0, 'P_keys': 0.0, 'P_none': 0.0}

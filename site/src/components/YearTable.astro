@@ -1,0 +1,101 @@
+---
+import type { Literal, YearRow, AstroCell, EventCell } from '../data/types';
+import { shortLabel, fmtDeg, fmtHours } from '../lib/labels';
+
+interface Props { literals: Literal[]; years: YearRow[] }
+const { literals, years } = Astro.props;
+const heads = literals.map((l) => shortLabel(l.id, l.gloss));
+const party = (p: string) => (p === 'R' ? 'Republican' : p === 'D' ? 'Democratic' : p);
+const astroCells = (r: YearRow) => r.cells.filter((c): c is AstroCell => c.kind === 'astro');
+const cushion = (r: YearRow) => Math.min(...astroCells(r).map((c) => c.margin_hours));
+const minCushion = Math.min(...years.map(cushion));
+const negated = (id: string) => id.startsWith('NOT_');
+const nCorrect = years.filter((y) => y.correct).length;
+---
+<div class="table-scroll" tabindex="0" role="region" aria-label="Year-by-year table, scrolls sideways on small screens">
+  <table class="years">
+    <caption>
+      All 32 presidential elections, 1900&ndash;2024, Electoral College coding. A &#10003; in a condition column means the
+      <em>condition as used in the rule</em> holds that year. The rule predicts that the incumbent party wins only when all
+      four conditions hold. Cushion = hours of clock error that would flip the nearest astronomy condition that year.
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Year</th>
+        <th scope="col">Election Day</th>
+        <th scope="col">Incumbent party</th>
+        <th scope="col">Result</th>
+        {heads.map((h) => <th scope="col">{h}</th>)}
+        <th scope="col">Rule says</th>
+        <th scope="col">Match</th>
+        <th scope="col">Cushion</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      {years.map((r) => (
+        <tr class={cushion(r) === minCushion ? 'tight' : ''}>
+          <th scope="row">{r.year}</th>
+          <td class="num">{r.election_day}</td>
+          <td>{party(r.incumbent_party)}</td>
+          <td><span class={r.incumbent_party_won ? 'yes' : 'no'}>{r.incumbent_party_won ? 'won' : 'lost'}</span></td>
+          {r.cells.map((c) => (
+            <td>
+              <span class={c.literal_value ? 'yes' : 'no'} aria-label={c.literal_value ? 'holds' : 'does not hold'}>
+                {c.literal_value ? '✓' : '✗'}
+              </span>
+              {c.kind === 'astro' ? (
+                <>
+                  {' '}{fmtDeg(c.measured_deg, 1)}
+                  <span class="sub">needs {negated(c.literal) ? '<' : '≥'} {c.threshold_deg}&deg;</span>
+                </>
+              ) : c.held ? (
+                <>
+                  {' '}{c.winner_at_time} won
+                  <span class="sub">Super Bowl {c.game}, {c.date}</span>
+                </>
+              ) : (
+                <span class="sub">no Super Bowl yet</span>
+              )}
+            </td>
+          ))}
+          <td>{r.prediction ? 'wins' : 'does not win'}</td>
+          <td><span class={r.correct ? 'yes' : 'no'}>{r.correct ? '✓' : '✗'}</span></td>
+          <td class="num cushion">{fmtHours(cushion(r))}</td>
+          <td>
+            <details>
+              <summary>sources</summary>
+              <dl>
+                {r.cells.map((c, i) => (
+                  <>
+                    <dt>{heads[i]}</dt>
+                    {c.kind === 'astro' ? (
+                      <dd>
+                        {c.instant_utc}: difference in ecliptic longitude {c.measured_deg.toFixed(4)}&deg; (threshold {c.threshold_deg}&deg;,
+                        distance {Math.abs(c.margin_deg).toFixed(3)}&deg; &asymp; {fmtHours(c.margin_hours)} of clock error).
+                        Skyfield + DE421. JPL Horizons: {c.horizons_deg.toFixed(4)}&deg;, gap {c.horizons_gap_deg.toExponential(1)}&deg;.
+                      </dd>
+                    ) : c.held ? (
+                      <dd>
+                        Super Bowl {c.game} ({c.date}): {c.winner_at_time} {c.score} over {c.loser_at_time}. Wikipedia; ESPN agrees
+                        ({c.espn_detail}).
+                      </dd>
+                    ) : (
+                      <dd>No Super Bowl was played in {r.year} (first game: January 1967, per ESPN).</dd>
+                    )}
+                  </>
+                ))}
+              </dl>
+            </details>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2">Total</th>
+        <td colspan={heads.length + 6}><strong>{nCorrect} of {years.length}</strong> elections matched.</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

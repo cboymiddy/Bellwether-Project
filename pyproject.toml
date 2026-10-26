@@ -1,0 +1,22 @@
+[project]
+name = "bellwether"
+version = "0.0.1"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas", "numpy", "skyfield", "requests", "beautifulsoup4", "lxml",
+  "ortools", "pyyaml",
+]
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+ignore = ["ISC004"]

@@ -1,0 +1,378 @@
+{
+ "featured_rule_popvote": {
+  "correct": 30,
+  "wrong_years": [
+   2000,
+   2016
+  ]
+ },
+ "frontier": {
+  "ec_T1": {
+   "defunct_rules": {
+    "count": 3,
+    "ranks": [
+     1,
+     23,
+     24
+    ]
+   },
+   "k_hist": {
+    "4": 446
+   },
+   "n_pareto": 22,
+   "n_rules": 446,
+   "n_tz_sensitive_rules": 274,
+   "tied_glosses": {
+    "NOT_astro_geo_0121_sep_mars_jupiter_ge160": "NOT: Mars and Jupiter are at least 160° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+    "NOT_astro_geo_0206_sep_mercury_jupiter_ge160": "NOT: Mercury and Jupiter are at least 160° apart in ecliptic longitude on Feb 6 (00:00 UTC)",
+    "NOT_astro_geo_0211_sep_mars_jupiter_ge140": "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 11 (00:00 UTC)",
+    "NOT_astro_geo_0221_sep_mars_jupiter_ge140": "NOT: Mars and Jupiter are at least 140° apart in ecliptic longitude on Feb 21 (00:00 UTC)",
+    "NOT_astro_geo_0701_sep_mercury_pluto_ge160": "NOT: Mercury and Pluto are at least 160° apart in ecliptic longitude on Jul 1 (00:00 UTC)",
+    "NOT_astro_geo_0906_sep_sun_moon_ge140": "NOT: Sun and Moon are at least 140° apart in ecliptic longitude on Sep 6 (00:00 UTC)",
+    "NOT_astro_geo_0916_sep_venus_saturn_ge160": "NOT: Venus and Saturn are at least 160° apart in ecliptic longitude on Sep 16 (00:00 UTC)",
+    "NOT_sports_mlb_ws_loser_franchise_kansas_city_royals": "NOT: the Kansas City Royals lost the MLB World Series that election year",
+    "NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies": "NOT: the Philadelphia Phillies won the MLB World Series that election year",
+    "NOT_sports_nba_loser_franchise_phoenix_suns": "NOT: the Phoenix Suns lost the NBA Finals that election year",
+    "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers": "NOT: the Pittsburgh Steelers won the Super Bowl played earlier that year",
+    "NOT_sports_nhl_winner_franchise_quebec_bulldogs": "NOT: the Quebec Bulldogs won the Stanley Cup that election year",
+    "astro_geo_0121_sep_venus_pluto_ge040": "Venus and Pluto are at least 40° apart in ecliptic longitude on Jan 21 (00:00 UTC)",
+    "astro_geo_0201_sep_venus_pluto_ge020": "Venus and Pluto are at least 20° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+    "astro_geo_0201_sep_venus_pluto_ge040": "Venus and Pluto are at least 40° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+    "astro_geo_0201_sep_venus_pluto_ge060": "Venus and Pluto are at least 60° apart in ecliptic longitude on Feb 1 (00:00 UTC)",
+    "astro_geo_0306_sep_venus_uranus_ge020": "Venus and Uranus are at least 20° apart in ecliptic longitude on Mar 6 (00:00 UTC)",
+    "astro_geo_1021_sep_mercury_venus_ge020": "Mercury and Venus are at least 20° apart in ecliptic longitude on Oct 21 (00:00 UTC)"
+   },
+   "tied_top_key": [
+    {
+     "defunct_entity": true,
+     "has_moon": true,
+     "literals": [
+      "NOT_sports_nhl_winner_franchise_quebec_bulldogs",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 1
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": true,
+     "literals": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_kansas_city_royals",
+      "astro_geo_0121_sep_venus_pluto_ge040"
+     ],
+     "pareto": true,
+     "rank": 2
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": true,
+     "literals": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "NOT_sports_mlb_ws_loser_franchise_kansas_city_royals",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 3
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": true,
+     "literals": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies",
+      "astro_geo_0121_sep_venus_pluto_ge040"
+     ],
+     "pareto": true,
+     "rank": 4
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": true,
+     "literals": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 5
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": true,
+     "literals": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0121_sep_venus_pluto_ge040"
+     ],
+     "pareto": true,
+     "rank": 6
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": true,
+     "literals": [
+      "astro_geo_0306_sep_venus_uranus_ge020",
+      "NOT_astro_geo_0906_sep_sun_moon_ge140",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 7
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "NOT_astro_geo_0701_sep_mercury_pluto_ge160"
+     ],
+     "pareto": true,
+     "rank": 8
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0121_sep_mars_jupiter_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 9
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_loser_franchise_phoenix_suns",
+      "NOT_astro_geo_0701_sep_mercury_pluto_ge160"
+     ],
+     "pareto": true,
+     "rank": 10
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nba_loser_franchise_phoenix_suns",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 11
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "NOT_astro_geo_0701_sep_mercury_pluto_ge160"
+     ],
+     "pareto": true,
+     "rank": 12
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0206_sep_mercury_jupiter_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 13
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0211_sep_mars_jupiter_ge140",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "NOT_astro_geo_0701_sep_mercury_pluto_ge160"
+     ],
+     "pareto": true,
+     "rank": 14
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0211_sep_mars_jupiter_ge140",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 15
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0221_sep_mars_jupiter_ge140",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "NOT_astro_geo_0701_sep_mercury_pluto_ge160"
+     ],
+     "pareto": true,
+     "rank": 16
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0221_sep_mars_jupiter_ge140",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 17
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "NOT_astro_geo_0701_sep_mercury_pluto_ge160"
+     ],
+     "pareto": true,
+     "rank": 18
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0121_sep_venus_pluto_ge040"
+     ],
+     "pareto": true,
+     "rank": 19
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge020"
+     ],
+     "pareto": true,
+     "rank": 20
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge040"
+     ],
+     "pareto": true,
+     "rank": 21
+    },
+    {
+     "defunct_entity": false,
+     "has_moon": false,
+     "literals": [
+      "astro_geo_1021_sep_mercury_venus_ge020",
+      "NOT_astro_geo_0916_sep_venus_saturn_ge160",
+      "NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers",
+      "astro_geo_0201_sep_venus_pluto_ge060"
+     ],
+     "pareto": true,
+     "rank": 22
+    }
+   ]
+  },
+  "ec_T3": {
+   "defunct_rules": {
+    "count": 0
+   },
+   "n_rules": 126
+  }
+ },
+ "targets": {
+  "T1": {
+   "ec": {
+    "k": 4,
+    "label": "conjB",
+    "n_minimal_perfect": 446,
+    "n_pareto": 22,
+    "n_true": 18,
+    "perfect_subsets": 446
+   },
+   "popvote": {
+    "k": 4,
+    "label": "conjB",
+    "n_minimal_perfect": 150,
+    "n_pareto": 24,
+    "n_true": 20,
+    "perfect_subsets": 150
+   },
+   "rules_perfect_under_both_codings": 0
+  },
+  "T2": {
+   "ec": {
+    "k": 0,
+    "label": "none",
+    "n_minimal_perfect": null,
+    "n_pareto": null,
+    "n_true": 15,
+    "perfect_subsets": 0
+   },
+   "popvote": {
+    "k": 4,
+    "label": "conjB",
+    "n_minimal_perfect": 199,
+    "n_pareto": 5,
+    "n_true": 17,
+    "perfect_subsets": 199
+   },
+   "rules_perfect_under_both_codings": 0
+  },
+  "T3": {
+   "ec": {
+    "k": 4,
+    "label": "conjB",
+    "n_minimal_perfect": 126,
+    "n_pareto": 2,
+    "n_true": 17,
+    "perfect_subsets": 126
+   },
+   "popvote": {
+    "k": 4,
+    "label": "conjB",
+    "n_minimal_perfect": 3,
+    "n_pareto": 1,
+    "n_true": 15,
+    "perfect_subsets": 3
+   },
+   "rules_perfect_under_both_codings": 0
+  }
+ }
+}

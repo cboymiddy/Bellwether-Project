@@ -1,0 +1,24 @@
+---
+import type { Frontier } from '../data/types';
+import { shortLabel } from '../lib/labels';
+interface Props { front: Frontier['frontier']['ec_T1']; featured: number }
+const { front, featured } = Astro.props;
+const g = front.tied_glosses;
+---
+<table class="plain">
+  <caption class="sub" style="text-align:left">The {front.tied_top_key.length} rules that tie at the top of the frozen ranking (same minimum familiarity, mean familiarity, number of conditions, and tz-sensitive count). Their order is an alphabetical tie-break on literal ids, not a quality ranking.</caption>
+  <thead><tr><th>Tie #</th><th>Conditions (&ldquo;not&rdquo; = the rule needs this to be false)</th><th>Notes</th></tr></thead>
+  <tbody>
+    {front.tied_top_key.map((r) => (
+      <tr>
+        <td>{r.rank}{r.rank === featured && <strong> (featured)</strong>}</td>
+        <td>{r.literals.map((l) => shortLabel(l, g[l])).join('; ')}</td>
+        <td>
+          {r.has_moon && <span class="badge">uses the Moon</span>}{' '}
+          {r.pareto && <span class="badge">Pareto</span>}{' '}
+          {r.defunct_entity && <span class="badge flag" title="Names a club that no longer exists (C2.3)">defunct club (C2.3)</span>}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+---
+import type { Literal, Rule } from '../data/types';
+interface Props { literals: Literal[]; status: Rule['verification_status'] }
+const { literals, status } = Astro.props;
+const fLabel: Record<number, string> = { 1: 'niche', 2: 'enthusiast', 3: 'widely known' };
+const oLabel: Record<string, string> = { A: 'single authoritative source', B: 'depends on a named dataset or convention' };
+---
+<ol class="literals">
+  {literals.map((l) => (
+    <li>
+      {l.id.startsWith('NOT_') ? <strong>Unless </strong> : <strong>If </strong>}
+      {l.gloss.replace(/^NOT: /, '')}
+      <span class="badges">
+        <span class="badge" title={`Familiarity ${l.F}: ${fLabel[l.F]}`}>F{l.F}</span>
+        <span class="badge" title={`Objectivity ${l.O}: ${oLabel[l.O]}`}>O{l.O}</span>
+        {l.tz_sensitive && <span class="badge flag" title="Value changes at US Eastern/Pacific midnight in some year">timezone-sensitive</span>}
+        {l.defunct_entity && <span class="badge flag" title="Names a club or country that no longer exists (C2.3)">defunct entity</span>}
+        <span class="badge ok" title="Second-source comparison passed for every year (automated)">auto-checked 32/32</span>
+        <span class={l.human_checked_rows > 0 ? 'badge ok' : 'badge'} title="Rows signed off by a person (the automated check also ran on every row)">human-checked {l.human_checked_rows}/{l.rows}</span>
+      </span>
+    </li>
+  ))}
+</ol>
+<small class="note">
+  F = familiarity (1 niche, 2 enthusiast, 3 widely known); O = objectivity (A single authoritative source, B depends on a
+  named dataset or convention). "Auto-checked" means an automated comparison with a second source passed in every year.
+  <strong>{status.human_checked} of {status.rows} human-checked, {status.automated_only} automated.</strong>
+</small>

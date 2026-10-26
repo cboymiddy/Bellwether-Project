@@ -1,0 +1,380 @@
+- id: astro_season0_dom20
+  statement: The March equinox falls on day 20 of its month (UTC date)
+  category: astronomy
+  family: season_0
+  definition: Date of the March equinox in UTC; DE421 via Skyfield almanac.seasons. Month varies only
+    for the preceding-December case (March).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-03-20'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 38
+- id: NOT_astro_season0_dom20
+  statement: 'NOT: The March equinox falls on day 20 of its month (UTC date)'
+  category: astronomy
+  family: season_0
+  definition: Negation of astro_season0_dom20. Date of the March equinox in UTC; DE421 via Skyfield almanac.seasons.
+    Month varies only for the preceding-December case (March).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-03-20'
+  polarity: neg
+  base_id: astro_season0_dom20
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 39
+- id: astro_season0_dom21
+  statement: The March equinox falls on day 21 of its month (UTC date)
+  category: astronomy
+  family: season_0
+  definition: Date of the March equinox in UTC; DE421 via Skyfield almanac.seasons. Month varies only
+    for the preceding-December case (March).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-03-20'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 39
+- id: NOT_astro_season0_dom21
+  statement: 'NOT: The March equinox falls on day 21 of its month (UTC date)'
+  category: astronomy
+  family: season_0
+  definition: Negation of astro_season0_dom21. Date of the March equinox in UTC; DE421 via Skyfield almanac.seasons.
+    Month varies only for the preceding-December case (March).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-03-20'
+  polarity: neg
+  base_id: astro_season0_dom21
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 38
+- id: astro_season1_dom20
+  statement: The June solstice falls on day 20 of its month (UTC date)
+  category: astronomy
+  family: season_1
+  definition: Date of the June solstice in UTC; DE421 via Skyfield almanac.seasons. Month varies only
+    for the preceding-December case (June).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-06-20'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 40
+- id: NOT_astro_season1_dom20
+  statement: 'NOT: The June solstice falls on day 20 of its month (UTC date)'
+  category: astronomy
+  family: season_1
+  definition: Negation of astro_season1_dom20. Date of the June solstice in UTC; DE421 via Skyfield almanac.seasons.
+    Month varies only for the preceding-December case (June).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-06-20'
+  polarity: neg
+  base_id: astro_season1_dom20
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 41
+- id: astro_season1_dom21
+  statement: The June solstice falls on day 21 of its month (UTC date)
+  category: astronomy
+  family: season_1
+  definition: Date of the June solstice in UTC; DE421 via Skyfield almanac.seasons. Month varies only
+    for the preceding-December case (June).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-06-20'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 41
+- id: NOT_astro_season1_dom21
+  statement: 'NOT: The June solstice falls on day 21 of its month (UTC date)'
+  category: astronomy
+  family: season_1
+  definition: Negation of astro_season1_dom21. Date of the June solstice in UTC; DE421 via Skyfield almanac.seasons.
+    Month varies only for the preceding-December case (June).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-06-20'
+  polarity: neg
+  base_id: astro_season1_dom21
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 40
+- id: astro_season2_dom22
+  statement: The September equinox falls on day 22 of its month (UTC date)
+  category: astronomy
+  family: season_2
+  definition: Date of the September equinox in UTC; DE421 via Skyfield almanac.seasons. Month varies only
+    for the preceding-December case (September).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-09-22'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 42
+- id: NOT_astro_season2_dom22
+  statement: 'NOT: The September equinox falls on day 22 of its month (UTC date)'
+  category: astronomy
+  family: season_2
+  definition: Negation of astro_season2_dom22. Date of the September equinox in UTC; DE421 via Skyfield
+    almanac.seasons. Month varies only for the preceding-December case (September).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-09-22'
+  polarity: neg
+  base_id: astro_season2_dom22
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 43
+- id: astro_season2_dom23
+  statement: The September equinox falls on day 23 of its month (UTC date)
+  category: astronomy
+  family: season_2
+  definition: Date of the September equinox in UTC; DE421 via Skyfield almanac.seasons. Month varies only
+    for the preceding-December case (September).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-09-22'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 43
+- id: NOT_astro_season2_dom23
+  statement: 'NOT: The September equinox falls on day 23 of its month (UTC date)'
+  category: astronomy
+  family: season_2
+  definition: Negation of astro_season2_dom23. Date of the September equinox in UTC; DE421 via Skyfield
+    almanac.seasons. Month varies only for the preceding-December case (September).
+  source_url: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+  dataset_citation: JPL DE421 ephemeris (sha256 a20a7139da04...) via Skyfield; times in UTC
+  retrieval_date: '2026-10-25'
+  F: 2
+  O: B
+  resolves_by: '2024-09-22'
+  polarity: neg
+  base_id: astro_season2_dom23
+  status: auto
+  era_indicator: true
+  flags:
+  - tz_sensitive
+  equiv_class: 42
+- id: sports_derby_winner_trainer_ben_jones
+  statement: Ben Jones trained the Kentucky Derby winner in the election year
+  category: sports
+  family: kentucky_derby
+  definition: Column winner_trainer of kentucky_derby.csv equals 'Ben Jones'. True only if the event was
+    held and completed before Election Day of that year; otherwise False (event not completed = False).
+  source_url: https://en.wikipedia.org/wiki/1900_Kentucky_Derby
+  dataset_citation: Event table kentucky_derby.csv built from fetched sources; raw files and sha256 in
+    data/raw/kentucky_derby/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 1
+  O: B
+  resolves_by: '2024-05-04'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 182
+- id: NOT_sports_derby_winner_trainer_ben_jones
+  statement: 'NOT: Ben Jones trained the Kentucky Derby winner in the election year'
+  category: sports
+  family: kentucky_derby
+  definition: Negation of sports_derby_winner_trainer_ben_jones. Column winner_trainer of kentucky_derby.csv
+    equals 'Ben Jones'. True only if the event was held and completed before Election Day of that year;
+    otherwise False (event not completed = False).
+  source_url: https://en.wikipedia.org/wiki/1900_Kentucky_Derby
+  dataset_citation: Event table kentucky_derby.csv built from fetched sources; raw files and sha256 in
+    data/raw/kentucky_derby/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 1
+  O: B
+  resolves_by: '2024-05-04'
+  polarity: neg
+  base_id: sports_derby_winner_trainer_ben_jones
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 183
+- id: sports_indy500_winner_car_make_watson_offenhauser
+  statement: Watson-Offenhauser won the Indianapolis 500 in a car built by in the election year
+  category: sports
+  family: indy_500
+  definition: Column winner_car_make of indy_500.csv equals 'Watson-Offenhauser'. True only if the event
+    was held and completed before Election Day of that year; otherwise False (event not completed = False).
+  source_url: https://en.wikipedia.org/wiki/List_of_Indianapolis_500_winners
+  dataset_citation: Event table indy_500.csv built from fetched sources; raw files and sha256 in data/raw/indy_500/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 1
+  O: B
+  resolves_by: '2024-05-26'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 196
+- id: NOT_sports_indy500_winner_car_make_watson_offenhauser
+  statement: 'NOT: Watson-Offenhauser won the Indianapolis 500 in a car built by in the election year'
+  category: sports
+  family: indy_500
+  definition: Negation of sports_indy500_winner_car_make_watson_offenhauser. Column winner_car_make of
+    indy_500.csv equals 'Watson-Offenhauser'. True only if the event was held and completed before Election
+    Day of that year; otherwise False (event not completed = False).
+  source_url: https://en.wikipedia.org/wiki/List_of_Indianapolis_500_winners
+  dataset_citation: Event table indy_500.csv built from fetched sources; raw files and sha256 in data/raw/indy_500/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 1
+  O: B
+  resolves_by: '2024-05-26'
+  polarity: neg
+  base_id: sports_indy500_winner_car_make_watson_offenhauser
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 197
+- id: sports_nfl_sb_held
+  statement: The super bowl is completed before Election Day of the election year
+  category: sports
+  family: nfl_super_bowl
+  definition: The super bowl held in the calendar year. True only if the event was held and completed
+    before Election Day of that year; otherwise False (event not completed = False).
+  source_url: https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions
+  dataset_citation: Event table nfl_super_bowl.csv built from fetched sources; raw files and sha256 in
+    data/raw/nfl_super_bowl/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-02-11'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 42
+- id: NOT_sports_nfl_sb_held
+  statement: 'NOT: The super bowl is completed before Election Day of the election year'
+  category: sports
+  family: nfl_super_bowl
+  definition: Negation of sports_nfl_sb_held. The super bowl held in the calendar year. True only if the
+    event was held and completed before Election Day of that year; otherwise False (event not completed
+    = False).
+  source_url: https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions
+  dataset_citation: Event table nfl_super_bowl.csv built from fetched sources; raw files and sha256 in
+    data/raw/nfl_super_bowl/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-02-11'
+  polarity: neg
+  base_id: sports_nfl_sb_held
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 43
+- id: sports_nba_held
+  statement: The nba finals is completed before Election Day of the election year
+  category: sports
+  family: nba_finals
+  definition: The nba finals held in the calendar year. True only if the event was held and completed
+    before Election Day of that year; otherwise False (event not completed = False).
+  source_url: https://en.wikipedia.org/wiki/List_of_NBA_champions
+  dataset_citation: Event table nba_finals.csv built from fetched sources; raw files and sha256 in data/raw/nba_finals/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-06-17'
+  polarity: pos
+  base_id: null
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 220
+- id: NOT_sports_nba_held
+  statement: 'NOT: The nba finals is completed before Election Day of the election year'
+  category: sports
+  family: nba_finals
+  definition: Negation of sports_nba_held. The nba finals held in the calendar year. True only if the
+    event was held and completed before Election Day of that year; otherwise False (event not completed
+    = False).
+  source_url: https://en.wikipedia.org/wiki/List_of_NBA_champions
+  dataset_citation: Event table nba_finals.csv built from fetched sources; raw files and sha256 in data/raw/nba_finals/MANIFEST.csv
+  retrieval_date: '2026-10-25'
+  F: 3
+  O: B
+  resolves_by: '2024-06-17'
+  polarity: neg
+  base_id: sports_nba_held
+  status: auto
+  era_indicator: true
+  flags: []
+  equiv_class: 221

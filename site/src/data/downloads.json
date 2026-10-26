@@ -1,0 +1,785 @@
+{
+ "files": [
+  {
+   "bytes": 109162,
+   "description": "Every source page behind the data, one row each: URL, retrieval date, sha256. Phase 0 URLs are rebuilt from patterns and carry the batch date (see the url_basis column)",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "ALL_SOURCES_MANIFEST.csv",
+   "origin": "generated from data/raw/*/MANIFEST.csv and data/raw/SOURCES.md",
+   "path": "downloads/manifests/ALL_SOURCES_MANIFEST.csv",
+   "sha256": "aab648012663737b501cd7c83d310b483afc3e5d4468eb5a6a6f7d31ad620836"
+  },
+  {
+   "bytes": 3429,
+   "description": "Hashes of config, pools, astronomy grid, search code, cutoffs and seeds, frozen before the real search",
+   "group": "provenance",
+   "group_title": "Provenance and hashes",
+   "name": "freeze.yaml",
+   "origin": "freeze.yaml",
+   "path": "downloads/provenance/freeze.yaml",
+   "sha256": "fd0ac6bcbc72d7f7257bf8c2ea23a652f49170197efadcbbb1f64bf0b5f13cc1"
+  },
+  {
+   "bytes": 581,
+   "description": "Incumbent party, Electoral College winner and popular-vote winner for 1900-2024",
+   "group": "outcomes",
+   "group_title": "Election outcomes",
+   "name": "outcomes.csv",
+   "origin": "data/processed/outcomes.csv",
+   "path": "downloads/outcomes/outcomes.csv",
+   "sha256": "788dac38a7e61bbfbbd581f6ba0210ff5a1d96d6d49322bd8a4bf22ddb197868"
+  },
+  {
+   "bytes": 2290,
+   "description": "Year-by-year comparison of outcomes.csv with a second source",
+   "group": "outcomes",
+   "group_title": "Election outcomes",
+   "name": "outcomes_second_source_check.csv",
+   "origin": "reports/real_search/outcomes_second_source_check.csv",
+   "path": "downloads/outcomes/outcomes_second_source_check.csv",
+   "sha256": "ee717adcf84a683c4a6d1bcd86a3ba625984e21eb01f2cf614d442c3b9b653cb"
+  },
+  {
+   "bytes": 5652,
+   "description": "National Archives and UCSB pages for the outcomes (file and sha256 only; URL patterns are in phase0_SOURCES.md)",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "phase0_MANIFEST.csv",
+   "origin": "data/raw/MANIFEST.csv",
+   "path": "downloads/manifests/phase0_MANIFEST.csv",
+   "sha256": "da079f9eaa14c599f57de9297430876bab4963a22bc7f5768aaf6372c152a560"
+  },
+  {
+   "bytes": 1042,
+   "description": "URL patterns and retrieval date for the Phase 0 outcome pages",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "phase0_SOURCES.md",
+   "origin": "data/raw/SOURCES.md",
+   "path": "downloads/manifests/phase0_SOURCES.md",
+   "sha256": "b86b2dc680a520703db303419d7aea91e7d7c417b804f3508dcc01f075e138c8"
+  },
+  {
+   "bytes": 91081,
+   "description": "Main pool: 32-year truth values for each literal and its negation",
+   "group": "pool",
+   "group_title": "The pool of facts",
+   "name": "matrix_main.csv",
+   "origin": "data/processed/literals/matrix_main.csv",
+   "path": "downloads/pool/matrix_main.csv",
+   "sha256": "c8ff75f670be64f17f1bb4d6565f0729948d1c52a8efedf7bc413e3d121d0747"
+  },
+  {
+   "bytes": 690797,
+   "description": "Main pool: one record per literal (definition, grades, sources, flags)",
+   "group": "pool",
+   "group_title": "The pool of facts",
+   "name": "literals_main.yaml",
+   "origin": "data/processed/literals/literals_main.yaml",
+   "path": "downloads/pool/literals_main.yaml",
+   "sha256": "56d8145b449f9c713928fc6af6d6c86fde1ecef11e82ceddd3c280c353b314f6"
+  },
+  {
+   "bytes": 2152858,
+   "description": "Astronomy family: 32-year truth values (positive literals; negations are complements)",
+   "group": "pool",
+   "group_title": "The pool of facts",
+   "name": "astro_matrix.csv",
+   "origin": "data/processed/literals/astro/matrix.csv",
+   "path": "downloads/pool/astro_matrix.csv",
+   "sha256": "c04530ea98d4ee7d7803344425a8349bf6c5830987834ad69c8517b4ee292649"
+  },
+  {
+   "bytes": 1211,
+   "description": "Astronomy family: bodies, dates, thresholds, conventions, counts",
+   "group": "pool",
+   "group_title": "The pool of facts",
+   "name": "astro_family.yaml",
+   "origin": "data/processed/literals/astro/family.yaml",
+   "path": "downloads/pool/astro_family.yaml",
+   "sha256": "84301dee267d886b2d1344adae139dc91b762fb69da65725a8a9f229df2818aa"
+  },
+  {
+   "bytes": 12065,
+   "description": "Club names used in each election year (MLB, NFL, NBA, NHL)",
+   "group": "pool",
+   "group_title": "The pool of facts",
+   "name": "year_names.csv",
+   "origin": "display/year_names.csv",
+   "path": "downloads/pool/year_names.csv",
+   "sha256": "37c927a4d3e99664c32b73fb17663bddb11037f0c3b6e9a62f24026345e0681f"
+  },
+  {
+   "bytes": 437509,
+   "description": "All 446 perfect rules for the incumbent party (Electoral College coding), including the flagged Quebec Bulldogs rules",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "frontier_ec_T1.csv",
+   "origin": "reports/real_search/frontier_primary_ec_T1.csv",
+   "path": "downloads/search/frontier_ec_T1.csv",
+   "sha256": "a419eece9e0fe50327e2d94e37f1f15fcb83bccfc3795648722d5485312bf1cd"
+  },
+  {
+   "bytes": 70403,
+   "description": "All 126 perfect rules for the Republican Party (Electoral College coding)",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "frontier_ec_T3.csv",
+   "origin": "reports/real_search/frontier_primary_ec_T3.csv",
+   "path": "downloads/search/frontier_ec_T3.csv",
+   "sha256": "92734f36ff43272b30b0a0a2ef56a56dcba80ca0dbfe779751cb37943632eb39"
+  },
+  {
+   "bytes": 240846,
+   "description": "Perfect rules for the incumbent party under popular-vote coding (sensitivity run)",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "frontier_popvote_T1.csv",
+   "origin": "reports/real_search/frontier_sensitivity_popvote_T1.csv",
+   "path": "downloads/search/frontier_popvote_T1.csv",
+   "sha256": "1a5a5b8730ec7e72b404aa1491f29db3482c04aa9e47d10fb3481a761cd16157"
+  },
+  {
+   "bytes": 150655,
+   "description": "Perfect rules for the Democratic Party under popular-vote coding",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "frontier_popvote_T2.csv",
+   "origin": "reports/real_search/frontier_sensitivity_popvote_T2.csv",
+   "path": "downloads/search/frontier_popvote_T2.csv",
+   "sha256": "944a00533afa525be987a6fed332ffca24258f0abf435ff94f8ae521d7cd31d2"
+  },
+  {
+   "bytes": 3436,
+   "description": "Perfect rules for the Republican Party under popular-vote coding",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "frontier_popvote_T3.csv",
+   "origin": "reports/real_search/frontier_sensitivity_popvote_T3.csv",
+   "path": "downloads/search/frontier_popvote_T3.csv",
+   "sha256": "ba6fd6315fe62c80d5f3da950a09cf27abf1471399fbe3c964adcf99a6e82d14"
+  },
+  {
+   "bytes": 694,
+   "description": "Result label per target, Electoral College coding (T2 = none)",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "labels_ec.json",
+   "origin": "reports/real_search/labels_primary_ec.json",
+   "path": "downloads/search/labels_ec.json",
+   "sha256": "0927904ff07932b7d7425434e67d7b53a79a2a75048ce5acb8d92a6e4650406f"
+  },
+  {
+   "bytes": 935,
+   "description": "Result label per target, popular-vote coding",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "labels_popvote.json",
+   "origin": "reports/real_search/labels_sensitivity_popvote.json",
+   "path": "downloads/search/labels_popvote.json",
+   "sha256": "aa600243faa7004a057e708593044aad57a433df31219d5090d2e02ce71ded97"
+  },
+  {
+   "bytes": 98152,
+   "description": "Top 50 incumbent-party rules in the frozen ranking's order (ties are alphabetical)",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "top50_ec_T1.csv",
+   "origin": "reports/real_search/top50_primary_ec_T1.csv",
+   "path": "downloads/search/top50_ec_T1.csv",
+   "sha256": "da67bcbe1ae07cad1d6d2e1b2a71de912a835a30d45424dd5147a7f2d2063830"
+  },
+  {
+   "bytes": 2894,
+   "description": "N3 look-ahead results: real fit, test scores, shuffled-history comparison",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "n3_summary.json",
+   "origin": "reports/real_search/n3_summary.json",
+   "path": "downloads/search/n3_summary.json",
+   "sha256": "1d430e437de98d8ee9c6587d78e349e8b346862763b53d00daeaecd0e919f2a6"
+  },
+  {
+   "bytes": 17423,
+   "description": "Summaries of the shuffled-history runs (per-permutation files are omitted for size; they regenerate from the seeds)",
+   "group": "search",
+   "group_title": "The real search: frontiers, labels and N3",
+   "name": "nulls_summary.json",
+   "origin": "site/src/data/nulls.json",
+   "path": "downloads/search/nulls_summary.json",
+   "sha256": "f46a2be643ea30aae110251d2fb03839339d4b66e38e36813e3907fd5f4782d7"
+  },
+  {
+   "bytes": 59749,
+   "description": "Featured rule: every literal, every year, with sources and check status (2 of 128 rows human-checked)",
+   "group": "verification",
+   "group_title": "Verification",
+   "name": "verification_sheet_rank8.csv",
+   "origin": "reports/real_search/verification_sheet.csv",
+   "path": "downloads/verification/verification_sheet_rank8.csv",
+   "sha256": "191237b512a938accd17500954565eac9423cbfd4649c9fe15a6b83f857b2241"
+  },
+  {
+   "bytes": 67139,
+   "description": "Earlier sheet for tied ranks 2-4 (automated checks only)",
+   "group": "verification",
+   "group_title": "Verification",
+   "name": "verification_sheet_ranks2-4.csv",
+   "origin": "reports/real_search/verification_sheet_ranks2-4.csv",
+   "path": "downloads/verification/verification_sheet_ranks2-4.csv",
+   "sha256": "11dc796718b50dd4fd810946a8ccede2cef7a886245343d19a7c66712f6767d1"
+  },
+  {
+   "bytes": 465,
+   "description": "The human sign-offs, with who, when and the source",
+   "group": "verification",
+   "group_title": "Verification",
+   "name": "human_checks.csv",
+   "origin": "reports/real_search/human_checks.csv",
+   "path": "downloads/verification/human_checks.csv",
+   "sha256": "8f385b9343b1a344c64da84a6d39b6d034ccc3473c680232739de0aad39c4bfa"
+  },
+  {
+   "bytes": 9400,
+   "description": "Skyfield vs JPL Horizons for the three sky conditions, 32 years each",
+   "group": "verification",
+   "group_title": "Verification",
+   "name": "horizons_rank8_comparison.csv",
+   "origin": "reports/real_search/horizons_rank8/horizons_rank8_comparison.csv",
+   "path": "downloads/verification/horizons_rank8_comparison.csv",
+   "sha256": "44e0e3b6c3aa389eb94043b9537a93a0b6f36b9a7e2d34311aa4d0bdba73b2f2"
+  },
+  {
+   "bytes": 486,
+   "description": "sha256 of the saved Horizons responses",
+   "group": "verification",
+   "group_title": "Verification",
+   "name": "horizons_rank8_MANIFEST.csv",
+   "origin": "reports/real_search/horizons_rank8/MANIFEST.csv",
+   "path": "downloads/verification/horizons_rank8_MANIFEST.csv",
+   "sha256": "b835710e2008abbaa760c02cbb3a89970d386f68509bd308931e8571fae62397"
+  },
+  {
+   "bytes": 4457,
+   "description": "Exact Skyfield conventions and the matching Horizons settings, with the pilot comparison",
+   "group": "verification",
+   "group_title": "Verification",
+   "name": "HORIZONS_CONVENTION.md",
+   "origin": "reports/real_search/HORIZONS_CONVENTION.md",
+   "path": "downloads/verification/HORIZONS_CONVENTION.md",
+   "sha256": "740cd6d3a2564242f1aa30466ec8c7202efd84aa01f45095bebccbc7a2ce7cd9"
+  },
+  {
+   "bytes": 15938,
+   "description": "Report of the real search (primary, popular-vote sensitivity, N3)",
+   "group": "reports",
+   "group_title": "Reports",
+   "name": "gate2_report.md",
+   "origin": "reports/real_search/REPORT.md",
+   "path": "downloads/reports/gate2_report.md",
+   "sha256": "12f6d9a12a6efbfeade98edeb1d78e40433b813209aeacbd81d815d156dcbd1c"
+  },
+  {
+   "bytes": 2594,
+   "description": "Why one top-ranked rule's club literal was re-graded, and why it still fails the defunct-entity criterion",
+   "group": "reports",
+   "group_title": "Reports",
+   "name": "quebec_bulldogs_note.md",
+   "origin": "reports/real_search/quebec_bulldogs_writeup.md",
+   "path": "downloads/reports/quebec_bulldogs_note.md",
+   "sha256": "fcbf13b0dc77cc1c48383342315ea341cfc32f8a5dcee5a2c9369d70e21ecfa0"
+  },
+  {
+   "bytes": 17267,
+   "description": "Pool report: counts, exclusions, quarantined literals, coverage failures",
+   "group": "reports",
+   "group_title": "Reports",
+   "name": "phase1_pool_report.md",
+   "origin": "reports/phase1_pool_report.md",
+   "path": "downloads/reports/phase1_pool_report.md",
+   "sha256": "b64ded321bf139ce5f78c8f7640517fad7bd16b56705ca4cb317c8ab14d4133f"
+  },
+  {
+   "bytes": 10697,
+   "description": "Noise-only power curve, keys null and the tiered procedure proposal",
+   "group": "reports",
+   "group_title": "Reports",
+   "name": "phase1b_report.md",
+   "origin": "reports/phase1b_report.md",
+   "path": "downloads/reports/phase1b_report.md",
+   "sha256": "9a255d5d8c47a0a3e659f9b83b28c4664de682f126be1a2d6b8ad9f0c075e75a"
+  },
+  {
+   "bytes": 6985,
+   "description": "Whole-procedure shuffled-history results and the freeze",
+   "group": "reports",
+   "group_title": "Reports",
+   "name": "phase1c_report.md",
+   "origin": "reports/phase1c_report.md",
+   "path": "downloads/reports/phase1c_report.md",
+   "sha256": "827343d1b5e75bdab94b23a0d8f1d9800b9c472abab27118bd770b5dc3ee1e52"
+  },
+  {
+   "bytes": 6888,
+   "description": "Event table or notes: fifa world cup",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "fifa_world_cup.csv",
+   "origin": "data/processed/events/fifa_world_cup.csv",
+   "path": "downloads/events/fifa_world_cup.csv",
+   "sha256": "90aa6516c6db755bd262d5c42dd851d17929d7ac9e8236dbae7141c66113979d"
+  },
+  {
+   "bytes": 5682,
+   "description": "Event table or notes: fifa world cup all years",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "fifa_world_cup_all_years.csv",
+   "origin": "data/processed/events/fifa_world_cup_all_years.csv",
+   "path": "downloads/events/fifa_world_cup_all_years.csv",
+   "sha256": "37bb7d35f9f05fcb6b9003a2f8dca315ccf05810fd16bdf56defe69e3890ef7e"
+  },
+  {
+   "bytes": 746,
+   "description": "Event table or notes: fifa world cup gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "fifa_world_cup_gaps.md",
+   "origin": "data/processed/events/fifa_world_cup_gaps.md",
+   "path": "downloads/events/fifa_world_cup_gaps.md",
+   "sha256": "e0c889fc2e4e1ceeb6a2badb4aa7f11f98b8f35e0031840db74adb103a236ed3"
+  },
+  {
+   "bytes": 609,
+   "description": "Event table or notes: fifa world cup lineage",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "fifa_world_cup_lineage.csv",
+   "origin": "data/processed/events/fifa_world_cup_lineage.csv",
+   "path": "downloads/events/fifa_world_cup_lineage.csv",
+   "sha256": "0b64f5a5932572e8ed325a12451794a0e857f93d1e86713290ef5ef566bdea97"
+  },
+  {
+   "bytes": 8787,
+   "description": "Event table or notes: indy 500",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "indy_500.csv",
+   "origin": "data/processed/events/indy_500.csv",
+   "path": "downloads/events/indy_500.csv",
+   "sha256": "f043982c740c626a43c01047f3a28fb73d7400068b0a9cfda508d38502ab4aba"
+  },
+  {
+   "bytes": 885,
+   "description": "Event table or notes: indy 500 gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "indy_500_gaps.md",
+   "origin": "data/processed/events/indy_500_gaps.md",
+   "path": "downloads/events/indy_500_gaps.md",
+   "sha256": "72414dd639609173d137654c6ba3a07f17829ddd025a0c03aeaa9fa6e45ea3bd"
+  },
+  {
+   "bytes": 6821,
+   "description": "Event table or notes: kentucky derby",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "kentucky_derby.csv",
+   "origin": "data/processed/events/kentucky_derby.csv",
+   "path": "downloads/events/kentucky_derby.csv",
+   "sha256": "a4a6ff288b1fdaa452c0581cf6d8491e2a817e694146b12018088bb541ffaa82"
+  },
+  {
+   "bytes": 189,
+   "description": "Event table or notes: kentucky derby gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "kentucky_derby_gaps.md",
+   "origin": "data/processed/events/kentucky_derby_gaps.md",
+   "path": "downloads/events/kentucky_derby_gaps.md",
+   "sha256": "3654cf2e170c2ae87d2ceb872c506b7a9d519d5a7722279dbb4f6a085e84e172"
+  },
+  {
+   "bytes": 8313,
+   "description": "Event table or notes: masters",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "masters.csv",
+   "origin": "data/processed/events/masters.csv",
+   "path": "downloads/events/masters.csv",
+   "sha256": "002233baab8ee48c0c6a2d8a9287531aa08cbe3568d657c9f3dbadc4ad763d8e"
+  },
+  {
+   "bytes": 257,
+   "description": "Event table or notes: masters gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "masters_gaps.md",
+   "origin": "data/processed/events/masters_gaps.md",
+   "path": "downloads/events/masters_gaps.md",
+   "sha256": "b3dc93437ae7dae9b868bf12954fec9a46b99d9913abb3ee177bd6d156097a9e"
+  },
+  {
+   "bytes": 7910,
+   "description": "Event table or notes: mlb world series",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "mlb_world_series.csv",
+   "origin": "data/processed/events/mlb_world_series.csv",
+   "path": "downloads/events/mlb_world_series.csv",
+   "sha256": "eed8ea305fba8042209ccedd01db0b1eb1518db7d3696c3da1333125e373a2d0"
+  },
+  {
+   "bytes": 757,
+   "description": "Event table or notes: mlb world series gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "mlb_world_series_gaps.md",
+   "origin": "data/processed/events/mlb_world_series_gaps.md",
+   "path": "downloads/events/mlb_world_series_gaps.md",
+   "sha256": "dda08c1815bef4855c872487b5c58e7dff052bf206a3f6bd36e5f7cc18cc55bc"
+  },
+  {
+   "bytes": 6291,
+   "description": "Event table or notes: mlb world series lineage",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "mlb_world_series_lineage.csv",
+   "origin": "data/processed/events/mlb_world_series_lineage.csv",
+   "path": "downloads/events/mlb_world_series_lineage.csv",
+   "sha256": "427e4695177c4636d56de659f007d215a6bed6e6e1fd39425ef4e916920e4416"
+  },
+  {
+   "bytes": 8024,
+   "description": "Event table or notes: nba finals",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nba_finals.csv",
+   "origin": "data/processed/events/nba_finals.csv",
+   "path": "downloads/events/nba_finals.csv",
+   "sha256": "db8657f9ffc7deaba116c9d3f42d46be92d192248019a13a341b475390ddb361"
+  },
+  {
+   "bytes": 346,
+   "description": "Event table or notes: nba finals gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nba_finals_gaps.md",
+   "origin": "data/processed/events/nba_finals_gaps.md",
+   "path": "downloads/events/nba_finals_gaps.md",
+   "sha256": "765ea441fb558c4dd5ad4c9f8fffe36c0934fb05ec87a3a2f251fe1e7c3affb2"
+  },
+  {
+   "bytes": 3944,
+   "description": "Event table or notes: nba finals lineage",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nba_finals_lineage.csv",
+   "origin": "data/processed/events/nba_finals_lineage.csv",
+   "path": "downloads/events/nba_finals_lineage.csv",
+   "sha256": "7ec9eda39e0ec5a9e3e935d22fed31ec3656eba976022e3a822603b9280b0e33"
+  },
+  {
+   "bytes": 7024,
+   "description": "Event table or notes: nfl super bowl",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nfl_super_bowl.csv",
+   "origin": "data/processed/events/nfl_super_bowl.csv",
+   "path": "downloads/events/nfl_super_bowl.csv",
+   "sha256": "6a75d7418f5dc2f0582e0abd21ece0eb7cb63e5a3217174000d2fdac056a0153"
+  },
+  {
+   "bytes": 274,
+   "description": "Event table or notes: nfl super bowl gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nfl_super_bowl_gaps.md",
+   "origin": "data/processed/events/nfl_super_bowl_gaps.md",
+   "path": "downloads/events/nfl_super_bowl_gaps.md",
+   "sha256": "c4af8b78fed7743a7337b3bf92652a8abede0619308d44b5a7981cf1577c5f3f"
+  },
+  {
+   "bytes": 3803,
+   "description": "Event table or notes: nfl super bowl lineage",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nfl_super_bowl_lineage.csv",
+   "origin": "data/processed/events/nfl_super_bowl_lineage.csv",
+   "path": "downloads/events/nfl_super_bowl_lineage.csv",
+   "sha256": "f1eefe1b759d045105d1c4213fcc94623c209e145055d35610d8d749bdcd2181"
+  },
+  {
+   "bytes": 14349,
+   "description": "Event table or notes: nhl stanley cup",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nhl_stanley_cup.csv",
+   "origin": "data/processed/events/nhl_stanley_cup.csv",
+   "path": "downloads/events/nhl_stanley_cup.csv",
+   "sha256": "a27ea4fb9212c0212107197b81118306e89fea78c71a5c14f5398a28e0417b04"
+  },
+  {
+   "bytes": 968,
+   "description": "Event table or notes: nhl stanley cup gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nhl_stanley_cup_gaps.md",
+   "origin": "data/processed/events/nhl_stanley_cup_gaps.md",
+   "path": "downloads/events/nhl_stanley_cup_gaps.md",
+   "sha256": "2bb48763de4502c4db9ac825d659925d011e84144dbbcaca598def498d1dd12b"
+  },
+  {
+   "bytes": 6834,
+   "description": "Event table or notes: nhl stanley cup lineage",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "nhl_stanley_cup_lineage.csv",
+   "origin": "data/processed/events/nhl_stanley_cup_lineage.csv",
+   "path": "downloads/events/nhl_stanley_cup_lineage.csv",
+   "sha256": "e05c1399321f7f9024aec8420d659b4c77a7eed6eaa2b1fec92fa8ce66bfb4ff"
+  },
+  {
+   "bytes": 11489,
+   "description": "Event table or notes: summer olympics",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "summer_olympics.csv",
+   "origin": "data/processed/events/summer_olympics.csv",
+   "path": "downloads/events/summer_olympics.csv",
+   "sha256": "31a44e6798f152871f2ef9a0811f1f87c010c932e350dc3c9dfa083e8d0dd059"
+  },
+  {
+   "bytes": 4907,
+   "description": "Event table or notes: summer olympics gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "summer_olympics_gaps.md",
+   "origin": "data/processed/events/summer_olympics_gaps.md",
+   "path": "downloads/events/summer_olympics_gaps.md",
+   "sha256": "e41ed9ea1f396863eb6a0d4fd18485678eaebbbac2bc695788c046ae8a88d03b"
+  },
+  {
+   "bytes": 15632,
+   "description": "Event table or notes: triple crown",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "triple_crown.csv",
+   "origin": "data/processed/events/triple_crown.csv",
+   "path": "downloads/events/triple_crown.csv",
+   "sha256": "10c38a35db4b97615cbb2995e021385789464f26bb245c523689816ac41f1ad4"
+  },
+  {
+   "bytes": 5373,
+   "description": "Event table or notes: triple crown gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "triple_crown_gaps.md",
+   "origin": "data/processed/events/triple_crown_gaps.md",
+   "path": "downloads/events/triple_crown_gaps.md",
+   "sha256": "7f6bfe31bae5819bbae55f73b9748bde4128d95a358bf9cdb55a2bd178a2c2b3"
+  },
+  {
+   "bytes": 9205,
+   "description": "Event table or notes: weather coverage",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "weather_coverage.md",
+   "origin": "data/processed/events/weather_coverage.md",
+   "path": "downloads/events/weather_coverage.md",
+   "sha256": "71aab111f091e2c832ce0ecf92f2895e6f39102346c523f8216dce093d4eb394"
+  },
+  {
+   "bytes": 35713,
+   "description": "Event table or notes: weather station years",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "weather_station_years.csv",
+   "origin": "data/processed/events/weather_station_years.csv",
+   "path": "downloads/events/weather_station_years.csv",
+   "sha256": "dfbd1d1f1fba3c68e05880116b8dcdb6075edb18ef37df0df4b93c20be398676"
+  },
+  {
+   "bytes": 11670,
+   "description": "Event table or notes: wimbledon mens singles",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "wimbledon_mens_singles.csv",
+   "origin": "data/processed/events/wimbledon_mens_singles.csv",
+   "path": "downloads/events/wimbledon_mens_singles.csv",
+   "sha256": "42950d96a0199114f392b27030ddf474cc05739fa1159ec11e5132daf69d4654"
+  },
+  {
+   "bytes": 730,
+   "description": "Event table or notes: wimbledon mens singles gaps",
+   "group": "events",
+   "group_title": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+   "name": "wimbledon_mens_singles_gaps.md",
+   "origin": "data/processed/events/wimbledon_mens_singles_gaps.md",
+   "path": "downloads/events/wimbledon_mens_singles_gaps.md",
+   "sha256": "f55c0c775166da98b1dd6ff1f6990f836f4b81fd624c4831fece0a063aa8f188"
+  },
+  {
+   "bytes": 167,
+   "description": "Sources for astronomy: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "astronomy_MANIFEST.csv",
+   "origin": "data/raw/astronomy/MANIFEST.csv",
+   "path": "downloads/manifests/astronomy_MANIFEST.csv",
+   "sha256": "fcd59bb8c618bc21aab8de2de2a2a3174c79c662dab8ca9a47a0a55a33587419"
+  },
+  {
+   "bytes": 458,
+   "description": "Sources for chicago thread check: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "chicago_thread_check_MANIFEST.csv",
+   "origin": "data/raw/chicago_thread_check/MANIFEST.csv",
+   "path": "downloads/manifests/chicago_thread_check_MANIFEST.csv",
+   "sha256": "4ead0c4b25f1193665f6d2ec625d16d105576d29f15d938d54e89231cb86d22f"
+  },
+  {
+   "bytes": 6670,
+   "description": "Sources for fifa world cup: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "fifa_world_cup_MANIFEST.csv",
+   "origin": "data/raw/fifa_world_cup/MANIFEST.csv",
+   "path": "downloads/manifests/fifa_world_cup_MANIFEST.csv",
+   "sha256": "0844646f5c87aa4997fc78f54a6064e44d5df5bd64cfe8dbb2694d29dad74a75"
+  },
+  {
+   "bytes": 4602,
+   "description": "Sources for indy 500: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "indy_500_MANIFEST.csv",
+   "origin": "data/raw/indy_500/MANIFEST.csv",
+   "path": "downloads/manifests/indy_500_MANIFEST.csv",
+   "sha256": "4e6e84f19932092047c3e8128cdd3173b9eca9fbcd3ebdf78413fa565c551149"
+  },
+  {
+   "bytes": 5044,
+   "description": "Sources for kentucky derby: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "kentucky_derby_MANIFEST.csv",
+   "origin": "data/raw/kentucky_derby/MANIFEST.csv",
+   "path": "downloads/manifests/kentucky_derby_MANIFEST.csv",
+   "sha256": "bd28ecd6c69a935e00653b9599f5319996e9d0c21e7ac692e6104268e87577c3"
+  },
+  {
+   "bytes": 4111,
+   "description": "Sources for masters: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "masters_MANIFEST.csv",
+   "origin": "data/raw/masters/MANIFEST.csv",
+   "path": "downloads/manifests/masters_MANIFEST.csv",
+   "sha256": "1bee6869238e79a2053a89ad0391e76f5c8208691c5c3952364b9f497f078ed8"
+  },
+  {
+   "bytes": 9103,
+   "description": "Sources for mlb world series: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "mlb_world_series_MANIFEST.csv",
+   "origin": "data/raw/mlb_world_series/MANIFEST.csv",
+   "path": "downloads/manifests/mlb_world_series_MANIFEST.csv",
+   "sha256": "cc6e53af81b59fef2ba6b4e738c3e452787f99830546e5f737f05db511b731ba"
+  },
+  {
+   "bytes": 6277,
+   "description": "Sources for nba finals: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "nba_finals_MANIFEST.csv",
+   "origin": "data/raw/nba_finals/MANIFEST.csv",
+   "path": "downloads/manifests/nba_finals_MANIFEST.csv",
+   "sha256": "1db68a9ec2c2839cbd053a64dd7afa9e9e91e16bcddb5bd123a2696acd76e329"
+  },
+  {
+   "bytes": 348,
+   "description": "Sources for nfl super bowl: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "nfl_super_bowl_MANIFEST.csv",
+   "origin": "data/raw/nfl_super_bowl/MANIFEST.csv",
+   "path": "downloads/manifests/nfl_super_bowl_MANIFEST.csv",
+   "sha256": "caa9a62d9b2a41a7edb090bab025c539f803782fc92245ac037623df66a760fb"
+  },
+  {
+   "bytes": 10369,
+   "description": "Sources for nhl stanley cup: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "nhl_stanley_cup_MANIFEST.csv",
+   "origin": "data/raw/nhl_stanley_cup/MANIFEST.csv",
+   "path": "downloads/manifests/nhl_stanley_cup_MANIFEST.csv",
+   "sha256": "5835845092bbef28b226221beed7bb51e2aa6c260269eceebab9b2b7ac58120b"
+  },
+  {
+   "bytes": 759,
+   "description": "Sources for outcomes second source: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "outcomes_second_source_MANIFEST.csv",
+   "origin": "data/raw/outcomes_second_source/MANIFEST.csv",
+   "path": "downloads/manifests/outcomes_second_source_MANIFEST.csv",
+   "sha256": "d9751b95574fc6c79dbcb21b65af14fbfd910b9cbfd7681d9587642444857b39"
+  },
+  {
+   "bytes": 9311,
+   "description": "Sources for summer olympics: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "summer_olympics_MANIFEST.csv",
+   "origin": "data/raw/summer_olympics/MANIFEST.csv",
+   "path": "downloads/manifests/summer_olympics_MANIFEST.csv",
+   "sha256": "ce10cf4327137501392f43a3d4c4cf2b34fa138ae4cef7f55d3c8a0cec882c86"
+  },
+  {
+   "bytes": 5833,
+   "description": "Sources for triple crown: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "triple_crown_MANIFEST.csv",
+   "origin": "data/raw/triple_crown/MANIFEST.csv",
+   "path": "downloads/manifests/triple_crown_MANIFEST.csv",
+   "sha256": "8a504a02cdf13a731bf8945b7850c97580d37bf32de4bfd28cdddef2ecb41bbe"
+  },
+  {
+   "bytes": 2388,
+   "description": "Sources for weather: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "weather_MANIFEST.csv",
+   "origin": "data/raw/weather/MANIFEST.csv",
+   "path": "downloads/manifests/weather_MANIFEST.csv",
+   "sha256": "eb956aaf2d0ba7ffd8a10d43eeb3df2a00cc4e50a52e59db0c9e44275a96e31e"
+  },
+  {
+   "bytes": 10296,
+   "description": "Sources for wimbledon mens singles: file, URL, retrieval date, sha256",
+   "group": "manifests",
+   "group_title": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+   "name": "wimbledon_mens_singles_MANIFEST.csv",
+   "origin": "data/raw/wimbledon_mens_singles/MANIFEST.csv",
+   "path": "downloads/manifests/wimbledon_mens_singles_MANIFEST.csv",
+   "sha256": "a859fd0e26aa0d3d873734d4f6ea245c881f1648c535619e6df4309e97d6b049"
+  }
+ ],
+ "groups": {
+  "events": "Event tables built from the sources (sports and weather), with gaps and lineage notes",
+  "manifests": "Raw-source manifests (URL, retrieval date, sha256; the source pages themselves are not redistributed)",
+  "outcomes": "Election outcomes",
+  "pool": "The pool of facts",
+  "provenance": "Provenance and hashes",
+  "reports": "Reports",
+  "search": "The real search: frontiers, labels and N3",
+  "verification": "Verification"
+ },
+ "total_bytes": 4558448
+}

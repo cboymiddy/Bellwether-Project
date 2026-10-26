@@ -1,0 +1,117 @@
+{
+ "built_utc_date": "2026-10-25",
+ "freeze_note": "freeze hash covers config, pools, astronomy grid, search code, cutoffs and seeds",
+ "hashes": {
+  "astro_grid_sha256": "5399209bd46f9491dab5abe6817dfa586c137d84f5b6d1a8b2080f5b74056bfb",
+  "config_sha256": "17350119fff5ee544f343d12b5b9dff20573f6f9ea0a111527c6c32e0b8e0ceb",
+  "ephemeris_sha256": "a20a7139da04cbc462454634918e9a9ca69127044e2cc9d4f9c16e238d2deedc",
+  "freeze_sha256": "475aba0811048404051d238c3ccdcb368f9e8e075b992e50738b604363965c1a",
+  "inputs": {
+   "frontier_primary_ec_T1.csv": "a419eece9e0fe50327e2d94e37f1f15fcb83bccfc3795648722d5485312bf1cd",
+   "labels_primary_ec.json": "0927904ff07932b7d7425434e67d7b53a79a2a75048ce5acb8d92a6e4650406f",
+   "n3_summary.json": "1d430e437de98d8ee9c6587d78e349e8b346862763b53d00daeaecd0e919f2a6",
+   "verification_sheet.csv": "191237b512a938accd17500954565eac9423cbfd4649c9fe15a6b83f857b2241"
+  },
+  "outcomes_sha256": "788dac38a7e61bbfbbd581f6ba0210ff5a1d96d6d49322bd8a4bf22ddb197868",
+  "pool_A_vectors_sha256": "a4fc1686c2e65a48bbe73883b6961f71d7a29a227dd68665694789193e32252b",
+  "pool_B_vectors_sha256": "9d8bb6b37c151bc0d78b693e39e5bf97ec45f90a8540510f1b478a6a0ef0504f"
+ },
+ "headline": {
+  "p_perfect_rule_best_of_three_targets": 0.99998,
+  "p_perfect_rule_under_noise": {
+   "T1": 0.98119,
+   "T2": 0.97677,
+   "T3": 0.97566
+  },
+  "permutations": 100000,
+  "tier_1a_rate_under_noise": {
+   "T1": 0.0004,
+   "T2": 0.00014,
+   "T3": 0.00021
+  }
+ },
+ "provenance_local_commits": [
+  {
+   "id": "9ff77ed",
+   "subject": "Release prep: base path build setting, licences, public-export script, privacy tests"
+  },
+  {
+   "id": "3c58041",
+   "subject": "Site step 8: 2028 reading in the same frame as its disclaimer"
+  },
+  {
+   "id": "106e20a",
+   "subject": "Site step 7: human check record, downloads list with source manifest, limitations page"
+  },
+  {
+   "id": "0dcd8cf",
+   "subject": "Site step 6: N3 look-ahead exhibit with best-constant-guess baselines and top-20 rule tables"
+  },
+  {
+   "id": "e4a469c",
+   "subject": "Site step 5: shuffle demo with TypeScript search port and Python/TS parity tests"
+  },
+  {
+   "id": "2da7b62",
+   "subject": "Fix stale quarantine count in the Phase 1 report text (6 -> 7, with the net change from 10)"
+  },
+  {
+   "id": "eb4bdbe",
+   "subject": "Site step 4: /how/ page with null figures, data tables, and the popular-vote exhibit"
+  },
+  {
+   "id": "7ef07b3",
+   "subject": "Site step 3: home page, site name, and history strip"
+  },
+  {
+   "id": "33aeebf",
+   "subject": "Site step 2: Astro project and the rule card page"
+  },
+  {
+   "id": "9e137bd",
+   "subject": "Site step 1: exporter with hash gate, rule-card data, and tests"
+  },
+  {
+   "id": "968c64a",
+   "subject": "Gate 2 results and Phase 4 prep: real search outputs, rank-8 checks, display layer"
+  },
+  {
+   "id": "2f3166e",
+   "subject": "Gate-2 runner (unfrozen orchestrator over frozen functions), N3, whole-procedure null results"
+  }
+ ],
+ "search_size": {
+  "astro": {
+   "constant": 4510,
+   "era_indicator": 2814,
+   "included_positives": 21476,
+   "positives_built": 28800
+  },
+  "cutoffs": {
+   "k_max": 4,
+   "keys_N_star": 4,
+   "keys_margin_star": 2
+  },
+  "main_pool_by_category": {
+   "astronomy": 9,
+   "calendar": 26,
+   "sports": 376,
+   "weather": 20
+  },
+  "main_pool_positives": 431,
+  "main_pool_positives_F_ge_2": 319,
+  "null_plan": {
+   "N1_party": 100000,
+   "N1_per_target": 100000,
+   "N2_block": 100000,
+   "N2_exact": 63
+  },
+  "pool_A_distinct_vectors": 266,
+  "pool_B_distinct_vectors": 15010,
+  "pool_cuts": {
+   "main_constant_dropped": 15,
+   "main_era_indicator_positives": 10,
+   "main_quarantined_O_C": 7
+  }
+ }
+}

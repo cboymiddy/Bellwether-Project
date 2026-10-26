@@ -1,0 +1,13 @@
+literal,used_in_ranks,kind,quantity,threshold_deg,min_abs_margin_deg,year_of_min,value_at_min_deg,literal_truth_at_min,hours_of_clock_error_to_flip_at_min,n_years_margin_lt_1deg,n_years_margin_lt_0p1deg,true_sep_min_abs_margin_deg,true_sep_year_of_min,years_truth_differs_if_true_sep
+astro_geo_0306_sep_venus_uranus_ge020,"2,3,4,5,6,7",sep,ecliptic-longitude difference,20,1.738321,1940.0,21.738321,True,37.04,0.0,0.0,1.760431,1940.0,0.0
+NOT_astro_geo_0906_sep_sun_moon_ge140,"2,3,4,5,6,7",sep,ecliptic-longitude difference,140,1.833034,2020.0,138.166966,True,4.04,0.0,0.0,2.016091,2020.0,0.0
+NOT_sports_mlb_ws_loser_franchise_kansas_city_royals,"2,3",event,categorical event outcome,n/a,n/a,,,,,,,,,
+astro_geo_0121_sep_venus_pluto_ge040,"2,4,6",sep,ecliptic-longitude difference,40,5.685365,2020.0,45.685365,True,116.39,0.0,0.0,5.580834,1992.0,0.0
+astro_geo_0201_sep_venus_pluto_ge060,"3,5,7,9",sep,ecliptic-longitude difference,60,1.498588,2020.0,58.501412,False,31.09,0.0,0.0,1.504415,2020.0,0.0
+NOT_sports_mlb_ws_winner_franchise_philadelphia_phillies,"4,5",event,categorical event outcome,n/a,n/a,,,,,,,,,
+NOT_sports_nfl_sb_winner_franchise_pittsburgh_steelers,"6,7,8,9",event,categorical event outcome,n/a,n/a,,,,,,,,,
+astro_geo_1021_sep_mercury_venus_ge020,"8,9,10",sep,ecliptic-longitude difference,20,1.884298,1928.0,21.884298,True,19.33,0.0,0.0,1.919611,1928.0,0.0
+NOT_astro_geo_0121_sep_mars_jupiter_ge160,"8,9",sep,ecliptic-longitude difference,160,1.884694,1952.0,158.115306,True,147.95,0.0,0.0,1.886221,1952.0,0.0
+NOT_astro_geo_0701_sep_mercury_pluto_ge160,"8,10",sep,ecliptic-longitude difference,160,5.724281,2020.0,165.724281,False,237.18,0.0,0.0,4.744477,2020.0,0.0
+NOT_astro_geo_0206_sep_mercury_jupiter_ge160,10,sep,ecliptic-longitude difference,160,3.525394,1932.0,163.525394,False,49.89,0.0,0.0,3.518169,1932.0,0.0
+NOT_sports_nba_loser_franchise_phoenix_suns,10,event,categorical event outcome,n/a,n/a,,,,,,,,,

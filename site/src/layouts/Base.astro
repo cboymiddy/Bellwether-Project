@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import meta from '../data/meta.json';
+import { url } from '../lib/url';
+
+interface Props { title: string; description?: string; current?: string }
+const { title, description = '', current = '' } = Astro.props;
+const SITE_NAME = 'The Great Presidential Bellwether';
+const DRAFT_COPY = true; // flip when the copy is approved
+const h = meta.headline;
+const pct = (h.p_perfect_rule_under_noise.T1 * 100).toFixed(1);
+const nav = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/rule/', label: 'Rule card', key: 'rule' },
+  { href: '/how/', label: 'How we found it', key: 'how' }, { href: '/shuffle/', label: 'Shuffle your own history', key: 'shuffle' },
+  { href: '/n3/', label: 'N3', key: 'n3' }, { href: '/limitations/', label: 'Limitations & downloads', key: 'limits' }, { href: '/2028/', label: '2028', key: '2028' },
+];
+const fz = meta.hashes.freeze_sha256;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | {SITE_NAME}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+  </head>
+  <body>
+    <aside class="spurious-banner" role="note" aria-label="Disclaimer">
+      <div class="wrap">
+        <strong>This rule is spurious.</strong>
+        It predicts nothing. A search like this one finds a rule that fits all 32 elections in about {pct}% of
+        histories whose outcomes have been shuffled.
+      </div>
+    </aside>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href={url('/')}>{SITE_NAME}</a>
+        <nav aria-label="Pages">
+          {nav.map((n) => n.href
+            ? <a href={url(n.href)} aria-current={current === n.key ? 'page' : undefined}>{n.label}</a>
+            : <span class="soon" title="Not built yet">{n.label} (soon)</span>)}
+        </nav>
+        {DRAFT_COPY && <span class="draft-tag" title="Tone and wording await approval">draft copy</span>}
+      </div>
+    </header>
+    <main class="wrap"><slot /></main>
+    <footer class="site">
+      <div class="wrap">
+        Frozen pipeline hash <code title={fz}>{fz.slice(0, 16)}&hellip;</code> &middot;
+        outcomes.csv <code title={meta.hashes.outcomes_sha256}>{meta.hashes.outcomes_sha256.slice(0, 12)}&hellip;</code> &middot;
+        data exported {meta.built_utc_date}. Every number on this page is read from files produced by the frozen pipeline.
+      </div>
+    </footer>
+  </body>
+</html>

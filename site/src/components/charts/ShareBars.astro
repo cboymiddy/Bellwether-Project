@@ -1,0 +1,48 @@
+---
+// Horizontal bars, one per target (+ one neutral "any of the three"). Value at the bar tip; real-history result
+// as text beside the label; one tooltip per row; the data table lives beside this chart on the page.
+export interface BarRow { id: 'T1' | 'T2' | 'T3' | 'any'; label: string; value: number; tip: string; real?: string }
+interface Props { rows: BarRow[]; title: string; sub: string; descId: string }
+const { rows, title, sub, descId } = Astro.props;
+const W = 760, LEFT = 262, RIGHT = 70, TOP = 26, ROW = 50, BAR = 20;
+const PW = W - LEFT - RIGHT;
+const H = TOP + rows.length * ROW + 8;
+const x = (v: number) => LEFT + v * PW;
+const cls = (id: string) => (id === 'T1' ? 1 : id === 'T2' ? 2 : id === 'T3' ? 3 : 0);
+const bar = (x0: number, y: number, w: number, h: number, r = 4) => {
+  const x1 = x0 + w, rr = Math.min(r, Math.max(w, 0) / 2);
+  return `M${x0},${y}H${x1 - rr}Q${x1},${y} ${x1},${y + rr}V${y + h - rr}Q${x1},${y + h} ${x1 - rr},${y + h}H${x0}Z`;
+};
+const ticks = [0, 0.25, 0.5, 0.75, 1];
+---
+<div class="chart viz">
+  <p class="chart-title">{title}</p>
+  <p class="chart-sub">{sub}</p>
+  <ul class="legend" aria-label="Legend">
+    {rows.map((r) => <li><span class={`sw b${cls(r.id)}`}></span>{r.label.split(':')[0]}</li>)}
+  </ul>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby={`${descId}-t ${descId}-d`}>
+    <title id={`${descId}-t`}>{title}</title>
+    <desc id={`${descId}-d`}>{rows.map((r) => `${r.label}: ${(r.value * 100).toFixed(1)}%`).join('. ')}</desc>
+    {ticks.map((t) => (
+      <>
+        <line class="grid" x1={x(t)} x2={x(t)} y1={TOP - 4} y2={H - 8} />
+        <text class="axis" x={x(t)} y={TOP - 10} text-anchor="middle">{Math.round(t * 100)}%</text>
+      </>
+    ))}
+    <line class="axisline" x1={LEFT} x2={LEFT} y1={TOP - 4} y2={H - 8} />
+    {rows.map((r, i) => {
+      const y = TOP + i * ROW + 4;
+      return (
+        <g>
+          <text x="0" y={y + 13} class="strong">{r.label}</text>
+          {r.real && <text x="0" y={y + 28}>{r.real}</text>}
+          <path d={bar(LEFT, y, r.value * PW, BAR)} class={`f${cls(r.id)}`} />
+          <text x={x(r.value) + 6} y={y + 14} class="strong">{(r.value * 100).toFixed(r.value > 0.9995 ? 3 : 1)}%</text>
+          <rect class="hit" x="0" y={y - 6} width={W} height={BAR + 12} tabindex="0" data-tip={r.tip} />
+        </g>
+      );
+    })}
+  </svg>
+</div>
+<script>import '../../scripts/tooltip';</script>

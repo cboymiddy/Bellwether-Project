@@ -1,0 +1,163 @@
+---
+import { url } from '../lib/url';
+import Base from '../layouts/Base.astro';
+import ruleJson from '../data/rule.json';
+import frontJson from '../data/frontier.json';
+import metaJson from '../data/meta.json';
+import nullsJson from '../data/nulls.json';
+import n3Json from '../data/n3.json';
+import dlJson from '../data/downloads.json';
+
+const rule: any = ruleJson, front: any = frontJson, meta: any = metaJson, nulls: any = nullsJson, n3: any = n3Json, dl: any = dlJson;
+const sel = rule.selection, ver = rule.verification, vs = rule.verification_status;
+const f1 = front.frontier.ec_T1;
+const fmt = (n: number) => n.toLocaleString('en-US');
+const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`;
+const base = url('/');
+const kb = (b: number) => (b >= 1e6 ? `${(b / 1e6).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1000))} KB`);
+const order = ['provenance', 'outcomes', 'manifests', 'pool', 'events', 'search', 'verification', 'reports'];
+const closed = new Set(['events', 'manifests']);
+const freezeShort = meta.hashes.freeze_sha256.slice(0, 16);
+const nullB = n3.targets.T1.null.B;
+const noise = pct(meta.headline.p_perfect_rule_under_noise.T1, 1);
+---
+<Base title="Limitations and downloads" description="Everything that could be wrong with this, in one place." current="limits">
+  <h1>Limitations and downloads</h1>
+  <p class="lede">Everything that could be wrong with this, in one place.</p>
+
+  <h2 id="choice">How this rule was chosen</h2>
+  <ul>
+    <li>
+      The search found {fmt(f1.n_rules)} perfect rules for &ldquo;the incumbent party wins&rdquo;. {sel.tied_top_key_rules} of them tie at the top of the frozen ranking. The featured rule is
+      one of those {sel.tied_top_key_rules}, and one of the {sel.tied_sharing_best_cushion} that share the largest minimum timing cushion ({sel.featured_cushion_hours} hours).
+    </li>
+    <li>
+      <strong>{sel.chosen_by} picked it after seeing the results,</strong> for two reasons: it has no Moon condition, and that cushion. {sel.tied_with_no_moon_literal} of the
+      {sel.tied_top_key_rules} tied rules have no Moon condition. Choosing one rule among many equally perfect ones, after the fact, is another way a search like this flatters itself.
+    </li>
+    <li>Ranks 1&ndash;{sel.tied_top_key_rules} tie on every ranking criterion. Their order is an alphabetical tie-break on condition names, so the rank numbers carry no meaning.</li>
+  </ul>
+
+  <h2 id="designed">The search was built to succeed</h2>
+  <ul>
+    <li>The sky family (ten bodies, 60 dates, thresholds in steps of 20&deg;) was added on purpose, and sized from tests on shuffled histories so that a perfect rule would be very likely. The identical search on shuffled histories finds one {noise} of the time for T1.</li>
+    <li>The choice of facts, dates, thresholds, tiers and cutoffs are all choices. Each was fixed before the real search ran, but they were not chosen blind: several were chosen by looking at how the search behaved on shuffled histories. <a href={url('/how/#decided')}>What was decided when</a> lists them.</li>
+    <li>
+      <strong>&ldquo;Win&rdquo; was set to the Electoral College before the search.</strong> Under popular-vote coding two elections flip (2000 and 2016), the incumbent-party record goes from 18 wins and 14 losses to 20 and 12, and the perfect rules change completely:
+      no rule is perfect under both codings, and the featured rule gets {rule.popvote.correct} of 32 under popular-vote coding (wrong in {rule.popvote.wrong_years.join(' and ')}). The popular-vote version was run once as a side check and <strong>has no shuffled-history comparison</strong>.
+    </li>
+  </ul>
+
+  <h2 id="crosschecks">What was cross-checked</h2>
+  <ul>
+    <li><strong>Election outcomes:</strong> the National Archives (Electoral College) and UCSB (popular vote) pages agree on the winning party in all 33 elections from 1896, and a third source (Wikipedia lists) agreed with the coded outcomes for all 32 elections in 1900&ndash;2024.</li>
+    <li><strong>Sky conditions:</strong> computed with Skyfield and JPL DE421, then compared with JPL Horizons for the featured rule&rsquo;s {ver.horizons_comparisons} values. The truth value differed in {ver.horizons_truth_differs}. That is a second computation from the same family of ephemerides, not an independent observation.</li>
+    <li><strong>Super Bowl winners:</strong> Wikipedia checked against ESPN. Nothing else in the featured rule had a second source before the human check, and the human check used ESPN too.</li>
+    <li><strong>Everything else in the pool</strong> (most of the sports facts) was built from one source per event family, as listed under Data and sources above, without a second source. The featured rule does not use most of those facts, but many of the other {fmt(f1.n_rules - 1)} perfect rules do.</li>
+  </ul>
+
+  <h2 id="data">Data and sources</h2>
+  <ul>
+    <li>
+      <strong>The re-grading of early Stanley Cup facts rests on one source.</strong> Whether the winner of the Cup in 1900, 1904, 1908 and 1912 depends on which challenge series counts was settled by reading
+      Wikipedia&rsquo;s list of challenge games, where every series in each year was won by the same club. No independent source was reachable: Hockey-Reference has no pre-1918 pages, and the Britannica and
+      hockeydb pages returned errors. The three Wikipedia pages used are not independent of each other. The change took the quarantined literals from 10 to 7 (see the
+      <a href={`${base}downloads/reports/phase1_pool_report.md`}>pool report</a>). None of these conditions is in the featured rule.
+    </li>
+    <li>
+      <strong>Other single or thin sources.</strong> Kentucky Derby, Masters and Wimbledon dates come from Wikipedia infoboxes only, and the Wimbledon date is the tournament&rsquo;s end date, standing in for the final.
+      NBA game dates are Wikipedia only. The Super Bowl cross-check is ESPN only (two other sites refused access). Club lineage for MLB is read from Wikipedia&rsquo;s labels, not an MLB page. Belmont Stakes run dates
+      could not be sourced for 20 of 31 held years, so only the computed &ldquo;won the Triple Crown&rdquo; fact was built. Weather is a single NOAA source, and only New York&rsquo;s Central Park station is complete for every window tested.
+    </li>
+    <li>
+      <strong>Defunct entities.</strong> The criteria say a fact must not depend on a club or country that no longer exists. That was not enforced as a gate. {f1.defunct_rules.count} of the {fmt(f1.n_rules)} perfect rules contain such a fact (the Quebec Bulldogs); they are
+      flagged and still counted. The top-ranked rule in the look-ahead test for T1 contains one too (the Seattle Metropolitans). The featured rule contains none. Familiarity grades were set per event, not per club, so an obscure
+      defunct club inherits the grade of the Stanley Cup final.
+    </li>
+    <li><strong>The Venus gap.</strong> In a six-point pilot of JPL Horizons against our astronomy code, five points agreed to about 0.00001&deg;. Venus on 1940-03-06 differed by 0.00027&deg; (about one arcsecond, or 20 seconds of Venus&rsquo;s motion). We did not explain it. Horizons and our code differ in several conventions (ephemeris version, light bending, pre-1962 time handling), and the difference is far smaller than any condition&rsquo;s margin. For the featured rule&rsquo;s own {ver.horizons_comparisons} comparisons, the largest gap was {ver.horizons_max_gap_deg.toFixed(5)}&deg; against a tolerance of {ver.horizons_tolerance_deg}&deg;, and the truth value differed in {ver.horizons_truth_differs} of them.</li>
+    <li><strong>Wording.</strong> The sky conditions compare the difference in ecliptic longitude between two bodies at 00:00 UTC, ignoring latitude. The pool&rsquo;s own text called this &ldquo;angular separation&rdquo;; only the display text was corrected, and the data files keep the original wording.</li>
+    <li>
+      <strong>Weather had coverage failures.</strong> Station records have gaps and moves, and stations were never spliced. For the summer-temperature and first-snow windows tested, only New York&rsquo;s Central Park station has complete data for all 32 election years.
+      Chicago, Washington, Boston and Los Angeles stations each miss years, so those cities were left out rather than patched. Readings flagged as bad by NOAA count as missing.
+    </li>
+    <li><strong>Timezones.</strong> Some sky conditions would flip if the instant were local midnight in the US; they are flagged as timezone-sensitive. None is in the featured rule.</li>
+    <li>Olympic closing dates differ between sources for 1904, 1908, 1912 and 1920; no before-Election-Day truth value depends on the difference. Pre-1936 college football and the Heisman Trophy were not used.</li>
+  </ul>
+
+  <h2 id="stats">Statistical caveats</h2>
+  <ul>
+    <li>
+      <strong>The look-ahead comparison used {fmt(nullB)} shuffled histories per target,</strong> not the 20,000 planned, because finding the top-ranked rule exactly is slow when thousands of rules fit the 21 training elections (the run took more than
+      three hours). With {fmt(nullB)} shuffles a share near 50% is known to within about &plusmn;2 percentage points. <strong>The second split from the project plan (fit 1900&ndash;1990, score 1992&ndash;2024) was not run.</strong>
+    </li>
+    <li>The party-level shuffle set aside {pct(nulls.party.rejected_fraction, 1)} of its draws because the derived incumbent-party target had too few true years for exact counting. The structured shuffles of the real sequence are only 63 exact sequences plus block shuffles.</li>
+    <li>The shuffles keep the number of wins and shuffle everything else. They test whether the search can find a perfect rule in a history with no information in it. They do not test any particular mechanism.</li>
+    <li>&ldquo;Perfect&rdquo; here means all 32 elections right, using at most four facts. Counts of perfect rules are counts of minimal combinations of distinct patterns; many facts share the same pattern across years.</li>
+    <li>A single split, 1900&ndash;1980 against 1984&ndash;2024, was used for the look-ahead test, and it was fixed in advance.</li>
+  </ul>
+
+  <h2 id="process">How the work was done</h2>
+  <ul>
+    <li>
+      <strong>The runner that produced the real-search outputs is not part of the frozen set.</strong> The frozen driver could only write one file with the top 40 rules and no log, so a small orchestrator (<code>src/search/gate2.py</code>) called the same frozen
+      search functions with an unlimited rule list and wrote to a separate folder. It was committed before the run and tested only on shuffled noise. The look-ahead test&rsquo;s shortcut for finding the top-ranked rule is also unfrozen; it was checked against full
+      enumeration on 40 random histories. The pools, cutoffs, ranking and procedure were not changed.
+    </li>
+    <li>The real search was run once. Nothing was rerun, re-ranked or tuned afterward. The pipeline hash <code title={meta.hashes.freeze_sha256}>{freezeShort}&hellip;</code> covers the config, pools, astronomy grid, search code, cutoffs and seeds.</li>
+    <li>
+      <strong>Human checking is thin: {vs.human_checked} of {vs.rows} rows human-checked, {vs.automated_only} automated.</strong>
+      {ver.human_checks.length > 0 && <> The human-checked rows are the Pittsburgh Steelers&rsquo; Super Bowl wins in {ver.human_checks.map((h: any) => h.year).join(' and ')} (checked by {ver.human_checks[0].checked_by} against <a href={ver.human_checks[0].source_url}>ESPN</a>, {ver.human_checks[0].checked_on}).</>}
+      That is the same source the automated Super Bowl cross-check used, so it adds a human reader, not an independent source.
+      The automated checks (JPL Horizons for the sky conditions, ESPN for the Super Bowl, a second source for election outcomes) are real but are not a person reading the sources.
+    </li>
+    <li>The site copy is marked draft until approved.</li>
+  </ul>
+
+  <h2 id="claim">What a real claim would need</h2>
+  <p>
+    One rule, written down before the outcome is known, from a pool fixed beforehand, with no choosing among tied candidates afterward, tested prospectively on an election that has not happened. The next one is in 2028, and <a href={url('/2028/')}>the 2028 page</a> shows what this rule and its equally perfect rivals say for it.
+    Nothing here meets that bar, and nothing here was meant to.
+  </p>
+
+  <h2 id="downloads">Downloads</h2>
+  <p>
+    These are derived files and source <em>manifests</em>. The source web pages themselves are not redistributed: each manifest lists the page&rsquo;s URL, retrieval date and a sha256 so the page can be fetched again and checked.
+    The manifest for the National Archives and UCSB pages used for the election outcomes lists file names and sha256 only; the URL patterns are in the accompanying sources note. Per-shuffle files from the
+    null runs are omitted for size; they regenerate from the seeds. {fmt(dl.files.length)} files, {kb(dl.total_bytes)} in total.
+  </p>
+  <p>
+    <strong>Retrieval dates.</strong> The combined source manifest (<a href={`${base}downloads/manifests/ALL_SOURCES_MANIFEST.csv`}>ALL_SOURCES_MANIFEST.csv</a>) lists URL, retrieval date and sha256 for every source page.
+    For the National Archives and UCSB pages used for election outcomes, the original manifest recorded only file and sha256: their URLs are rebuilt from the published URL patterns, and the date is the one batch date
+    (2026-10-25) written in the sources note, not a per-file record. The <code>url_basis</code> column says which rows are which. The derived files below are built from the repository, not downloaded, so they have a sha256 and no URL.
+  </p>
+  {order.map((g) => {
+    const files = dl.files.filter((f: any) => f.group === g);
+    return (
+      <details class="viz-table" open={!closed.has(g)}>
+        <summary>{dl.groups[g]} ({files.length})</summary>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>File</th><th>What it is</th><th class="r">Size</th><th>sha256</th></tr></thead>
+            <tbody>
+              {files.map((f: any) => (
+                <tr>
+                  <td><a href={`${base}${f.path}`} download>{f.name}</a></td>
+                  <td>{f.description}</td>
+                  <td class="r">{kb(f.bytes)}</td>
+                  <td><code title={f.sha256}>{f.sha256.slice(0, 12)}&hellip;</code></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    );
+  })}
+  <h3>Reproducing the numbers</h3>
+  <p class="sub">From the project repository (not yet public):</p>
+  <pre class="repro"><code>uv sync
+uv run pytest                                  # 50+ tests, including the frozen-state checks
+uv run python -c "import yaml; from src.nulls.freeze import build; fz = yaml.safe_load(open('freeze.yaml')); print(build(fz['null_plan'])['freeze_sha256'] == fz['freeze_sha256'])"   # True if the frozen files are unchanged
+uv run python -m src.site.export               # rebuild the data behind these pages (refuses if hashes differ)
+cd site && npm install && npx vitest run       # TypeScript search port against Python results</code></pre>
+</Base>
